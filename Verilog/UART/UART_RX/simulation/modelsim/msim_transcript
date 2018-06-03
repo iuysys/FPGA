@@ -1,0 +1,257 @@
+# Reading S:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do UART_RX_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying S:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied S:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/UART/UART_RX {F:/FPGA/Verilog/UART/UART_RX/UART_RX.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_RX
+# 
+# Top level modules:
+# 	UART_RX
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/UART/UART_RX/simulation/modelsim {F:/FPGA/Verilog/UART/UART_RX/simulation/modelsim/UART_RX.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_RX_vlg_tst
+# 
+# Top level modules:
+# 	UART_RX_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs="+acc"  UART_RX_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps UART_RX_vlg_tst 
+# Loading work.UART_RX_vlg_tst
+# Loading work.UART_RX
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+do UART_RX_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/UART/UART_RX {F:/FPGA/Verilog/UART/UART_RX/UART_RX.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_RX
+# 
+# Top level modules:
+# 	UART_RX
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/UART/UART_RX/simulation/modelsim {F:/FPGA/Verilog/UART/UART_RX/simulation/modelsim/UART_RX.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_RX_vlg_tst
+# 
+# Top level modules:
+# 	UART_RX_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs="+acc"  UART_RX_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps UART_RX_vlg_tst 
+# Loading work.UART_RX_vlg_tst
+# Loading work.UART_RX
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+add wave -position end  sim:/UART_RX_vlg_tst/i1/STATE
+do UART_RX_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/UART/UART_RX {F:/FPGA/Verilog/UART/UART_RX/UART_RX.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_RX
+# 
+# Top level modules:
+# 	UART_RX
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/UART/UART_RX/simulation/modelsim {F:/FPGA/Verilog/UART/UART_RX/simulation/modelsim/UART_RX.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_RX_vlg_tst
+# 
+# Top level modules:
+# 	UART_RX_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs="+acc"  UART_RX_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps UART_RX_vlg_tst 
+# Loading work.UART_RX_vlg_tst
+# Loading work.UART_RX
+# 
+# add wave *
+# add wave -position end  sim:/UART_RX_vlg_tst/i1/STATE
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+add wave -position end  sim:/UART_RX_vlg_tst/i1/bit_cnt
+do UART_RX_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/UART/UART_RX {F:/FPGA/Verilog/UART/UART_RX/UART_RX.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_RX
+# 
+# Top level modules:
+# 	UART_RX
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/UART/UART_RX/simulation/modelsim {F:/FPGA/Verilog/UART/UART_RX/simulation/modelsim/UART_RX.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_RX_vlg_tst
+# 
+# Top level modules:
+# 	UART_RX_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs="+acc"  UART_RX_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps UART_RX_vlg_tst 
+# Loading work.UART_RX_vlg_tst
+# Loading work.UART_RX
+# 
+# add wave *
+# add wave -position end  sim:/UART_RX_vlg_tst/i1/STATE
+# add wave -position end  sim:/UART_RX_vlg_tst/i1/bit_cnt
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+add wave -position end  sim:/UART_RX_vlg_tst/i1/baud_count
+do UART_RX_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/UART/UART_RX {F:/FPGA/Verilog/UART/UART_RX/UART_RX.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_RX
+# 
+# Top level modules:
+# 	UART_RX
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/UART/UART_RX/simulation/modelsim {F:/FPGA/Verilog/UART/UART_RX/simulation/modelsim/UART_RX.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_RX_vlg_tst
+# 
+# Top level modules:
+# 	UART_RX_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs="+acc"  UART_RX_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps UART_RX_vlg_tst 
+# Loading work.UART_RX_vlg_tst
+# Loading work.UART_RX
+# 
+# add wave *
+# add wave -position end  sim:/UART_RX_vlg_tst/i1/STATE
+# add wave -position end  sim:/UART_RX_vlg_tst/i1/bit_cnt
+# add wave -position end  sim:/UART_RX_vlg_tst/i1/baud_count
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+do UART_RX_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/UART/UART_RX {F:/FPGA/Verilog/UART/UART_RX/UART_RX.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_RX
+# 
+# Top level modules:
+# 	UART_RX
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/UART/UART_RX/simulation/modelsim {F:/FPGA/Verilog/UART/UART_RX/simulation/modelsim/UART_RX.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_RX_vlg_tst
+# 
+# Top level modules:
+# 	UART_RX_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs="+acc"  UART_RX_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps UART_RX_vlg_tst 
+# Loading work.UART_RX_vlg_tst
+# Loading work.UART_RX
+# 
+# add wave *
+# add wave -position end  sim:/UART_RX_vlg_tst/i1/STATE
+# add wave -position end  sim:/UART_RX_vlg_tst/i1/bit_cnt
+# add wave -position end  sim:/UART_RX_vlg_tst/i1/baud_count
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+do UART_RX_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/UART/UART_RX {F:/FPGA/Verilog/UART/UART_RX/UART_RX.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_RX
+# 
+# Top level modules:
+# 	UART_RX
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/UART/UART_RX/simulation/modelsim {F:/FPGA/Verilog/UART/UART_RX/simulation/modelsim/UART_RX.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_RX_vlg_tst
+# 
+# Top level modules:
+# 	UART_RX_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs="+acc"  UART_RX_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps UART_RX_vlg_tst 
+# Loading work.UART_RX_vlg_tst
+# Loading work.UART_RX
+# 
+# add wave *
+# add wave -position end  sim:/UART_RX_vlg_tst/i1/STATE
+# add wave -position end  sim:/UART_RX_vlg_tst/i1/bit_cnt
+# add wave -position end  sim:/UART_RX_vlg_tst/i1/baud_count
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
