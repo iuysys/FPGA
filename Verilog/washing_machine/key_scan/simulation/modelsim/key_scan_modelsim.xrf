@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, F:/FPGA/Verilog/washing_machine/key_scan/key_scan.v
+source_file = 1, F:/FPGA/Verilog/washing_machine/key_scan/key_scan.vwf
+source_file = 1, F:/FPGA/Verilog/washing_machine/key_scan/db/key_scan.cbx.xml
+design_name = key_scan
+instance = comp, \key_s~I , key_s, key_scan, 1
+instance = comp, \CLK~I , CLK, key_scan, 1
+instance = comp, \key_w~I , key_w, key_scan, 1
+instance = comp, \key_value~0 , key_value~0, key_scan, 1
+instance = comp, \RST_N~I , RST_N, key_scan, 1
+instance = comp, \key_value[0]~reg0 , key_value[0]~reg0, key_scan, 1
+instance = comp, \key_p~I , key_p, key_scan, 1
+instance = comp, \key_value[0]~I , key_value[0], key_scan, 1
+instance = comp, \key_value[1]~I , key_value[1], key_scan, 1
+instance = comp, \key_value[2]~I , key_value[2], key_scan, 1

@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dF:\FPGA\Verilog\washing_machine\washing_machine\simulation\qsim
+vwashing_machine
+Z1 !s100 V<]=EBZ;g2czZEOAUAk3e1
+Z2 I2:Mo0;d;Xgoa9Q?7b<Q:K0
+Z3 V^R`okd?[h7DkNJjFATBO21
+Z4 dF:\FPGA\Verilog\washing_machine\washing_machine\simulation\qsim
+Z5 w1525681844
+Z6 8washing_machine.vo
+Z7 Fwashing_machine.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|washing_machine.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1525681845.570000
+Z12 !s107 washing_machine.vo|
+!s101 -O0
+vwashing_machine_vlg_check_tst
+!i10b 1
+Z13 !s100 W<X9kNPSba1mc96Q2j[cc0
+Z14 I^AP_YC?:FPohF9Qe_]iUA0
+Z15 V?0N0zla6T?`PnoNn]Z^QY2
+R4
+Z16 w1525681843
+Z17 8washing_machine.vt
+Z18 Fwashing_machine.vt
+L0 67
+R8
+r1
+!s85 0
+31
+Z19 !s108 1525681845.788000
+Z20 !s107 washing_machine.vt|
+Z21 !s90 -work|work|washing_machine.vt|
+!s101 -O0
+R10
+vwashing_machine_vlg_sample_tst
+!i10b 1
+Z22 !s100 B;M_]4L]Z@1N=VMX90Y]a0
+Z23 I2><S`mNk?Z_YgP]>hh]0>0
+Z24 V8ZJUD`>aM[mMKzGDDGIF<2
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vwashing_machine_vlg_vec_tst
+!i10b 1
+Z25 !s100 h4>S5[4?>gFkYd>Dl4lPL3
+Z26 I><7zTCV:1UKR:h?AFH]m72
+Z27 VY55@]k^h13U3G0V@a1Gjj3
+R4
+R16
+R17
+R18
+Z28 L0 297
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

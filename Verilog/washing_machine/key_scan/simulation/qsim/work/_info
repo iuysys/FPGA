@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dF:\FPGA\Verilog\washing_machine\key_scan\simulation\qsim
+vkey_scan
+Z1 IPJ<F`W^hhBSkFhzZod0l33
+Z2 V3Y^hgLdZoeYn>9RL>M=U33
+Z3 dF:\FPGA\Verilog\washing_machine\key_scan\simulation\qsim
+Z4 w1525679480
+Z5 8key_scan.vo
+Z6 Fkey_scan.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|key_scan.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 Yi5?>MUH_1<g^i]nol3Ek0
+!s85 0
+Z11 !s108 1525679481.478000
+Z12 !s107 key_scan.vo|
+!s101 -O0
+vkey_scan_vlg_check_tst
+!i10b 1
+Z13 !s100 IJoGnXR`MY5PbPL7FzPeE3
+Z14 IS67GGnj<E=o99AB`;P1bR2
+Z15 V8m5X>346cZnl:kmJoHSnb2
+R3
+Z16 w1525679479
+Z17 8key_scan.vt
+Z18 Fkey_scan.vt
+L0 65
+R7
+r1
+!s85 0
+31
+Z19 !s108 1525679481.645000
+Z20 !s107 key_scan.vt|
+Z21 !s90 -work|work|key_scan.vt|
+!s101 -O0
+R9
+vkey_scan_vlg_sample_tst
+!i10b 1
+Z22 !s100 8llm_YRMkCTQa6aH8FRLV0
+Z23 Ih>Y_KbP?0=:NzUX;AJ[Y41
+Z24 V5eXm_1e^Bn0XbdoAEYNRi1
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vkey_scan_vlg_vec_tst
+!i10b 1
+Z25 !s100 Af9lM8Fn?lZn>ldO^4K]h2
+Z26 IXNf10j681WNA;BkkDBfoz3
+Z27 V2@ALTRTHaB9FkYJJg70:I0
+R3
+R16
+R17
+R18
+Z28 L0 195
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
