@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dF:\FPGA\Verilog\CLK_DIV_EVEN\simulation\qsim
+vCLK_DIV_EVEN
+Z1 !s100 ND2<n6Tfl;IkXM_fVNk@:3
+Z2 IhW88_c97BXkb>0z95TPnI2
+Z3 VdX>BL6^9[1B8G20QGz@S[1
+Z4 dF:\FPGA\Verilog\CLK_DIV_EVEN\simulation\qsim
+Z5 w1526170524
+Z6 8CLK_DIV_EVEN.vo
+Z7 FCLK_DIV_EVEN.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|CLK_DIV_EVEN.vo|
+Z10 o-work work -O0
+Z11 n@c@l@k_@d@i@v_@e@v@e@n
+!i10b 1
+!s85 0
+Z12 !s108 1526170526.856000
+Z13 !s107 CLK_DIV_EVEN.vo|
+!s101 -O0
+vCLK_DIV_EVEN_vlg_check_tst
+!i10b 1
+Z14 !s100 0C:T0nISN`T<7FHDU=ig03
+Z15 IGMkoVY8N05cD];h@VN57m0
+Z16 VQ^HN0^`F@zhd^o5I_6EkH0
+R4
+Z17 w1526170522
+Z18 8CLK_DIV_EVEN.vt
+Z19 FCLK_DIV_EVEN.vt
+L0 59
+R8
+r1
+!s85 0
+31
+Z20 !s108 1526170527.128000
+Z21 !s107 CLK_DIV_EVEN.vt|
+Z22 !s90 -work|work|CLK_DIV_EVEN.vt|
+!s101 -O0
+R10
+Z23 n@c@l@k_@d@i@v_@e@v@e@n_vlg_check_tst
+vCLK_DIV_EVEN_vlg_sample_tst
+!i10b 1
+Z24 !s100 J?`KQ0_ODImKWkATG>TRS3
+Z25 IGf>21z?1_?Rd`Mo<85R9E2
+Z26 Vi7^UDlXUM8CiZ9hU[j_T:2
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@c@l@k_@d@i@v_@e@v@e@n_vlg_sample_tst
+vCLK_DIV_EVEN_vlg_vec_tst
+!i10b 1
+Z28 !s100 ^o?YFZT9T<8nb5f:R6h652
+Z29 IGK[CQ`zm?5f4e9NQbS2Y12
+Z30 V[F2iUR1_IA=25M1jW[GmK0
+R4
+R17
+R18
+R19
+Z31 L0 154
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z32 n@c@l@k_@d@i@v_@e@v@e@n_vlg_vec_tst
