@@ -1,0 +1,211 @@
+# Reading S:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do ov7670_read_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying S:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied S:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670/ov7670_read {F:/FPGA/Verilog/OV7670/ov7670_read/ov7670_read.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ov7670_read
+# 
+# Top level modules:
+# 	ov7670_read
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670/ov7670_read {F:/FPGA/Verilog/OV7670/ov7670_read/FIFO_IP.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module FIFO_IP
+# 
+# Top level modules:
+# 	FIFO_IP
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670/ov7670_read/simulation/modelsim {F:/FPGA/Verilog/OV7670/ov7670_read/simulation/modelsim/ov7670_read.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ov7670_read_vlg_tst
+# 
+# Top level modules:
+# 	ov7670_read_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  ov7670_read_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps ov7670_read_vlg_tst 
+# Loading work.ov7670_read_vlg_tst
+# Loading work.ov7670_read
+# Loading work.FIFO_IP
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+add wave -position end  sim:/ov7670_read_vlg_tst/i1/FIFO_IP_inst/rdempty
+do ov7670_read_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670/ov7670_read {F:/FPGA/Verilog/OV7670/ov7670_read/ov7670_read.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ov7670_read
+# 
+# Top level modules:
+# 	ov7670_read
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670/ov7670_read {F:/FPGA/Verilog/OV7670/ov7670_read/FIFO_IP.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module FIFO_IP
+# 
+# Top level modules:
+# 	FIFO_IP
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670/ov7670_read/simulation/modelsim {F:/FPGA/Verilog/OV7670/ov7670_read/simulation/modelsim/ov7670_read.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ov7670_read_vlg_tst
+# 
+# Top level modules:
+# 	ov7670_read_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  ov7670_read_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps ov7670_read_vlg_tst 
+# Loading work.ov7670_read_vlg_tst
+# Loading work.ov7670_read
+# Loading work.FIFO_IP
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+add wave -position end  sim:/ov7670_read_vlg_tst/i1/FIFO_IP_inst/rdempty
+run -all
+add wave -position end  sim:/ov7670_read_vlg_tst/i1/FIFO_IP_inst/wrfull
+run -all
+do ov7670_read_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670/ov7670_read {F:/FPGA/Verilog/OV7670/ov7670_read/ov7670_read.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ov7670_read
+# 
+# Top level modules:
+# 	ov7670_read
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670/ov7670_read {F:/FPGA/Verilog/OV7670/ov7670_read/FIFO_IP.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module FIFO_IP
+# 
+# Top level modules:
+# 	FIFO_IP
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670/ov7670_read/simulation/modelsim {F:/FPGA/Verilog/OV7670/ov7670_read/simulation/modelsim/ov7670_read.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ov7670_read_vlg_tst
+# 
+# Top level modules:
+# 	ov7670_read_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  ov7670_read_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps ov7670_read_vlg_tst 
+# Loading work.ov7670_read_vlg_tst
+# Loading work.ov7670_read
+# Loading work.FIFO_IP
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
+# 
+# add wave *
+# add wave -position end  sim:/ov7670_read_vlg_tst/i1/FIFO_IP_inst/rdempty
+# add wave -position end  sim:/ov7670_read_vlg_tst/i1/FIFO_IP_inst/wrfull
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+do ov7670_read_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670/ov7670_read {F:/FPGA/Verilog/OV7670/ov7670_read/ov7670_read.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ov7670_read
+# 
+# Top level modules:
+# 	ov7670_read
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670/ov7670_read {F:/FPGA/Verilog/OV7670/ov7670_read/FIFO_IP.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module FIFO_IP
+# 
+# Top level modules:
+# 	FIFO_IP
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670/ov7670_read/simulation/modelsim {F:/FPGA/Verilog/OV7670/ov7670_read/simulation/modelsim/ov7670_read.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ov7670_read_vlg_tst
+# 
+# Top level modules:
+# 	ov7670_read_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  ov7670_read_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps ov7670_read_vlg_tst 
+# Loading work.ov7670_read_vlg_tst
+# Loading work.ov7670_read
+# Loading work.FIFO_IP
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
+# 
+# add wave *
+# add wave -position end  sim:/ov7670_read_vlg_tst/i1/FIFO_IP_inst/rdempty
+# add wave -position end  sim:/ov7670_read_vlg_tst/i1/FIFO_IP_inst/wrfull
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench

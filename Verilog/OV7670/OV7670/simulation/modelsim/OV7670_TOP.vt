@@ -1,0 +1,92 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "03/20/2018 15:41:52"
+                                                                                
+// Verilog Test Bench template for design : OV7670_TOP
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ps/ 1 ps
+module OV7670_TOP_vlg_tst();
+// constants                                           
+// general purpose registers
+//reg eachvec;
+// test vector input registers
+reg [7:0] OV_DATA;
+reg OV_VSYNC;
+reg RST_N;
+reg SYS_CLK;
+// wires                                               
+wire OV_RCLK;
+wire OV_RRST;
+wire OV_SCL;
+wire OV_SDA;
+wire OV_WEN;
+wire OV_WRRST;
+wire VGA_CLK;
+wire [15:0]  VGA_DATA;
+wire VGA_HSYNC;
+wire VGA_VSYNC;
+
+// assign statements (if any)                          
+OV7670_TOP i1 (
+// port map - connection between master ports and signals/registers   
+	.OV_DATA(OV_DATA),
+	.OV_RCLK(OV_RCLK),
+	.OV_RRST(OV_RRST),
+	.OV_SCL(OV_SCL),
+	.OV_SDA(OV_SDA),
+	.OV_VSYNC(OV_VSYNC),
+	.OV_WEN(OV_WEN),
+	.OV_WRRST(OV_WRRST),
+	.RST_N(RST_N),
+	.SYS_CLK(SYS_CLK),
+	.VGA_CLK(VGA_CLK),
+	.VGA_DATA(VGA_DATA),
+	.VGA_HSYNC(VGA_HSYNC),
+	.VGA_VSYNC(VGA_VSYNC)
+);
+initial                                                
+begin 
+	#100000
+	OV_DATA = 8'HAF;
+	OV_VSYNC = 0;
+	RST_N = 1;
+	SYS_CLK = 1 ;
+	#1000 RST_N = 0 ;
+	#100 	RST_N = 1 ;
+$display("Running testbench");                       
+end   
+
+                                                 
+always                                                           
+begin                                                  
+   #50 SYS_CLK = ~ SYS_CLK ;                                     
+end  
+
+always 
+begin
+	#1000 OV_VSYNC = 0 ;
+	#90000 OV_VSYNC = 1 ;
+end
+                                                  
+endmodule
+
