@@ -1,0 +1,144 @@
+m255
+K3
+13
+cModel Technology
+Z0 dF:\FPGA\Verilog\SDRAM\sim
+vSDRAM_AREF
+!i10b 1
+Z1 !s100 i_l=5CHYZ=B>5[N9@A4>V2
+Z2 I2NGDKD;`n]V]2N8Ula<d@0
+Z3 V@nLOPjjXF``bPzk:Ig6fo2
+Z4 dF:\FPGA\Verilog\SDRAM\sim
+Z5 w1529567819
+Z6 8./../src/SDRAM_AREF.v
+Z7 F./../src/SDRAM_AREF.v
+L0 2
+Z8 OV;L;10.1d;51
+r1
+!s85 0
+31
+Z9 !s108 1529651966.952000
+Z10 !s107 ./../src/sdram_model_plus.v|./../src/SDRAM_init.v|./../src/SDRAM_WRITE.v|./../src/SDRAM_TOP.v|./../src/SDRAM_CTRL.v|./../src/SDRAM_AREF.v|
+Z11 !s90 -reportprogress|300|-work|work|./../src/SDRAM_AREF.v|./../src/SDRAM_CTRL.v|./../src/SDRAM_TOP.v|./../src/SDRAM_WRITE.v|./../src/SDRAM_init.v|./../src/sdram_model_plus.v|
+!s101 -O0
+Z12 o-work work -O0
+Z13 n@s@d@r@a@m_@a@r@e@f
+vSDRAM_CTRL
+!i10b 1
+Z14 !s100 NWSbS^^5S?3Sc]P7k524R2
+Z15 ISk]mA>EF>9K2Nl4kFLlie2
+Z16 VdmOk9URVRY2o[kG^PnBSe1
+R4
+Z17 w1529570195
+Z18 8./../src/SDRAM_CTRL.v
+Z19 F./../src/SDRAM_CTRL.v
+L0 2
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R12
+Z20 n@s@d@r@a@m_@c@t@r@l
+vSDRAM_init
+!i10b 1
+Z21 !s100 mYBaRl?<:Rmk8Z_:NFj[?3
+Z22 I2e1<FGP_d;eoBP?Y]P?Z:2
+Z23 VaCk9X<b@7abfQm<X29W?R3
+R4
+Z24 w1529567807
+Z25 8./../src/SDRAM_init.v
+Z26 F./../src/SDRAM_init.v
+L0 2
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R12
+Z27 n@s@d@r@a@m_init
+vsdram_model_plus
+!i10b 1
+Z28 !s100 ^JI9j;liYH^o^@G[<R8i:1
+Z29 I3]IC0DK[AJJPGU4=O;EC<2
+Z30 V<oGd@Kk?DZ5H3H<1jKfY:2
+R4
+Z31 w1529571180
+Z32 8./../src/sdram_model_plus.v
+Z33 F./../src/sdram_model_plus.v
+L0 56
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R12
+vSDRAM_TOP
+!i10b 1
+Z34 !s100 jA5MGeC[9PM`X]?SK7]ha3
+Z35 IGODcTNkHCoh39<G3K9jAQ1
+Z36 VUDk;j;<IC>Hj:5j2Y<7]^3
+R4
+Z37 w1529633942
+Z38 8./../src/SDRAM_TOP.v
+Z39 F./../src/SDRAM_TOP.v
+L0 2
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R12
+Z40 n@s@d@r@a@m_@t@o@p
+vSDRAM_TOP_tb
+Z41 !s100 O06kY`3E6;PYCo:FW=[4k1
+Z42 IIMKM3D9:i`RLOdnlK6EKU1
+Z43 V_S5SRCkXem]WDlYUllk:G2
+R4
+Z44 w1529633825
+Z45 8./SDRAM_TOP_tb.v
+Z46 F./SDRAM_TOP_tb.v
+L0 3
+R8
+r1
+31
+Z47 !s90 -reportprogress|300|-work|work|./SDRAM_TOP_tb.v|
+R12
+Z48 n@s@d@r@a@m_@t@o@p_tb
+!i10b 1
+!s85 0
+Z49 !s108 1529651966.740000
+Z50 !s107 ./SDRAM_TOP_tb.v|
+!s101 -O0
+vSDRAM_WRITE
+!i10b 1
+Z51 !s100 n`fHc30Wk=h]@>=ZB3W3J0
+Z52 IcRGbjGgZ99XjP5T0<_1TE3
+Z53 VN732=64NcBMG4FC01YcQX0
+R4
+Z54 w1529586107
+Z55 8./../src/SDRAM_WRITE.v
+Z56 F./../src/SDRAM_WRITE.v
+L0 2
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+R12
+Z57 n@s@d@r@a@m_@w@r@i@t@e
