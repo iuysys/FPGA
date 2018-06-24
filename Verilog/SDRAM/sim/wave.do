@@ -1,102 +1,31 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate -divider SDRAM_top_tb
+add wave -noupdate -divider SDRAM_CTRL_inst
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_CTRL_inst/write_en
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/image_cnt
+add wave -noupdate -divider SDRAM_TOP_tb
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/write_req
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/write_en
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/STATE
+add wave -noupdate -divider SDRAM_WTRITE
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/S_CLK
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/RST_N
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/write_ack
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/write_en
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/aref_req
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/fifo_rd_req
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/sdram_addr
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/write_addr
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/write_cmd
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/STATE
-add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/burst_cnt
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Dq
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Addr
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Ba
-add wave -noupdate -color {Green Yellow} /SDRAM_TOP_tb/sdram_model_plus_inst/Clk
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Cke
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Cs_n
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Ras_n
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Cas_n
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/We_n
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Dqm
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Debug
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Dqm_reg0
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Dqm_reg1
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/B0_row_addr
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/B1_row_addr
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/B2_row_addr
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/B3_row_addr
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Mode_reg
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Dq_reg
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Dq_dqm
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Col_temp
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Burst_counter
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Act_b0
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Act_b1
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Act_b2
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Act_b3
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Pc_b0
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Pc_b1
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Pc_b2
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Pc_b3
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Data_in_enable
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Data_out_enable
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Bank
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Previous_bank
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Row
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Col
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Col_brst
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/CkeZ
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Sys_clk
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/dd
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Active_enable
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Aref_enable
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Burst_term
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Mode_reg_enable
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Prech_enable
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Read_enable
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Write_enable
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Burst_length_1
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Burst_length_2
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Burst_length_4
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Burst_length_8
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Cas_latency_2
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Cas_latency_3
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Write_burst_mode
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/Dq_chk
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/mem_d
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/sdram_r
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/sdram_w
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/compare
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/MRD_chk
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/RC_chk
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/RRD_chk
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/RAS_chk0
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/RAS_chk1
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/RAS_chk2
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/RAS_chk3
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/RCD_chk0
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/RCD_chk1
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/RCD_chk2
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/RCD_chk3
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/RP_chk0
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/RP_chk1
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/RP_chk2
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/RP_chk3
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/test_file
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/sdram_control
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/cke_temp
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/sdram_command
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/sdram_data
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/sdram_mem
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/aa
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/cc
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/bb
-add wave -noupdate /SDRAM_TOP_tb/sdram_model_plus_inst/ee
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/burst_cnt
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/flag_aref
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/flag_next_row
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/flag_wd_end
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/row_addr_cnt
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_WRITE_inst/col_addr_cnt
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {49762 ns} 0}
+WaveRestoreCursors {{Cursor 1} {215700 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100

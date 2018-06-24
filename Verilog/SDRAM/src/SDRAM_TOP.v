@@ -1,8 +1,9 @@
 `timescale 1ns / 1ns
 module SDRAM_TOP(
+//system inout
 input								S_CLK					,				//系统时钟
 input								RST_N					,				//系统复位输入
-
+//SDRAM interfaces
 output								SDRAM_CLK				,			//SDRAM时钟
 output		reg						SDRAM_CKE				,			//时钟使能
 output		reg						SDRAM_CS				,			//片选
@@ -13,14 +14,14 @@ output				[1:0]			SDRAM_BANK				,			//BANK选择
 output		reg		[11:0]			SDRAM_ADDR				,			//地址线
 inout				[15:0]			SDRAM_DQ				,			//数据线
 output				[1:0]			SDRAM_DQM				,			//掩码线
-                                                            
+//Write SDRAM fifo interfaces                                                           
 input 				[15:0]			sdram_data				,			//写入SDRAM的数据
 input				[19:0]			sdram_addr				,			
-                                                            
-															
-															
+output								fifo_rd_req				,                                                           
+//Read SDRAM fifo interfaces															
+
+//ctrler interfaces															
 input								write_req				,
-output								fifo_rd_req				,
 output								write_ack				
 	
 );
@@ -53,6 +54,7 @@ always@(posedge S_CLK or negedge RST_N) begin
 	if(!RST_N)	begin
 		STATE <= INIT ;
 		aref_en <= 1'b0 ;
+		write_en <= 1'b0 ;
 	end
 	else begin
 		case(STATE)
@@ -85,8 +87,13 @@ always@(posedge S_CLK or negedge RST_N) begin
 				end
 			end
 			WRITE :begin
-				if(write_ack) begin
+				if(~write_req && write_ack ) begin
 					STATE <= IDLE ;
+					write_en <= 1'b0 ;
+					
+				end
+				else if(aref_req && write_ack) begin
+					STATE <= AREF ;
 					write_en <= 1'b0 ;
 				end
 				else begin
@@ -151,16 +158,17 @@ SDRAM_AREF SDRAM_AREF_inst(
 
 
 SDRAM_WRITE SDRAM_WRITE_inst(
-	.S_CLK					(S_CLK		),				//系统时钟
-	.RST_N					(RST_N		),				//系统复位输入
-                             
-	.write_ack				(write_ack	),
-	.write_en				(write_en	),
-	.fifo_rd_req			(fifo_rd_req),
-	.sdram_addr				(sdram_addr	),
-	.write_addr				(write_addr	),
-	.write_cmd				(write_cmd	)
-);
+	.S_CLK					(S_CLK			),				//系统时钟
+	.RST_N					(RST_N			),				//系统复位输入
+	                        
+	.write_ack				(write_ack		),				//写结束应答
+	.write_en				(write_en		),				//仲裁模块输入的写使能信号
+	.aref_req				(aref_req		),
+	.fifo_rd_req			(fifo_rd_req	),
+	.sdram_addr				(sdram_addr		),
+	.write_addr				(write_addr		),
+	.write_cmd			    (write_cmd		)
+); 
 
 
 

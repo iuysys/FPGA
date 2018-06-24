@@ -16,8 +16,8 @@ entity SDRAM_TOP is
         SDRAM_DQM       : out    vl_logic_vector(1 downto 0);
         sdram_data      : in     vl_logic_vector(15 downto 0);
         sdram_addr      : in     vl_logic_vector(19 downto 0);
-        write_req       : in     vl_logic;
         fifo_rd_req     : out    vl_logic;
+        write_req       : in     vl_logic;
         write_ack       : out    vl_logic
     );
 end SDRAM_TOP;

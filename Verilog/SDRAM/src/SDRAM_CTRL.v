@@ -12,7 +12,7 @@ output		reg						write_en
 //--内部信号
 //--------------------------------------------------------
 reg					[1:0]				STATE				;
-
+reg					[8:0]				image_cnt			;
 
 
 //--------------------------------------------------------
@@ -35,19 +35,20 @@ always@(posedge S_CLK or negedge RST_N) begin
 			IDLE :begin
 				if(image_rd_en) begin
 					STATE <= WRITE ;
-					write_en <= 1'b1 ;
+					
 				end
 				else begin
 					STATE <= IDLE ;
 				end
 			end
 			WRITE :begin
-				if(write_ack) begin
+				if(write_ack && image_cnt == 300) begin
 					write_en <= 1'b0 ;
 					STATE <= IDLE ;
 				end
 				else begin
 					addr <= 12'h0001 ;
+					write_en <= 1'b1 ;
 				end
 			end
 			default :begin
@@ -55,6 +56,22 @@ always@(posedge S_CLK or negedge RST_N) begin
 			end
 		
 		endcase
+	end
+end
+
+//图像像素计数
+always@(posedge write_ack or negedge RST_N) begin
+	if(!RST_N)	begin
+		image_cnt <= 'b0 ;
+	end
+	else begin
+		if(image_cnt == 300) begin
+			image_cnt <= 'b0 ;
+		end
+		else begin
+			image_cnt <= image_cnt + 1'b1 ;
+		end
+		
 	end
 end
 

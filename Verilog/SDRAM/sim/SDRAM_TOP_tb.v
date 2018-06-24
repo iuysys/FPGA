@@ -15,7 +15,7 @@ wire	[11:0]			SDRAM_ADDR				;			//地址线
 wire	[15:0]			SDRAM_DQ				;			//数据线
 wire	[1:0]			SDRAM_DQM				;			//掩码线
                                                 
-wire	[15:0]			sdram_data				;			//写入SDRAM的数据
+reg		[15:0]			sdram_data				;			//写入SDRAM的数据
 wire	[19:0]			sdram_addr				;			
 										        
 
@@ -33,8 +33,20 @@ end
 
 always #25 S_CLK = ~ S_CLK ;
 
-assign sdram_data = 16'haffa ;
+// assign sdram_data = 16'haffa ;
 assign	image_rd_en = 1'b1 ;
+
+//模拟产生数据
+always@(posedge S_CLK or negedge RST_N) begin
+	if(!RST_N)	begin
+		sdram_data <= 'b0 ;
+	end
+	else begin
+		if(fifo_rd_req) begin
+			sdram_data <= sdram_data + 1'b1 ;
+		end
+	end
+end
 
 
 SDRAM_CTRL	SDRAM_CTRL_inst(
