@@ -19,10 +19,18 @@ reg		[15:0]			sdram_data				;			//写入SDRAM的数据
 wire	[19:0]			sdram_addr				;			
 										        
 
-wire					write_en				;															
+wire					write_en				;
+wire					read_en					;
+															
 wire					write_req				;
+wire					read_req				;
+
 wire					fifo_rd_req				;
+wire					fifo_wd_req				;
+
 wire					write_ack				;
+wire					read_ack				;
+
 
 initial begin
 	S_CLK = 1'b1 ;
@@ -56,7 +64,9 @@ SDRAM_CTRL	SDRAM_CTRL_inst(
 .image_rd_en			(image_rd_en	),
 .addr					(sdram_addr		),
 .write_ack				(write_ack		),
-.write_en				(write_en		)	
+.write_en				(write_en		),
+.read_ack				(read_ack		),
+.read_en				(read_en		)		
 );
 
 
@@ -79,8 +89,11 @@ SDRAM_TOP	SDRAM_TOP_inst(
 	.sdram_addr				(sdram_addr	),			
 
 	.write_req				(write_en		),
+	.read_req				(read_en		),
 	.fifo_rd_req			(fifo_rd_req	),
-	.write_ack				(write_ack		)
+	.fifo_wd_req			(fifo_wd_req 	),
+	.write_ack				(write_ack		),
+	.read_ack				(read_ack		)
 	
 );
 

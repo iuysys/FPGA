@@ -17,12 +17,15 @@ output				[1:0]			SDRAM_DQM				,			//掩码线
 //Write SDRAM fifo interfaces                                                           
 input 				[15:0]			sdram_data				,			//写入SDRAM的数据
 input				[19:0]			sdram_addr				,			
-output								fifo_rd_req				,                                                           
+output								fifo_rd_req				,   
+output 								fifo_wd_req				,                                                        
 //Read SDRAM fifo interfaces															
 
 //ctrler interfaces															
 input								write_req				,
-output								write_ack				
+input								read_req				,
+output								write_ack				,
+output								read_ack
 	
 );
 //--------------------------------------------------------
@@ -38,16 +41,19 @@ wire								aref_ack				;
 wire				[4:0]			aref_cmd				;
 wire				[11:0]			aref_addr	            ;
 reg									aref_en					;
-reg									write_en				;
-                                                            
 
+reg									write_en				;
 wire				[4:0]			write_cmd				;
 wire				[11:0]			write_addr	            ;
 
+
+reg									read_en		            ;
+wire				[11:0]			read_addr	            ;
+wire				[4:0]			read_cmd	            ;
 //--------------------------------------------------------
 //--参数定义
 //--------------------------------------------------------
-localparam		INIT = 3'D0 ,IDLE = 3'D1 ,AREF = 3'D2 ,WRITE = 3'D3;
+localparam		INIT = 3'D0 ,IDLE = 3'D1 ,AREF = 3'D2 ,WRITE = 3'D3,READ = 3'D4;
 
 
 always@(posedge S_CLK or negedge RST_N) begin
@@ -72,6 +78,9 @@ always@(posedge S_CLK or negedge RST_N) begin
 				end
 				else if(write_req) begin
 					STATE <= WRITE ;
+				end
+				else if(read_req) begin
+					STATE <= READ ;
 				end
 				else begin
 					STATE <= IDLE ;
@@ -99,6 +108,21 @@ always@(posedge S_CLK or negedge RST_N) begin
 				else begin
 					STATE <= WRITE ;
 					write_en <= 1'b1 ;
+				end
+			end
+			READ :begin
+				if(~read_req && read_ack ) begin
+					STATE <= IDLE ;
+					read_en <= 1'b0 ;
+					
+				end
+				else if(aref_req && read_ack) begin
+					STATE <= AREF ;
+					read_en <= 1'b0 ;
+				end
+				else begin
+					STATE <= READ ;
+					read_en <= 1'b1 ;
 				end
 			end
 			default :begin
@@ -170,6 +194,18 @@ SDRAM_WRITE SDRAM_WRITE_inst(
 	.write_cmd			    (write_cmd		)
 ); 
 
+SDRAM_READ SDRAM_READ_inst(
+	.S_CLK					(S_CLK			),				//系统时钟
+	.RST_N					(RST_N			),				//系统复位输入
+	
+	.read_ack				(read_ack		),				//读结束应答
+	.read_en				(read_en		),				//仲裁模块输入的读使能信号
+	.aref_req				(aref_req		),
+	.fifo_wd_req			(fifo_wd_req	),
+	.sdram_addr				(sdram_addr		),
+	.read_addr				(read_addr		),
+	.read_cmd				(read_cmd		)
+);
 
 
 endmodule
