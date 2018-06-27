@@ -45,6 +45,7 @@ always@(posedge S_CLK or negedge RST_N) begin
 		burst_cnt <= 'b0 ;
 		row_addr_cnt <= 'b0 ;
 		col_addr_cnt <= 'b0 ;
+		cas_cnt <= 'b0 ;
 	end
 	else begin
 		case(STATE)
@@ -80,7 +81,7 @@ always@(posedge S_CLK or negedge RST_N) begin
 				end
 			end
 			RD :begin
-				if(burst_cnt == `BURST_LENGHT - 1'b1 ) begin							//突发结束	
+				if(burst_cnt == `BURST_LENGHT - `CAS_Latency - 1) begin					//突发至下一次潜伏期开始
 					if(aref_req) begin													//自刷新
 						flag_aref <= 1'b1 ;
 						STATE <= WAIT ;
@@ -90,6 +91,7 @@ always@(posedge S_CLK or negedge RST_N) begin
 						STATE <= WAIT;
 					end
 					else begin
+						STATE <= CAS ;
 						flag_aref <= 1'b0 ;
 						flag_next_row <= 1'b0 ;
 						flag_rd_end <= 1'b0 ;
@@ -177,7 +179,7 @@ always@(*) begin
 					
 				end
 			endcase
-			if(burst_cnt > `BURST_LENGHT - `CAS_Latency - 1'b1) begin
+			if(burst_cnt == `BURST_LENGHT - `CAS_Latency - 1'b1) begin
 				read_ack <= 1'b1 ;
 				fifo_wd_req <= 1'b0 ;
 			end
@@ -185,6 +187,7 @@ always@(*) begin
 				read_ack <= 1'b0 ;
 				fifo_wd_req <= 1'b1 ;
 			end
+			cas_cnt <= 'b0 ;
 		end
 		PREC :begin
 			read_cmd <= CMD_PREC ;

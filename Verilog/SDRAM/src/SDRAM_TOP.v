@@ -61,6 +61,7 @@ always@(posedge S_CLK or negedge RST_N) begin
 		STATE <= INIT ;
 		aref_en <= 1'b0 ;
 		write_en <= 1'b0 ;
+		read_en <= 1'b0 ;
 	end
 	else begin
 		case(STATE)
@@ -146,6 +147,10 @@ always@(*)begin
 		WRITE :begin
 			{SDRAM_CKE,SDRAM_CS,SDRAM_RAS,SDRAM_CAS,SDRAM_WE} <= write_cmd ;
 			SDRAM_ADDR = write_addr ;
+		end
+		READ :begin
+			{SDRAM_CKE,SDRAM_CS,SDRAM_RAS,SDRAM_CAS,SDRAM_WE} <= read_cmd ;
+			SDRAM_ADDR = read_addr ;
 		end
 	endcase
 

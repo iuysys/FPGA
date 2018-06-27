@@ -64,9 +64,9 @@ add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_READ_inst/burst_cnt
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_READ_inst/flag_aref
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_READ_inst/flag_next_row
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_READ_inst/flag_rd_end
-add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_READ_inst/row_addr_cnt
-add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_READ_inst/col_addr_cnt
-add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_READ_inst/cas_cnt
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_READ_inst/row_addr_cnt
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_READ_inst/col_addr_cnt
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_TOP_inst/SDRAM_READ_inst/cas_cnt
 #==============================================
 # run the simulation
 run		220us

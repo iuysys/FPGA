@@ -73,8 +73,11 @@ always@(posedge S_CLK or negedge RST_N) begin
 			end
 			WD :begin
 				if(burst_cnt == `BURST_LENGHT - 1'b1 ) begin							//突发结束	
-					
-					if(aref_req) begin										//自刷新
+					if(~write_en) begin
+						STATE <= IDLE ;
+						flag_wd_end <= 1'b1 ;
+					end
+					else if(aref_req) begin										//自刷新
 						flag_aref <= 1'b1 ;
 						STATE <= WAIT ;
 					end
