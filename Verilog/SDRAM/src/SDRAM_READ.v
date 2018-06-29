@@ -51,7 +51,7 @@ always@(posedge S_CLK or negedge RST_N) begin
 		case(STATE)
 			IDLE :begin
 				if(read_en) begin
-					STATE <= ACT ;
+					STATE <= PREC ;
 				end
 				else begin
 					STATE <= IDLE ;
@@ -81,8 +81,11 @@ always@(posedge S_CLK or negedge RST_N) begin
 				end
 			end
 			RD :begin
-				if(burst_cnt == `BURST_LENGHT - `CAS_Latency - 1) begin					//突发至下一次潜伏期开始
-					if(aref_req) begin													//自刷新
+				if(burst_cnt == `BURST_LENGHT - `CAS_Latency ) begin					//突发至下一次潜伏期开始
+					if(~read_en) begin
+						STATE <= IDLE ;
+					end
+					else if(aref_req) begin													//自刷新
 						flag_aref <= 1'b1 ;
 						STATE <= WAIT ;
 					end
@@ -114,6 +117,9 @@ always@(posedge S_CLK or negedge RST_N) begin
 				else if(flag_next_row) begin
 					STATE <= ACT ;
 					row_addr_cnt <= row_addr_cnt + 1'b1 ;
+				end
+				else begin
+					STATE <= ACT ;
 				end
 			end
 			WAIT :begin

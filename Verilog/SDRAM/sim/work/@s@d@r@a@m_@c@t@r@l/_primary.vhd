@@ -5,6 +5,7 @@ entity SDRAM_CTRL is
         S_CLK           : in     vl_logic;
         RST_N           : in     vl_logic;
         image_rd_en     : in     vl_logic;
+        vga_rd_req      : in     vl_logic;
         addr            : out    vl_logic_vector(19 downto 0);
         write_ack       : in     vl_logic;
         write_en        : out    vl_logic;

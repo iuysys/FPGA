@@ -1,8 +1,8 @@
 `timescale 1ns / 1ns
 module SDRAM_TOP(
 //system inout
-input								S_CLK					,				//系统时钟
-input								RST_N					,				//系统复位输入
+input								S_CLK					,			//系统时钟
+input								RST_N					,			//系统复位输入
 //SDRAM interfaces
 output								SDRAM_CLK				,			//SDRAM时钟
 output		reg						SDRAM_CKE				,			//时钟使能
@@ -16,16 +16,16 @@ inout				[15:0]			SDRAM_DQ				,			//数据线
 output				[1:0]			SDRAM_DQM				,			//掩码线
 //Write SDRAM fifo interfaces                                                           
 input 				[15:0]			sdram_data				,			//写入SDRAM的数据
-input				[19:0]			sdram_addr				,			
-output								fifo_rd_req				,   
-output 								fifo_wd_req				,                                                        
+input				[19:0]			sdram_addr				,			//读写SDRAM的地址			
+output								fifo_rd_req				,			//读写fifo请求   
+output 								fifo_wd_req				,           //写读fifo请求                                             
 //Read SDRAM fifo interfaces															
 
 //ctrler interfaces															
-input								write_req				,
-input								read_req				,
-output								write_ack				,
-output								read_ack
+input								write_req				,			//控制器输入写SDRAM请求
+input								read_req				,			//控制器输入读SDRAM请求
+output								write_ack				,			//SDRAM突发写结束
+output								read_ack							//SDRAM突发读结束
 	
 );
 //--------------------------------------------------------

@@ -17,7 +17,7 @@ Z8 OV;L;10.1d;51
 r1
 !s85 0
 31
-Z9 !s108 1530082270.248000
+Z9 !s108 1530272279.927000
 Z10 !s107 ./../src/sdram_model_plus.v|./../src/SDRAM_init.v|./../src/SDRAM_WRITE.v|./../src/SDRAM_TOP.v|./../src/SDRAM_READ.v|./../src/SDRAM_CTRL.v|./../src/SDRAM_AREF.v|
 Z11 !s90 -reportprogress|300|-work|work|./../src/SDRAM_AREF.v|./../src/SDRAM_CTRL.v|./../src/SDRAM_READ.v|./../src/SDRAM_TOP.v|./../src/SDRAM_WRITE.v|./../src/SDRAM_init.v|./../src/sdram_model_plus.v|
 !s101 -O0
@@ -25,11 +25,11 @@ Z12 o-work work -O0
 Z13 n@s@d@r@a@m_@a@r@e@f
 vSDRAM_CTRL
 !i10b 1
-Z14 !s100 9jddD;RCOPPV_8TV^0mjB3
-Z15 IO<IIML1nC9EXhYoQKia4E3
-Z16 V]l:Ll7a<eU?:O?Mm@nL:i1
+Z14 !s100 YzGQPVXFj@ZTTd<_MW2T=1
+Z15 IWBC[0[?fC=8[Dz`Qkh2Kn1
+Z16 VH`CKB>=8nR]3COc?[`Gd=3
 R4
-Z17 w1529916135
+Z17 w1530261900
 Z18 8./../src/SDRAM_CTRL.v
 Z19 F./../src/SDRAM_CTRL.v
 L0 2
@@ -84,13 +84,13 @@ R11
 R12
 vSDRAM_READ
 !i10b 1
-!s100 64KaXKJca^fglPzM7OQ>j1
-I[f>YAXF?Xa?35`zX<2LL82
-Z34 VFg6?Dbhc;^0K;Fh5[OA;13
+Z34 !s100 ?`AA2N[UObT8_S8J6U6^>3
+Z35 I1XE=9D4SPQjmY8U<]aTb01
+Z36 VFg6?Dbhc;^0K;Fh5[OA;13
 R4
-w1530082265
-Z35 8./../src/SDRAM_READ.v
-Z36 F./../src/SDRAM_READ.v
+Z37 w1530263263
+Z38 8./../src/SDRAM_READ.v
+Z39 F./../src/SDRAM_READ.v
 L0 2
 R8
 r1
@@ -101,16 +101,16 @@ R10
 R11
 !s101 -O0
 R12
-Z37 n@s@d@r@a@m_@r@e@a@d
+Z40 n@s@d@r@a@m_@r@e@a@d
 vSDRAM_TOP
 !i10b 1
-Z38 !s100 XOSelz4HJm[aJ7=;`CgCW2
-Z39 IWKi6L;F=IhVHfc]mbf37_2
-Z40 V>bXHl:1iD7Ti599^C=c801
+Z41 !s100 XOSelz4HJm[aJ7=;`CgCW2
+Z42 IWKi6L;F=IhVHfc]mbf37_2
+Z43 V>bXHl:1iD7Ti599^C=c801
 R4
-Z41 w1530080078
-Z42 8./../src/SDRAM_TOP.v
-Z43 F./../src/SDRAM_TOP.v
+Z44 w1530159842
+Z45 8./../src/SDRAM_TOP.v
+Z46 F./../src/SDRAM_TOP.v
 L0 2
 R8
 r1
@@ -121,36 +121,36 @@ R10
 R11
 !s101 -O0
 R12
-Z44 n@s@d@r@a@m_@t@o@p
+Z47 n@s@d@r@a@m_@t@o@p
 vSDRAM_TOP_tb
-Z45 !s100 a0lXz?F243?Q;oGNTVWCY3
-Z46 ISAdbTUJQAk2WR3?zNSh6z2
-Z47 V_S5SRCkXem]WDlYUllk:G2
+Z48 !s100 OWef<XW0lNg<h1P>b67zF1
+Z49 I6[0hKcRzN1XDWCJ`MJiK30
+Z50 V_S5SRCkXem]WDlYUllk:G2
 R4
-Z48 w1529913798
-Z49 8./SDRAM_TOP_tb.v
-Z50 F./SDRAM_TOP_tb.v
+Z51 w1530254659
+Z52 8./SDRAM_TOP_tb.v
+Z53 F./SDRAM_TOP_tb.v
 L0 3
 R8
 r1
 31
-Z51 !s90 -reportprogress|300|-work|work|./SDRAM_TOP_tb.v|
+Z54 !s90 -reportprogress|300|-work|work|./SDRAM_TOP_tb.v|
 R12
-Z52 n@s@d@r@a@m_@t@o@p_tb
+Z55 n@s@d@r@a@m_@t@o@p_tb
 !i10b 1
 !s85 0
-Z53 !s108 1530082270.103000
-Z54 !s107 ./SDRAM_TOP_tb.v|
+Z56 !s108 1530272279.769000
+Z57 !s107 ./SDRAM_TOP_tb.v|
 !s101 -O0
 vSDRAM_WRITE
 !i10b 1
-Z55 !s100 iXAlVRjHdVeAfMEfL2MUO1
-Z56 InnecFdWNCb29o`XNQg<Y[0
-Z57 VQj1I<P9:Z^CFLIIng8dPo1
+Z58 !s100 Wi]O:o610o>jZ4fSgMGWY1
+Z59 In^::_Xl2L:5`5fHXeXV^81
+Z60 VQj1I<P9:Z^CFLIIng8dPo1
 R4
-Z58 w1530079915
-Z59 8./../src/SDRAM_WRITE.v
-Z60 F./../src/SDRAM_WRITE.v
+Z61 w1530263712
+Z62 8./../src/SDRAM_WRITE.v
+Z63 F./../src/SDRAM_WRITE.v
 L0 2
 R8
 r1
@@ -161,4 +161,4 @@ R10
 R11
 !s101 -O0
 R12
-Z61 n@s@d@r@a@m_@w@r@i@t@e
+Z64 n@s@d@r@a@m_@w@r@i@t@e

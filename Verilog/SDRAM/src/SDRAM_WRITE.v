@@ -49,8 +49,13 @@ always@(posedge S_CLK or negedge RST_N) begin
 		case(STATE)
 			IDLE :begin
 				if(write_en) begin
-					STATE <= ACT ;
-					// write_ack <= 1'b0 ;
+					if(flag_wd_end) begin
+						STATE <= PREC ;
+						flag_wd_end <= 1'b0 ;
+					end
+					else begin
+						STATE <= ACT ;
+					end
 				end
 				else begin
 					STATE <= IDLE ;
@@ -112,6 +117,9 @@ always@(posedge S_CLK or negedge RST_N) begin
 					STATE <= ACT ;
 					row_addr_cnt <= row_addr_cnt + 1'b1 ;
 				end
+				else begin
+					STATE <= ACT ;
+				end
 			end
 			WAIT :begin
 				STATE <= PREC ;
@@ -169,16 +177,16 @@ always@(*) begin
 			
 			if(burst_cnt > 2) begin
 				write_ack <= 1'b1 ;
-				fifo_rd_req <= 1'b0 ;
+				// fifo_rd_req <= 1'b0 ;
 			end
 			else begin
 				write_ack <= 1'b0 ;
-				fifo_rd_req <= 1'b1 ;
+				// fifo_rd_req <= 1'b1 ;
 			end
 		end
 		PREC :begin
 			write_cmd <= CMD_PREC ;
-
+			fifo_rd_req <= 1'b0 ;
 			write_addr <= 12'b0100_0000_0000;
 		end
 		WAIT :begin

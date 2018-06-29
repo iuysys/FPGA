@@ -43,6 +43,7 @@ always #25 S_CLK = ~ S_CLK ;
 
 // assign sdram_data = 16'haffa ;
 assign	image_rd_en = 1'b1 ;
+assign	vga_rd_req = 1'b1 ;
 
 //模拟产生数据
 always@(posedge S_CLK or negedge RST_N) begin
@@ -62,6 +63,7 @@ SDRAM_CTRL	SDRAM_CTRL_inst(
 .RST_N					(RST_N			),				//系统复位输入
                         
 .image_rd_en			(image_rd_en	),
+.vga_rd_req				(vga_rd_req		),
 .addr					(sdram_addr		),
 .write_ack				(write_ack		),
 .write_en				(write_en		),
