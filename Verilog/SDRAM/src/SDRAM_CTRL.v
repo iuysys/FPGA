@@ -6,6 +6,7 @@ input								RST_N					,				//系统复位输入
 input								image_rd_en				,				//图像数据读使能
 input								vga_rd_req				,				//vga读数据请求
 output		reg		[19:0]			addr					,				//读写SDRAM地址
+output				[1:0]			bank					,
 input								write_ack				,				//突发写结束		
 output		reg						write_en				,				//写SDRAM使能
 input								read_ack				,				//突发读结束
@@ -25,7 +26,7 @@ reg					[1:0]				image_cnt				;
 //--------------------------------------------------------
 localparam		IDLE = 2'D0 ,WRITE =2'D1 ,READ =2'D2 ;
 
-
+assign	bank = 2'b01 ;
 
 //--------------------------------------------------------
 //--

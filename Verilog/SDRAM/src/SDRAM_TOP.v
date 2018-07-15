@@ -15,10 +15,14 @@ output		reg		[11:0]			SDRAM_ADDR				,			//地址线
 inout				[15:0]			SDRAM_DQ				,			//数据线
 output				[1:0]			SDRAM_DQM				,			//掩码线
 //Write SDRAM fifo interfaces                                                           
-input 				[15:0]			sdram_data				,			//写入SDRAM的数据
+input 				[15:0]			sys_write_data			,			//写入SDRAM的数据
+input				[1:0]			sys_bank				,
 input				[19:0]			sdram_addr				,			//读写SDRAM的地址			
-output								fifo_rd_req				,			//读写fifo请求   
-output 								fifo_wd_req				,           //写读fifo请求                                             
+output								fifo_rd_req				,			//读写fifo请求 
+output								fifo_rd_clk				,			//写fifo的读时钟  
+output 								fifo_wd_req				,           //写读fifo请求
+output								fifo_wd_clk				,			//fifo的写时钟
+output				[15:0]			sys_read_data			,    		                                         
 //Read SDRAM fifo interfaces															
 
 //ctrler interfaces															
@@ -155,11 +159,13 @@ always@(*)begin
 	endcase
 
 end
-assign	SDRAM_BANK = 2'b00 ;
+assign	SDRAM_BANK = sys_bank ;
 assign SDRAM_CLK = ~ S_CLK ;
-assign SDRAM_DQ = (STATE == WRITE) ? sdram_data : 16'bZ ;
-// assign	SDRAM_DQ = sdram_data ;
+assign SDRAM_DQ = (STATE == WRITE) ? sys_write_data : 16'bZ ;
+assign	sys_read_data = SDRAM_DQ ;
 assign	SDRAM_DQM = 2'b0 ;
+assign fifo_rd_clk = S_CLK ;
+assign fifo_wd_clk = S_CLK ;
 
 SDRAM_init SDRAM_init_inst(
 	.S_CLK			(S_CLK		)		,				//系统时钟
@@ -192,7 +198,7 @@ SDRAM_WRITE SDRAM_WRITE_inst(
 	                        
 	.write_ack				(write_ack		),				//写结束应答
 	.write_en				(write_en		),				//仲裁模块输入的写使能信号
-	.aref_req				(aref_req		),
+	// .aref_req				(aref_req		),
 	.fifo_rd_req			(fifo_rd_req	),
 	.sdram_addr				(sdram_addr		),
 	.write_addr				(write_addr		),
@@ -205,7 +211,7 @@ SDRAM_READ SDRAM_READ_inst(
 	
 	.read_ack				(read_ack		),				//读结束应答
 	.read_en				(read_en		),				//仲裁模块输入的读使能信号
-	.aref_req				(aref_req		),
+	// .aref_req				(aref_req		),
 	.fifo_wd_req			(fifo_wd_req	),
 	.sdram_addr				(sdram_addr		),
 	.read_addr				(read_addr		),
