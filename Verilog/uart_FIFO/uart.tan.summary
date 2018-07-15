@@ -1,0 +1,36 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.694 ns
+From           : uart_tx~reg0
+To             : uart_tx
+From Clock     : uart_clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'uart_clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 199.12 MHz ( period = 5.022 ns )
+From           : count[0]
+To             : count1[2]
+From Clock     : uart_clk
+To Clock       : uart_clk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

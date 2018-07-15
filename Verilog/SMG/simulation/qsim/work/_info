@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dF:\FPGA\Verilog\SMG\simulation\qsim
+vSMG
+Z1 !s100 VNXdASWFNg7V>7`PWz0g=0
+Z2 I3il4fES2V1k1bSk;@M8232
+Z3 V>7UOV114UR2Xe3?Sa1bS^0
+Z4 dF:\FPGA\Verilog\SMG\simulation\qsim
+Z5 w1520149118
+Z6 8SMG.vo
+Z7 FSMG.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|SMG.vo|
+Z10 o-work work -O0
+Z11 n@s@m@g
+!i10b 1
+!s85 0
+Z12 !s108 1520149119.281000
+Z13 !s107 SMG.vo|
+!s101 -O0
+vSMG_vlg_check_tst
+!i10b 1
+Z14 !s100 z<o[4TeQJ=Uf;Hb0kLc6b1
+Z15 IUi^n3Jl7fzhhI8Gi1jQM?1
+Z16 V[jSMT8WDZ@6X8g1]^]WjQ3
+R4
+Z17 w1520149117
+Z18 8SMG.vt
+Z19 FSMG.vt
+L0 61
+R8
+r1
+!s85 0
+31
+Z20 !s108 1520149119.643000
+Z21 !s107 SMG.vt|
+Z22 !s90 -work|work|SMG.vt|
+!s101 -O0
+R10
+Z23 n@s@m@g_vlg_check_tst
+vSMG_vlg_sample_tst
+!i10b 1
+Z24 !s100 PKjH1d5]L7`IC7S_SjoWW2
+Z25 ImkBCRhEP][C`PF3K>3Y]l1
+Z26 VF_cP^]?abAKnG9VD9oP_j3
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@s@m@g_vlg_sample_tst
+vSMG_vlg_vec_tst
+!i10b 1
+Z28 !s100 _Peh<]=d6LI03RGI63fZW0
+Z29 IkQC6f`7ZoNPV8giok@bI]2
+Z30 VS:FK3idR@k?92mVjg:WS91
+R4
+R17
+R18
+R19
+Z31 L0 343
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z32 n@s@m@g_vlg_vec_tst

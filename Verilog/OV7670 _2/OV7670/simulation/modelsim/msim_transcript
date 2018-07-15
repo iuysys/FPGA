@@ -1,0 +1,134 @@
+# Reading S:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do OV7670_TOP_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying S:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied S:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670\ _2/OV7670/UART_TX_IMAGE {F:/FPGA/Verilog/OV7670 _2/OV7670/UART_TX_IMAGE/UART_TXD.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_TXD
+# 
+# Top level modules:
+# 	UART_TXD
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670\ _2/OV7670/UART_TX_IMAGE {F:/FPGA/Verilog/OV7670 _2/OV7670/UART_TX_IMAGE/UART_TOP.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_TOP
+# 
+# Top level modules:
+# 	UART_TOP
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670\ _2/OV7670/UART_TX_IMAGE {F:/FPGA/Verilog/OV7670 _2/OV7670/UART_TX_IMAGE/FIFO_IP.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module FIFO_IP
+# 
+# Top level modules:
+# 	FIFO_IP
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670\ _2/OV7670/ov7670_run {F:/FPGA/Verilog/OV7670 _2/OV7670/ov7670_run/ov7670_run.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ov7670_run
+# 
+# Top level modules:
+# 	ov7670_run
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670\ _2/OV7670/ov7670_read {F:/FPGA/Verilog/OV7670 _2/OV7670/ov7670_read/ov7670_read.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ov7670_read
+# 
+# Top level modules:
+# 	ov7670_read
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670\ _2/OV7670/ov7670_init {F:/FPGA/Verilog/OV7670 _2/OV7670/ov7670_init/I2C_T.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module I2C_T
+# 
+# Top level modules:
+# 	I2C_T
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670\ _2/OV7670/ov7670_init {F:/FPGA/Verilog/OV7670 _2/OV7670/ov7670_init/I2C_OV7670_Config.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module I2C_OV7670_Config
+# 
+# Top level modules:
+# 	I2C_OV7670_Config
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670\ _2/OV7670/ov7670_init {F:/FPGA/Verilog/OV7670 _2/OV7670/ov7670_init/I2C_control.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module I2C_control
+# 
+# Top level modules:
+# 	I2C_control
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670\ _2/OV7670/ov7670_init {F:/FPGA/Verilog/OV7670 _2/OV7670/ov7670_init/CLK_DIV_EVEN.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module CLK_DIV_EVEN
+# 
+# Top level modules:
+# 	CLK_DIV_EVEN
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670\ _2/OV7670/ov7670_control {F:/FPGA/Verilog/OV7670 _2/OV7670/ov7670_control/ov7670_control.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ov7670_control
+# 
+# Top level modules:
+# 	ov7670_control
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670\ _2/OV7670 {F:/FPGA/Verilog/OV7670 _2/OV7670/PLL_IP.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module PLL_IP
+# 
+# Top level modules:
+# 	PLL_IP
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670\ _2/OV7670 {F:/FPGA/Verilog/OV7670 _2/OV7670/OV7670_TOP.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module OV7670_TOP
+# 
+# Top level modules:
+# 	OV7670_TOP
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/OV7670\ _2/OV7670/simulation/modelsim {F:/FPGA/Verilog/OV7670 _2/OV7670/simulation/modelsim/OV7670_TOP.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module OV7670_TOP_vlg_tst
+# 
+# Top level modules:
+# 	OV7670_TOP_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  OV7670_TOP_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps OV7670_TOP_vlg_tst 
+# Loading work.OV7670_TOP_vlg_tst
+# Loading work.OV7670_TOP
+# Loading work.PLL_IP
+# Loading altera_mf_ver.altpll
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.pll_iobuf
+# Loading work.ov7670_control
+# Loading work.I2C_control
+# Loading work.CLK_DIV_EVEN
+# Loading work.I2C_T
+# Loading work.I2C_OV7670_Config
+# Loading work.ov7670_run
+# Loading work.ov7670_read
+# Loading work.UART_TOP
+# Loading work.FIFO_IP
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading work.UART_TXD
+# Loading altera_mf_ver.MF_stratixii_pll
+# Loading altera_mf_ver.MF_pll_reg
+# Loading altera_mf_ver.arm_m_cntr
+# Loading altera_mf_ver.arm_n_cntr
+# Loading altera_mf_ver.arm_scale_cntr
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+#  Note : Cyclone II PLL is enabled
+# Time: 0  Instance: OV7670_TOP_vlg_tst.i1.PLL_IP_inst.altpll_component.stratixii_pll.pll1
+#  Note : Cyclone II PLL locked to incoming clock
+# Time: 200000  Instance: OV7670_TOP_vlg_tst.i1.PLL_IP_inst.altpll_component.stratixii_pll.pll1
+# Running testbench

@@ -1,0 +1,81 @@
+# do SR04.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SR04
+# 
+# Top level modules:
+# 	SR04
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SR04_vlg_sample_tst
+# -- Compiling module SR04_vlg_check_tst
+# -- Compiling module SR04_vlg_vec_tst
+# 
+# Top level modules:
+# 	SR04_vlg_vec_tst
+# vsim -L cycloneii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.SR04_vlg_vec_tst 
+# Loading work.SR04_vlg_vec_tst
+# Loading work.SR04
+# Loading cycloneii_ver.cycloneii_lcell_comb
+# Loading cycloneii_ver.cycloneii_lcell_ff
+# Loading cycloneii_ver.cycloneii_io
+# Loading cycloneii_ver.cycloneii_mux21
+# Loading cycloneii_ver.cycloneii_dffe
+# Loading cycloneii_ver.cycloneii_asynch_io
+# Loading cycloneii_ver.cycloneii_clkctrl
+# Loading cycloneii_ver.cycloneii_mux41
+# Loading cycloneii_ver.cycloneii_ena_reg
+# Loading work.SR04_vlg_sample_tst
+# Loading work.SR04_vlg_check_tst
+# Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
+# ERROR! Vector Mismatch for output port distance[0] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+# ERROR! Vector Mismatch for output port distance[1] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+# ERROR! Vector Mismatch for output port distance[2] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+# ERROR! Vector Mismatch for output port distance[3] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+# ERROR! Vector Mismatch for output port distance[4] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+# ERROR! Vector Mismatch for output port distance[5] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+# ERROR! Vector Mismatch for output port distance[6] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+# ERROR! Vector Mismatch for output port distance[7] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+# ERROR! Vector Mismatch for output port distance[8] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+# ERROR! Vector Mismatch for output port distance[9] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+# ERROR! Vector Mismatch for output port distance[10] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+# ERROR! Vector Mismatch for output port distance[11] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+# ERROR! Vector Mismatch for output port distance[12] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+# ERROR! Vector Mismatch for output port distance[13] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+# ERROR! Vector Mismatch for output port distance[14] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+# ERROR! Vector Mismatch for output port distance[15] :: @time = 1000000.000 ps
+#      Expected value = 0000000000000000
+#      Real value = xxxxxxxxxxxxxxxx
+#          16 mismatched vectors : Simulation failed !
+# ** Note: $finish    : SR04.vt(466)
+#    Time: 2 us  Iteration: 0  Instance: /SR04_vlg_vec_tst/tb_out

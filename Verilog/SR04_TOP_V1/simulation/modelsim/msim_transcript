@@ -1,0 +1,157 @@
+# Reading S:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do SR04_TOP_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying S:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied S:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/SR04_TOP {F:/FPGA/Verilog/SR04_TOP/SR04_TOP.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SR04_TOP
+# 
+# Top level modules:
+# 	SR04_TOP
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/SR04_TOP {F:/FPGA/Verilog/SR04_TOP/SR04.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SR04
+# 
+# Top level modules:
+# 	SR04
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/SR04_TOP/simulation/modelsim {F:/FPGA/Verilog/SR04_TOP/simulation/modelsim/SR04_TOP.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SR04_TOP_vlg_tst
+# ** Error: F:/FPGA/Verilog/SR04_TOP/simulation/modelsim/SR04_TOP.vt(62): near "=": syntax error, unexpected '='
+# ** Error: S:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./SR04_TOP_run_msim_rtl_verilog.do line 11
+# S:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/SR04_TOP/simulation/modelsim {F:/FPGA/Verilog/SR04_TOP/simulation/modelsim/SR04_TOP.vt}"
+do SR04_TOP_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/SR04_TOP {F:/FPGA/Verilog/SR04_TOP/SR04_TOP.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SR04_TOP
+# 
+# Top level modules:
+# 	SR04_TOP
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/SR04_TOP {F:/FPGA/Verilog/SR04_TOP/SR04.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SR04
+# 
+# Top level modules:
+# 	SR04
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/SR04_TOP/simulation/modelsim {F:/FPGA/Verilog/SR04_TOP/simulation/modelsim/SR04_TOP.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SR04_TOP_vlg_tst
+# 
+# Top level modules:
+# 	SR04_TOP_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  SR04_TOP_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps SR04_TOP_vlg_tst 
+# Loading work.SR04_TOP_vlg_tst
+# Loading work.SR04_TOP
+# Loading work.SR04
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+do SR04_TOP_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/SR04_TOP {F:/FPGA/Verilog/SR04_TOP/SR04_TOP.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SR04_TOP
+# 
+# Top level modules:
+# 	SR04_TOP
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/SR04_TOP {F:/FPGA/Verilog/SR04_TOP/SR04.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SR04
+# 
+# Top level modules:
+# 	SR04
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/SR04_TOP/simulation/modelsim {F:/FPGA/Verilog/SR04_TOP/simulation/modelsim/SR04_TOP.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SR04_TOP_vlg_tst
+# 
+# Top level modules:
+# 	SR04_TOP_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  SR04_TOP_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps SR04_TOP_vlg_tst 
+# Loading work.SR04_TOP_vlg_tst
+# Loading work.SR04_TOP
+# Loading work.SR04
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+do SR04_TOP_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/SR04_TOP {F:/FPGA/Verilog/SR04_TOP/SR04_TOP.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SR04_TOP
+# 
+# Top level modules:
+# 	SR04_TOP
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/SR04_TOP {F:/FPGA/Verilog/SR04_TOP/SR04.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SR04
+# 
+# Top level modules:
+# 	SR04
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/SR04_TOP/simulation/modelsim {F:/FPGA/Verilog/SR04_TOP/simulation/modelsim/SR04_TOP.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SR04_TOP_vlg_tst
+# 
+# Top level modules:
+# 	SR04_TOP_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  SR04_TOP_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps SR04_TOP_vlg_tst 
+# Loading work.SR04_TOP_vlg_tst
+# Loading work.SR04_TOP
+# Loading work.SR04
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench

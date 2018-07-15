@@ -1,0 +1,394 @@
+# Reading S:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do led_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying S:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied S:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test {F:/FPGA/Verilog/led_test/clk_div.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clk_div
+# 
+# Top level modules:
+# 	clk_div
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test {F:/FPGA/Verilog/led_test/led.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module led
+# 
+# Top level modules:
+# 	led
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test/simulation/modelsim {F:/FPGA/Verilog/led_test/simulation/modelsim/led.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module led_vlg_tst
+# 
+# Top level modules:
+# 	led_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  led
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps led 
+# Loading work.led
+# Loading work.clk_div
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: LIU  Hostname: DESKTOP-9UDQDE2  ProcessID: 3288
+# 
+#           Attempting to use alternate WLF file "./wlftzbsscq".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftzbsscq
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+do led_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test {F:/FPGA/Verilog/led_test/clk_div.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clk_div
+# 
+# Top level modules:
+# 	clk_div
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test {F:/FPGA/Verilog/led_test/led.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module led
+# 
+# Top level modules:
+# 	led
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test/simulation/modelsim {F:/FPGA/Verilog/led_test/simulation/modelsim/led.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module led_vlg_tst
+# 
+# Top level modules:
+# 	led_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  led_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps led_vlg_tst 
+# Loading work.led_vlg_tst
+# Loading work.led
+# Loading work.clk_div
+# ** Warning: (vsim-3015) F:/FPGA/Verilog/led_test/led.v(17): [PCDPC] - Port size (1 or 1) does not match connection size (4) for port 'clk_div'. The port definition is at: F:/FPGA/Verilog/led_test/clk_div.v(10).
+# 
+#         Region: /led_vlg_tst/i1/div1_1
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: LIU  Hostname: DESKTOP-9UDQDE2  ProcessID: 3288
+# 
+#           Attempting to use alternate WLF file "./wlftmni04f".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftmni04f
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+do led_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test {F:/FPGA/Verilog/led_test/clk_div.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clk_div
+# 
+# Top level modules:
+# 	clk_div
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test {F:/FPGA/Verilog/led_test/led.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module led
+# 
+# Top level modules:
+# 	led
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test/simulation/modelsim {F:/FPGA/Verilog/led_test/simulation/modelsim/led.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module led_vlg_tst
+# 
+# Top level modules:
+# 	led_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  led_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps led_vlg_tst 
+# Loading work.led_vlg_tst
+# Loading work.led
+# Loading work.clk_div
+# ** Warning: (vsim-3015) F:/FPGA/Verilog/led_test/led.v(17): [PCDPC] - Port size (1 or 1) does not match connection size (4) for port 'clk_div'. The port definition is at: F:/FPGA/Verilog/led_test/clk_div.v(10).
+# 
+#         Region: /led_vlg_tst/i1/div1_1
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: LIU  Hostname: DESKTOP-9UDQDE2  ProcessID: 3288
+# 
+#           Attempting to use alternate WLF file "./wlftgztgyz".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftgztgyz
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+do led_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test {F:/FPGA/Verilog/led_test/clk_div.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clk_div
+# 
+# Top level modules:
+# 	clk_div
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test {F:/FPGA/Verilog/led_test/led.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module led
+# 
+# Top level modules:
+# 	led
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test/simulation/modelsim {F:/FPGA/Verilog/led_test/simulation/modelsim/led.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module led_vlg_tst
+# 
+# Top level modules:
+# 	led_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  led_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps led_vlg_tst 
+# Loading work.led_vlg_tst
+# Loading work.led
+# Loading work.clk_div
+# ** Warning: (vsim-3015) F:/FPGA/Verilog/led_test/led.v(17): [PCDPC] - Port size (1 or 1) does not match connection size (4) for port 'clk_div'. The port definition is at: F:/FPGA/Verilog/led_test/clk_div.v(10).
+# 
+#         Region: /led_vlg_tst/i1/div1_1
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: LIU  Hostname: DESKTOP-9UDQDE2  ProcessID: 3288
+# 
+#           Attempting to use alternate WLF file "./wlftvi6yaz".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftvi6yaz
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+# Break in Module led_vlg_tst at F:/FPGA/Verilog/led_test/simulation/modelsim/led.vt line 63
+# Simulation Breakpoint: Break in Module led_vlg_tst at F:/FPGA/Verilog/led_test/simulation/modelsim/led.vt line 63
+# MACRO ./led_run_msim_rtl_verilog.do PAUSED at line 18
+do led_run_msim_rtl_verilog.do
+# transcript on
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test {F:/FPGA/Verilog/led_test/clk_div.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clk_div
+# 
+# Top level modules:
+# 	clk_div
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test {F:/FPGA/Verilog/led_test/led.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module led
+# 
+# Top level modules:
+# 	led
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test/simulation/modelsim {F:/FPGA/Verilog/led_test/simulation/modelsim/led.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module led_vlg_tst
+# 
+# Top level modules:
+# 	led_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  led_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps led_vlg_tst 
+# Loading work.led_vlg_tst
+# Loading work.led
+# Loading work.clk_div
+# ** Warning: (vsim-3015) F:/FPGA/Verilog/led_test/led.v(17): [PCDPC] - Port size (1 or 1) does not match connection size (4) for port 'clk_div'. The port definition is at: F:/FPGA/Verilog/led_test/clk_div.v(10).
+# 
+#         Region: /led_vlg_tst/i1/div1_1
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: LIU  Hostname: DESKTOP-9UDQDE2  ProcessID: 3288
+# 
+#           Attempting to use alternate WLF file "./wlftsykjdv".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftsykjdv
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+# Break in Module led_vlg_tst at F:/FPGA/Verilog/led_test/simulation/modelsim/led.vt line 63
+# Simulation Breakpoint: Break in Module led_vlg_tst at F:/FPGA/Verilog/led_test/simulation/modelsim/led.vt line 63
+# MACRO ./led_run_msim_rtl_verilog.do PAUSED at line 18
+restart
+# ** Warning: (vsim-3015) F:/FPGA/Verilog/led_test/led.v(17): [PCDPC] - Port size (1 or 1) does not match connection size (4) for port 'clk_div'. The port definition is at: F:/FPGA/Verilog/led_test/clk_div.v(10).
+# 
+#         Region: /led_vlg_tst/i1/div1_1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+do led_run_msim_rtl_verilog.do
+# transcript on
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test {F:/FPGA/Verilog/led_test/clk_div.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clk_div
+# 
+# Top level modules:
+# 	clk_div
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test {F:/FPGA/Verilog/led_test/led.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module led
+# 
+# Top level modules:
+# 	led
+# 
+# vlog -vlog01compat -work work +incdir+F:/FPGA/Verilog/led_test/simulation/modelsim {F:/FPGA/Verilog/led_test/simulation/modelsim/led.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module led_vlg_tst
+# 
+# Top level modules:
+# 	led_vlg_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  led_vlg_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps led_vlg_tst 
+# Loading work.led_vlg_tst
+# Loading work.led
+# Loading work.clk_div
+# ** Warning: (vsim-3015) F:/FPGA/Verilog/led_test/led.v(17): [PCDPC] - Port size (1 or 1) does not match connection size (4) for port 'clk_div'. The port definition is at: F:/FPGA/Verilog/led_test/clk_div.v(10).
+# 
+#         Region: /led_vlg_tst/i1/div1_1
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: LIU  Hostname: DESKTOP-9UDQDE2  ProcessID: 3288
+# 
+#           Attempting to use alternate WLF file "./wlft5xhc0t".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlft5xhc0t
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Running testbench
+restart
+# ** Warning: (vsim-3015) F:/FPGA/Verilog/led_test/led.v(17): [PCDPC] - Port size (1 or 1) does not match connection size (4) for port 'clk_div'. The port definition is at: F:/FPGA/Verilog/led_test/clk_div.v(10).
+# 
+#         Region: /led_vlg_tst/i1/div1_1
+run
+run
+# Running testbench
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run

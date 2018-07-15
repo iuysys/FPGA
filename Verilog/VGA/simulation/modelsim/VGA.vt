@@ -1,0 +1,78 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench template that is freely editable to  
+// suit user's needs .Comments are provided in each section to help the user    
+// fill out necessary details.                                                  
+// *****************************************************************************
+// Generated on "03/06/2018 16:33:27"
+                                                                                
+// Verilog Test Bench template for design : VGA
+// 
+// Simulation tool : ModelSim-Altera (Verilog)
+// 
+
+`timescale 1 ps/ 1 ps
+module VGA_vlg_tst();
+// constants                                           
+// general purpose registers
+//reg eachvec;
+// test vector input registers
+reg CLK_40M;
+reg [7:0] DATA_IN;
+reg RST_N;
+// wires                                               
+wire [15:0]  ADDRESS;
+wire [7:0]  DATA_OUT;
+wire HSYNC;
+wire VSYNC;
+
+// assign statements (if any)                          
+VGA i1 (
+// port map - connection between master ports and signals/registers   
+	.ADDRESS(ADDRESS),
+	.CLK_40M(CLK_40M),
+	.DATA_IN(DATA_IN),
+	.DATA_OUT(DATA_OUT),
+	.HSYNC(HSYNC),
+	.RST_N(RST_N),
+	.VSYNC(VSYNC)
+);
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+	CLK_40M = 1'b0;
+	DATA_IN = 16'b0;
+	RST_N = 1'b1;   
+	#100 RST_N = 1'b0;
+	#10 RST_N = 1'b1;
+// --> end                                             
+$display("Running testbench");                       
+end                                                    
+always                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn)                  
+begin                                                  
+// code executes for every event on sensitivity list   
+// insert code here --> begin                          
+   #1 CLK_40M = ~CLK_40M;                                                    
+//@eachvec;                                              
+// --> end                                             
+end 
+always@(posedge CLK_40M)    
+	DATA_IN <= DATA_IN + 1'b1;
+endmodule
+
