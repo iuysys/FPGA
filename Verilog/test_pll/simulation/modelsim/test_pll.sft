@@ -1,5 +1,0 @@
-set tool_name "ModelSim-Altera (Verilog)"
-set corner_file_list {
-	{{"Slow Model"} {test_pll.vo test_pll_v.sdo}}
-	{{"Fast Model"} {test_pll_fast.vo test_pll_v_fast.sdo}}
-}

@@ -1,5 +1,0 @@
-set tool_name "ModelSim-Altera (Verilog)"
-set corner_file_list {
-	{{"Slow Model"} {VGA_OV7670.vo VGA_OV7670_v.sdo}}
-	{{"Fast Model"} {VGA_OV7670_fast.vo VGA_OV7670_v_fast.sdo}}
-}
