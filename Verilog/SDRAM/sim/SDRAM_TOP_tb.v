@@ -24,8 +24,6 @@ wire	[1:0]			sys_bank				;
 wire					write_en				;
 wire					read_en					;
 															
-wire					write_req				;
-wire					read_req				;
 
 wire					fifo_rd_req				;
 wire					fifo_wd_req				;
@@ -33,12 +31,12 @@ wire					fifo_wd_req				;
 wire					write_ack				;
 wire					read_ack				;
 
+wire					fifo_rd_en				;
+
                                                 
-wire	[15:0]			read_fifo_data		    ;
 wire					read_fifo_rdclk		    ;
 wire					read_fifo_rdreq		    ;
 wire					read_fifo_wrclk		    ;
-wire					read_fifo_wrreq		    ;
 wire	[15:0]			read_fifo_q			    ;
 wire	[8:0]			read_fifo_wrusedw       ;
 
@@ -46,15 +44,13 @@ wire	[8:0]			read_fifo_wrusedw       ;
                                                 
 wire	[15:0]			write_fifo_data		    ;
 wire					write_fifo_rdclk	 	;
-wire					write_fifo_rdreq	 	;
 wire					write_fifo_wrclk	 	;
 wire					write_fifo_wrreq	 	;
-wire	[15:0]			write_fifo_q		 	;
+
 wire	[8:0]			write_fifo_wrusedw      ;
 
 reg						write_clk				;
 reg		[15:0]			w_fifo_data				;
-reg						w_fifo_req				;
 
 initial begin
 	S_CLK = 1'b1 ;
@@ -71,7 +67,7 @@ always #25 S_CLK = ~ S_CLK ;
 
 // assign sys_write_data = 16'haffa ;
 assign	image_rd_en = write_fifo_wrusedw > 255 ? 1'b1 : 1'b0 ;
-assign	vga_rd_req = 1'b1 ;
+
 
 
 //写fifo的写时钟
@@ -85,21 +81,16 @@ assign	write_fifo_wrclk = write_clk ;
 always@(posedge S_CLK or negedge RST_N) begin
 	if(!RST_N)	begin
 		w_fifo_data <= 'b0 ;
-		w_fifo_req <= 1'b0 ;
 	end
 	else begin
 		if(write_fifo_wrusedw < 256) begin
-			w_fifo_req <= 1'b1 ;
 			w_fifo_data <= w_fifo_data + 1'b1 ;
-		end
-		else begin
-			w_fifo_req <= 1'b0 ;
 		end
 	end
 end
 
 assign write_fifo_data = w_fifo_data ;
-assign write_fifo_wrreq = w_fifo_req ;
+assign write_fifo_wrreq = write_fifo_wrusedw < 256 ? 1'b1 : 1'b0 ;
 
 
 SDRAM_CTRL	SDRAM_CTRL_inst(
@@ -107,7 +98,7 @@ SDRAM_CTRL	SDRAM_CTRL_inst(
 .RST_N					(RST_N			),				//系统复位输入
                         
 .image_rd_en			(image_rd_en	),
-.vga_rd_req				(vga_rd_req		),
+.fifo_rd_en				(fifo_rd_en		),
 .addr					(sdram_addr		),
 .bank					(sys_bank		),
 .write_ack				(write_ack		),
@@ -167,11 +158,11 @@ sdram_model_plus sdram_model_plus_inst(
 
 
 read_fifo read_fifo_inst(
-	.data		(read_fifo_data						),
+	.data		(sys_read_data						),
 	.rdclk		(read_fifo_rdclk					),
 	.rdreq		(read_fifo_rdreq					),
 	.wrclk		(read_fifo_wrclk					),
-	.wrreq		(read_fifo_wrreq					),
+	.wrreq		(fifo_wd_req						),
 	.q			(read_fifo_q						),
 	.wrusedw    (read_fifo_wrusedw   				)
 );
