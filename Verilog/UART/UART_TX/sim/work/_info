@@ -5,25 +5,26 @@ cModel Technology
 Z0 dF:\FPGA\Verilog\UART\UART_TX\sim
 vUART_CTRL
 !i10b 1
-!s100 SLfDb8lLPI`P]aAk;e4c60
-IPO`9XRi0NTK9RMEg:gnVZ0
+!s100 agMi0XRHUQMDdm:zaJc^52
+IS;lK5J4[JomYh`PTUbY2G3
 Z1 VHl`LZ]PDTYoIlG5F`lMNH3
 Z2 dF:\FPGA\Verilog\UART\UART_TX\sim
-Z3 w1531638102
-Z4 8../src/UART_CTRL.v
-Z5 F../src/UART_CTRL.v
+w1531881577
+Z3 8../src/UART_CTRL.v
+Z4 F../src/UART_CTRL.v
 L0 1
-Z6 OV;L;10.1d;51
+Z5 OV;L;10.1d;51
 r1
 !s85 0
 31
-Z7 !s108 1531647427.777000
-Z8 !s107 ../src/UART_Txd.v|../src/UART_CTRL.v|
-Z9 !s90 -reportprogress|300|../src/UART_CTRL.v|../src/UART_Txd.v|
+Z6 !s108 1531881583.365000
+Z7 !s107 ../src/UART_Txd.v|../src/UART_CTRL.v|
+Z8 !s90 -reportprogress|300|../src/UART_CTRL.v|../src/UART_Txd.v|
 !s101 -O0
 o-O0
-Z10 n@u@a@r@t_@c@t@r@l
+Z9 n@u@a@r@t_@c@t@r@l
 vuart_tx_fifo
+Z10 !s100 TFzG6l];G]ThSlU;bPAHf3
 Z11 IXQEAM3MWBYEnYbOSJYeBc1
 Z12 VkVGETi^5;g7nl]DV?<3@N2
 R2
@@ -31,54 +32,53 @@ Z13 w1531644087
 Z14 8../core/uart_tx_fifo.v
 Z15 F../core/uart_tx_fifo.v
 L0 39
-R6
+R5
 r1
 31
 Z16 !s90 -reportprogress|300|../core/uart_tx_fifo.v|
 o-O0
-Z17 !s100 TFzG6l];G]ThSlU;bPAHf3
-Z18 !s108 1531647427.515000
-Z19 !s107 ../core/uart_tx_fifo.v|
+Z17 !s108 1531881583.058000
+Z18 !s107 ../core/uart_tx_fifo.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vUART_Txd
 !i10b 1
-!s100 UblI:nz_i]b?P4U<M=n<^3
-I]0S[RmnRfm`l8;FUVcZ8V0
-Z20 V?:oDI2lX0CIBBNIjnDzoS1
+Z19 !s100 iH?]L`bjNJ:BGg0B3TA6o1
+Z20 IR>GV:X;VkBU@f=9EEZ_VN3
+Z21 V?:oDI2lX0CIBBNIjnDzoS1
 R2
-Z21 w1531563891
-Z22 8../src/UART_Txd.v
-Z23 F../src/UART_Txd.v
+Z22 w1531876783
+Z23 8../src/UART_Txd.v
+Z24 F../src/UART_Txd.v
 L0 1
-R6
+R5
 r1
 !s85 0
 31
+R6
 R7
 R8
-R9
 !s101 -O0
 o-O0
-Z24 n@u@a@r@t_@txd
+Z25 n@u@a@r@t_@txd
 vUART_Txd_tb
-Z25 Ie_M`:ajcg]0bbIM:MLYRB2
-Z26 Vof76APbed2<1A;O]<dR6j3
+Z26 !s100 h_I0lkG=IaRk76dz[z:`R2
+Z27 Ik`iZ6G`4aibaaRl1>cz><1
+Z28 Vof76APbed2<1A;O]<dR6j3
 R2
-Z27 w1531639157
-Z28 8../sim/UART_Txd_tb.v
-Z29 F../sim/UART_Txd_tb.v
+Z29 w1531745188
+Z30 8../sim/UART_Txd_tb.v
+Z31 F../sim/UART_Txd_tb.v
 L0 1
-R6
+R5
 r1
 31
-Z30 !s90 -reportprogress|300|../sim/UART_Txd_tb.v|
+Z32 !s90 -reportprogress|300|../sim/UART_Txd_tb.v|
 o-O0
-Z31 n@u@a@r@t_@txd_tb
+Z33 n@u@a@r@t_@txd_tb
 !i10b 1
-Z32 !s100 l=^WB[j@]Ge226EB8@n5O0
 !s85 0
-Z33 !s108 1531647427.648000
-Z34 !s107 ../sim/UART_Txd_tb.v|
+Z34 !s108 1531881583.249000
+Z35 !s107 ../sim/UART_Txd_tb.v|
 !s101 -O0

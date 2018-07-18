@@ -27,7 +27,7 @@ reg		[7:0]	tx_data 			;				//TX脚将要发送的数据寄存器
 `define BAUD  256000 														//波特率
 `define SYS_CLK_PERIOD  50 													//SYS_CLK时钟周期
 `define BAUD_CNT_END  1_000_000_000 / `BAUD / `SYS_CLK_PERIOD 				//波特率计数值
-localparam IDLE = 2'D0 ,SEND = 2'D1 ;							
+localparam IDLE = 2'D0 ,LATCH = 2'D1 ,SEND = 2'D2 ;							
 
 //------------------------------------------------------
 //-- 波特率发生器
@@ -83,16 +83,21 @@ begin
 	case(STATE)
 		IDLE : begin
 			if(tx_req == 1'b1) begin
-				STATE_n = SEND ;
-				tx_data = data_in ;
+				STATE_n = LATCH ;
 			end
 			else begin
 				STATE_n = IDLE;
 			end 
 		end
+		LATCH: begin
+			STATE_n = SEND ;
+		end
 		SEND : begin
 			if(bit_cnt == 4'd10) begin
 				STATE_n = IDLE ;
+			end
+			else begin
+				STATE_n = SEND ;
 			end
 		end
 		default :
@@ -116,8 +121,11 @@ begin
 				Txd <= 1'B1 ;
 				tx_busy <= 1'b0 ;
 			end
-			SEND : begin
+			LATCH: begin
+				tx_data = data_in ;
 				tx_busy <= 1'b1 ;
+			end
+			SEND : begin
 				case(bit_cnt)
 					0 : begin
 						Txd <= 1'B0 ;

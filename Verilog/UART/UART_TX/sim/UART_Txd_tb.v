@@ -15,7 +15,7 @@ wire						rd_req		    ;
 			                                 
 wire			[7:0]		data_out	    ;
 wire						tx_req		    ;
-
+wire						wrreq			;
 reg				[15:0]  	data			;
 
 wire			[7:0]  		wrusedw			;
@@ -23,7 +23,7 @@ initial begin
 	SYS_CLK = 1'B1 ;
 	RST_N = 1'B1 ;
 	#50 RST_N = 1'B0 ;
-	#40 RST_N = 1'B1 ;
+	#100 RST_N = 1'B1 ;
 
 end
 
@@ -40,7 +40,7 @@ always@(posedge SYS_CLK or negedge RST_N) begin
 		end
 	end
 end
-
+assign	wrreq = wrusedw < 128 ? 1'b1 : 1'b0 ;
 
 
 
@@ -65,7 +65,7 @@ uart_tx_fifo	uart_tx_fifo_inst(
 .rdclk		(rd_clk					),
 .rdreq		(rd_req					),
 .wrclk		(SYS_CLK				),
-.wrreq		(1'b1					),
+.wrreq		(wrreq					),
 .q			(data_in				),
 .rdempty	(rd_empty				),
 .wrusedw 	(wrusedw				)
