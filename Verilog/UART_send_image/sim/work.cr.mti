@@ -1,0 +1,32 @@
+F:/FPGA/Verilog/UART/UART_TX/sim/UART_Txd_tb.v {1 {vlog -work work F:/FPGA/Verilog/UART/UART_TX/sim/UART_Txd_tb.v
+
+Top level modules:
+	UART_Txd
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module UART_Txd_tb
+
+Top level modules:
+	UART_Txd_tb
+
+} {} {}} F:/FPGA/Verilog/UART/UART_TX/src/UART_Txd.v {1 {vlog -work work F:/FPGA/Verilog/UART/UART_TX/core/uart_tx_fifo.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module uart_tx_fifo
+
+Top level modules:
+	uart_tx_fifo
+
+} {} {}} F:/FPGA/Verilog/UART/UART_TX/core/uart_tx_fifo.v {1 {vlog -work work F:/FPGA/Verilog/UART/UART_TX/core/uart_tx_fifo.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module uart_tx_fifo
+
+Top level modules:
+	uart_tx_fifo
+
+} {} {}} F:/FPGA/Verilog/UART/UART_TX/src/UART_CTRL.v {1 {vlog -work work F:/FPGA/Verilog/UART/UART_TX/src/UART_CTRL.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module UART_CTRL
+
+Top level modules:
+	UART_CTRL
+
+} {} {}}
