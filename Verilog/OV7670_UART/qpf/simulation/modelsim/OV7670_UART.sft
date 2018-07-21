@@ -1,0 +1,5 @@
+set tool_name "ModelSim-Altera (Verilog)"
+set corner_file_list {
+	{{"Slow Model"} {OV7670_UART.vo OV7670_UART_v.sdo}}
+	{{"Fast Model"} {OV7670_UART_fast.vo OV7670_UART_v_fast.sdo}}
+}

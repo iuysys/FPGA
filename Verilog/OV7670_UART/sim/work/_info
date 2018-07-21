@@ -1,0 +1,244 @@
+m255
+K3
+13
+cModel Technology
+Z0 dF:\FPGA\Verilog\OV7670_UART\sim
+vCLK_DIV_EVEN
+!i10b 1
+Z1 !s100 02WPh3COK6U4Y?BE7M?BG1
+Z2 IaIR_dIj9d_QTMzMM@a?_P0
+Z3 V8n1?3RS2VIfe_K3_cY4S20
+Z4 dF:\FPGA\Verilog\OV7670_UART\sim
+Z5 w1532081280
+Z6 8../src/CLK_DIV_EVEN.v
+Z7 F../src/CLK_DIV_EVEN.v
+L0 1
+Z8 OV;L;10.1d;51
+r1
+!s85 0
+31
+Z9 !s108 1532141151.279000
+Z10 !s107 ../src/UART_Txd.v|../src/UART_CTRL.v|../src/OV7670_top.v|../src/OV7670_UART.v|../src/OV7670_Capture.v|../src/I2C_Write.v|../src/I2C_OV7670_conf.v|../src/I2C_OV7670_LUT.v|../src/CLK_DIV_EVEN.v|
+Z11 !s90 -reportprogress|300|../src/CLK_DIV_EVEN.v|../src/I2C_OV7670_LUT.v|../src/I2C_OV7670_conf.v|../src/I2C_Write.v|../src/OV7670_Capture.v|../src/OV7670_UART.v|../src/OV7670_top.v|../src/UART_CTRL.v|../src/UART_Txd.v|
+!s101 -O0
+o-O0
+Z12 n@c@l@k_@d@i@v_@e@v@e@n
+vI2C_OV7670_conf
+!i10b 1
+Z13 !s100 T[8h7hkEQ<V@K4oPl]I]A0
+Z14 I?Nf>c0ML2O3UF<W^jDU<^3
+Z15 VkOjI1N9foaX^=g`7[?[:Y0
+R4
+Z16 w1532071835
+Z17 8../src/I2C_OV7670_conf.v
+Z18 F../src/I2C_OV7670_conf.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+o-O0
+Z19 n@i2@c_@o@v7670_conf
+vI2C_OV7670_LUT
+!i10b 1
+Z20 !s100 =DYcj0h:@NH[A=?>Dn2VG1
+Z21 IOOCKMES7Z05Sc5VEFD4[<2
+Z22 VJPK[851kzYg=hWeVn47F?0
+R4
+Z23 w1532077727
+Z24 8../src/I2C_OV7670_LUT.v
+Z25 F../src/I2C_OV7670_LUT.v
+L0 20
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+o-O0
+Z26 n@i2@c_@o@v7670_@l@u@t
+vI2C_Write
+!i10b 1
+Z27 !s100 eFER=PL]f1dTbFML3I?212
+Z28 Ig0^UcNQTV]lA=ZOPc8[cQ0
+Z29 V7A4i8U7Wf[lMoznT0L^GI3
+R4
+Z30 w1531993308
+Z31 8../src/I2C_Write.v
+Z32 F../src/I2C_Write.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+o-O0
+Z33 n@i2@c_@write
+vOV7670_Capture
+!i10b 1
+!s100 0Oa`GQdO0cXf^_5=EcR6@3
+ImV>Km5<`jnVZUgAjfQ=eZ0
+Z34 VGJNCGP4j;YmMGzCTl];YO2
+R4
+w1532141138
+Z35 8../src/OV7670_Capture.v
+Z36 F../src/OV7670_Capture.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+o-O0
+Z37 n@o@v7670_@capture
+vOV7670_top
+!i10b 1
+Z38 !s100 C=bdG:8EGNJ_;Fc5=DgTB3
+Z39 I_D^Ghz5z6e?TKV4I6P>=K0
+Z40 VH;1MQe679^_g@Z[1JZPeg0
+R4
+Z41 w1532138207
+Z42 8../src/OV7670_top.v
+Z43 F../src/OV7670_top.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+o-O0
+Z44 n@o@v7670_top
+vOV7670_UART
+!i10b 1
+Z45 !s100 eX7DLbe>F^M@VTg0bV9A63
+Z46 IB4[1EbnUQh4SZZ4F960IS1
+Z47 V3?Be1OmXKL>PMMM[FK`@A0
+R4
+Z48 w1532094243
+Z49 8../src/OV7670_UART.v
+Z50 F../src/OV7670_UART.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+o-O0
+Z51 n@o@v7670_@u@a@r@t
+vOV7670_UART_tb
+Z52 !s100 P:<OJOm]GE>;A:7LAF[;03
+Z53 I;_K@FO9[XSnB2f<?e_0?m2
+Z54 VLQG[]JO0l_l=^Wd<:9c8n3
+R4
+Z55 w1532139518
+Z56 8../sim/OV7670_UART_tb.v
+Z57 F../sim/OV7670_UART_tb.v
+L0 3
+R8
+r1
+31
+Z58 !s90 -reportprogress|300|../sim/OV7670_UART_tb.v|
+o-O0
+Z59 n@o@v7670_@u@a@r@t_tb
+!i10b 1
+!s85 0
+Z60 !s108 1532141151.153000
+Z61 !s107 ../sim/OV7670_UART_tb.v|
+!s101 -O0
+vOV_UART_pll
+Z62 !s100 IKff@2kA3Q;T46DW6SYB;1
+Z63 IDCCGU[g>>LP<MF9ibVS9H0
+Z64 V@@jd?iZ8z?G:aX7ikRRYQ2
+R4
+Z65 w1532139345
+Z66 8../core/OV_UART_pll.v
+Z67 F../core/OV_UART_pll.v
+L0 39
+R8
+r1
+31
+Z68 !s108 1532141150.916000
+Z69 !s107 ../core/uart_send_fifo.v|../core/OV_UART_pll.v|
+Z70 !s90 -reportprogress|300|../core/OV_UART_pll.v|../core/uart_send_fifo.v|
+o-O0
+Z71 n@o@v_@u@a@r@t_pll
+!i10b 1
+!s85 0
+!s101 -O0
+vUART_CTRL
+!i10b 1
+Z72 !s100 4NC]@Wn8B24R?V7PL?]K>3
+Z73 I<MnC3IV51Q;kRAdghacPg3
+Z74 VHl`LZ]PDTYoIlG5F`lMNH3
+R4
+Z75 w1532074657
+Z76 8../src/UART_CTRL.v
+Z77 F../src/UART_CTRL.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+o-O0
+Z78 n@u@a@r@t_@c@t@r@l
+vuart_send_fifo
+Z79 !s100 W8SGnYBa@LBI<gJzhOdJI3
+Z80 I4eZl1F50AIO?5HVkgfBGo1
+Z81 VmUKoGe[b51=c7bCHCjKVQ1
+R4
+Z82 w1532069885
+Z83 8../core/uart_send_fifo.v
+Z84 F../core/uart_send_fifo.v
+L0 39
+R8
+r1
+31
+R68
+R69
+R70
+o-O0
+!i10b 1
+!s85 0
+!s101 -O0
+vUART_Txd
+!i10b 1
+Z85 !s100 >b?Md1lK6h9=7dQNEd_=U3
+Z86 IgPk:L]b57f^kzY50ZUC>[3
+Z87 V?:oDI2lX0CIBBNIjnDzoS1
+R4
+Z88 w1531876783
+Z89 8../src/UART_Txd.v
+Z90 F../src/UART_Txd.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+o-O0
+Z91 n@u@a@r@t_@txd
