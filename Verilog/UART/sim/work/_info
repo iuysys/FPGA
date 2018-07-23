@@ -1,0 +1,164 @@
+m255
+K3
+13
+cModel Technology
+Z0 dF:\FPGA\Verilog\UART\UART_TX\sim
+vUART_CTRL
+Z1 !s100 Jm2C0RSR^4WV0K:7_PH7=3
+Z2 I8=1kRUH^kkORglL0HJ4WE2
+Z3 VHl`LZ]PDTYoIlG5F`lMNH3
+Z4 dF:\FPGA\Verilog\UART\sim
+Z5 w1532329182
+Z6 8../src/UART_Txd_CTRL.v
+Z7 F../src/UART_Txd_CTRL.v
+L0 1
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s108 1532329456.012000
+Z10 !s107 ../src/UART_Txd_CTRL.v|../src/UART_Txd.v|../src/UART_Rxd_CTRL.v|../src/UART_Rxd.v|
+Z11 !s90 -reportprogress|300|../src/UART_Rxd.v|../src/UART_Rxd_CTRL.v|../src/UART_Txd.v|../src/UART_Txd_CTRL.v|
+o-O0
+Z12 n@u@a@r@t_@c@t@r@l
+!i10b 1
+!s85 0
+!s101 -O0
+vUART_Rxd
+!i10b 1
+Z13 !s100 K3eSZ]Y5TnHQ1AY_V@jn93
+Z14 I@cDcJlARbXJ9cdJ?QUNj=0
+Z15 Vezl;m[IFCL:HRNJFm1@[42
+R4
+Z16 w1532264451
+Z17 8../src/UART_Rxd.v
+Z18 F../src/UART_Rxd.v
+L0 1
+R8
+r1
+!s85 0
+31
+Z19 !s108 1532331784.363000
+Z20 !s107 ../src/UART_Txd_CTRL.v|../src/UART_Txd.v|../src/UART_Rxd_CTRL.v|../src/UART_Rxd.v|
+R11
+!s101 -O0
+o-O0
+Z21 n@u@a@r@t_@rxd
+vUART_Rxd_CTRL
+!i10b 1
+Z22 !s100 E?FEAb<eQXHUh<BeXhAgC0
+Z23 I4`6OU2:@Z>O^@54eQnP`>2
+Z24 V:PfRYQfEDIk4@[mP5HACX2
+R4
+Z25 w1532262817
+Z26 8../src/UART_Rxd_CTRL.v
+Z27 F../src/UART_Rxd_CTRL.v
+L0 1
+R8
+r1
+!s85 0
+31
+R19
+R20
+R11
+!s101 -O0
+o-O0
+Z28 n@u@a@r@t_@rxd_@c@t@r@l
+vuart_tx_fifo
+Z29 !s100 TFzG6l];G]ThSlU;bPAHf3
+Z30 IXQEAM3MWBYEnYbOSJYeBc1
+Z31 VkVGETi^5;g7nl]DV?<3@N2
+R4
+Z32 w1531644087
+Z33 8../core/uart_tx_fifo.v
+Z34 F../core/uart_tx_fifo.v
+L0 39
+R8
+r1
+31
+Z35 !s90 -reportprogress|300|../core/uart_tx_fifo.v|
+o-O0
+Z36 !s108 1532331782.913000
+Z37 !s107 ../core/uart_tx_fifo.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vUART_Txd
+!i10b 1
+Z38 !s100 C=O9=LO1f>MDa4Q9UWl5@1
+Z39 I30X4na7TnJ2;<daL?:^jU3
+Z40 V?:oDI2lX0CIBBNIjnDzoS1
+R4
+Z41 w1532260916
+Z42 8../src/UART_Txd.v
+Z43 F../src/UART_Txd.v
+L0 1
+R8
+r1
+!s85 0
+31
+R19
+R20
+R11
+!s101 -O0
+o-O0
+Z44 n@u@a@r@t_@txd
+vUART_Txd_CTRL
+!i10b 1
+!s100 zO:OGig2ebGFY7JB^9TB<2
+IOd[jVd2dFJMfh6?:V<=hC0
+Z45 VO^]70N:1B;MN5QUig6jXc2
+R4
+w1532331779
+R6
+R7
+L0 1
+R8
+r1
+!s85 0
+31
+R19
+R20
+R11
+!s101 -O0
+o-O0
+Z46 n@u@a@r@t_@txd_@c@t@r@l
+vUART_Txd_Rxd_tb
+Z47 !s100 8JXlkh^72ZCA84A=GYoRY3
+Z48 INZEA7]nV35LjA7LP_JkRH1
+Z49 VBVD@<EMNG6G=RhVM7G1eP1
+R4
+Z50 w1532331601
+Z51 8../sim/UART_Txd_Rxd_tb.v
+Z52 F../sim/UART_Txd_Rxd_tb.v
+L0 1
+R8
+r1
+31
+Z53 !s90 -reportprogress|300|../sim/UART_Txd_Rxd_tb.v|
+o-O0
+Z54 n@u@a@r@t_@txd_@rxd_tb
+!i10b 1
+!s85 0
+Z55 !s108 1532331784.220000
+Z56 !s107 ../sim/UART_Txd_Rxd_tb.v|
+!s101 -O0
+vUART_Txd_tb
+Z57 !s100 Uo2B:d]Jh?Ec?ZXjajlWd1
+Z58 IfS6OW[:Y8o9k^]<=7R8;c0
+Z59 Vof76APbed2<1A;O]<dR6j3
+R4
+Z60 w1532259744
+Z61 8../sim/UART_Txd_tb.v
+Z62 F../sim/UART_Txd_tb.v
+L0 1
+R8
+r1
+31
+Z63 !s90 -reportprogress|300|../sim/UART_Txd_tb.v|
+o-O0
+Z64 n@u@a@r@t_@txd_tb
+Z65 !s108 1532259950.180000
+Z66 !s107 ../sim/UART_Txd_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0

@@ -1,0 +1,424 @@
+# Reading S:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# OpenFile F:/FPGA/Verilog/UART/sim/work.mpf 
+# Loading project work
+cd F:/FPGA/Verilog/UART/sim
+# reading modelsim.ini
+# reading modelsim.ini
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_tx_fifo
+# 
+# Top level modules:
+# 	uart_tx_fifo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Txd_tb
+# ** Error: ../sim/UART_Txd_tb.v(89): near ";": syntax error, unexpected ';', expecting ')'
+# ** Error: S:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./run.do line 20
+# S:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog	../sim/*.v"
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_tx_fifo
+# 
+# Top level modules:
+# 	uart_tx_fifo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Txd_tb
+# 
+# Top level modules:
+# 	UART_Txd_tb
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_CTRL
+# -- Compiling module UART_Rxd
+# ** Error: ../src/UART_Rxd.v(2): near ";": syntax error, unexpected ';', expecting ')'
+# ** Error: ../src/UART_Rxd.v(48): (vlog-2163) Macro `BAUD_CNT_END is undefined.
+# 
+# ** Error: ../src/UART_Rxd.v(60): (vlog-2163) Macro `HALF_BAUD_CNT is undefined.
+# 
+# ** Error: ../src/UART_Rxd.v(103): (vlog-2163) Macro `BAUD_CNT_END is undefined.
+# 
+# ** Error: ../src/UART_Rxd.v(111): (vlog-2163) Macro `BAUD_CNT_END is undefined.
+# 
+# -- Compiling module UART_Txd
+# ** Error: S:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./run.do line 21
+# S:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog	../src/*.v"
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_tx_fifo
+# 
+# Top level modules:
+# 	uart_tx_fifo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Txd_tb
+# 
+# Top level modules:
+# 	UART_Txd_tb
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_CTRL
+# -- Compiling module UART_Rxd
+# ** Error: ../src/UART_Rxd.v(48): (vlog-2163) Macro `BAUD_CNT_END is undefined.
+# 
+# ** Error: ../src/UART_Rxd.v(48): near ")": syntax error, unexpected ')'
+# ** Error: ../src/UART_Rxd.v(55): near "else": syntax error, unexpected else
+# ** Error: ../src/UART_Rxd.v(120): near "endcase": syntax error, unexpected endcase
+# ** Error: ../src/UART_Rxd.v(130): near "else": syntax error, unexpected else
+# ** Error: ../src/UART_Txd.v(15): 'baud_count' already declared in this scope (UART_Rxd).
+# ** Error: ../src/UART_Txd.v(16): 'bit_cnt' already declared in this scope (UART_Rxd).
+# ** Error: ../src/UART_Txd.v(30): 'IDLE' already declared in this scope.
+# ** Error: S:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./run.do line 21
+# S:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog	../src/*.v"
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_tx_fifo
+# 
+# Top level modules:
+# 	uart_tx_fifo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Txd_tb
+# 
+# Top level modules:
+# 	UART_Txd_tb
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_CTRL
+# -- Compiling module UART_Rxd
+# ** Error: ../src/UART_Rxd.v(120): near "endcase": syntax error, unexpected endcase
+# ** Error: ../src/UART_Rxd.v(130): near "else": syntax error, unexpected else
+# ** Error: ../src/UART_Txd.v(15): 'baud_count' already declared in this scope (UART_Rxd).
+# ** Error: ../src/UART_Txd.v(16): 'bit_cnt' already declared in this scope (UART_Rxd).
+# ** Error: ../src/UART_Txd.v(30): 'IDLE' already declared in this scope.
+# ** Error: S:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./run.do line 21
+# S:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog	../src/*.v"
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_tx_fifo
+# 
+# Top level modules:
+# 	uart_tx_fifo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Txd_tb
+# 
+# Top level modules:
+# 	UART_Txd_tb
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_CTRL
+# -- Compiling module UART_Rxd
+# -- Compiling module UART_Txd
+# 
+# Top level modules:
+# 	UART_CTRL
+# 	UART_Rxd
+# 	UART_Txd
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -t ns -novopt work.UART_Txd_tb 
+# Loading work.UART_Txd_tb
+# Loading work.UART_CTRL
+# Loading work.uart_tx_fifo
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading work.UART_Txd
+# Loading work.UART_Rxd
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
+add wave -position end  sim:/UART_Txd_tb/UART_Rxd_inst/rx_busy
+add wave -position end  sim:/UART_Txd_tb/UART_Rxd_inst/rx_data
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf F:/FPGA/Verilog/UART/sim/wave.do
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_tx_fifo
+# 
+# Top level modules:
+# 	uart_tx_fifo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Txd_tb
+# 
+# Top level modules:
+# 	UART_Txd_tb
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_CTRL
+# -- Compiling module UART_Rxd
+# -- Compiling module UART_Txd
+# 
+# Top level modules:
+# 	UART_CTRL
+# 	UART_Rxd
+# 	UART_Txd
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -t ns -novopt work.UART_Txd_tb 
+# Loading work.UART_Txd_tb
+# Loading work.UART_CTRL
+# Loading work.uart_tx_fifo
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading work.UART_Txd
+# Loading work.UART_Rxd
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_tx_fifo
+# 
+# Top level modules:
+# 	uart_tx_fifo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Txd_Rxd_tb
+# 
+# Top level modules:
+# 	UART_Txd_Rxd_tb
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Rxd
+# -- Compiling module UART_Txd
+# -- Compiling module UART_Txd_CTRL
+# 
+# Top level modules:
+# 	UART_Rxd
+# 	UART_Txd
+# 	UART_Txd_CTRL
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -t ns -novopt work.UART_Txd_Rxd_tb 
+# Loading work.UART_Txd_Rxd_tb
+# Loading work.UART_Txd_CTRL
+# Loading work.uart_tx_fifo
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading work.UART_Txd
+# Loading work.UART_Rxd
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
+add wave -position end  sim:/UART_Txd_Rxd_tb/UART_Txd_inst/data_in
+add wave -position end  sim:/UART_Txd_Rxd_tb/UART_Txd_inst/tx_req
+add wave -position end  sim:/UART_Txd_Rxd_tb/UART_Txd_inst/Txd
+add wave -position end  sim:/UART_Txd_Rxd_tb/UART_Txd_inst/tx_busy
+add wave -position end  sim:/UART_Txd_Rxd_tb/UART_Txd_inst/bit_cnt
+add wave -position end  sim:/UART_Txd_Rxd_tb/UART_Txd_inst/step_cnt
+add wave -position end  sim:/UART_Txd_Rxd_tb/UART_Rxd_inst/rx_data
+add wave -position end  sim:/UART_Txd_Rxd_tb/UART_Rxd_inst/rx_busy
+add wave -position end  sim:/UART_Txd_Rxd_tb/UART_Rxd_inst/state
+add wave -position end  sim:/UART_Txd_Rxd_tb/UART_Rxd_inst/bit_cnt
+add wave -position end  sim:/UART_Txd_Rxd_tb/UART_Rxd_inst/shift_data
+add wave -position end  sim:/UART_Txd_Rxd_tb/UART_Rxd_inst/shift_data_n
+add wave -position end  sim:/UART_Txd_Rxd_tb/UART_Rxd_inst/rx_start
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf F:/FPGA/Verilog/UART/sim/wave.do
+add wave -position end  sim:/UART_Txd_Rxd_tb/uart_tx_fifo_inst/data
+add wave -position end  sim:/UART_Txd_Rxd_tb/uart_tx_fifo_inst/q
+add wave -position end  sim:/UART_Txd_Rxd_tb/uart_tx_fifo_inst/rdempty
+add wave -position end  sim:/UART_Txd_Rxd_tb/uart_tx_fifo_inst/wrusedw
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf F:/FPGA/Verilog/UART/sim/wave.do
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf F:/FPGA/Verilog/UART/sim/wave.do
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_tx_fifo
+# 
+# Top level modules:
+# 	uart_tx_fifo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Txd_Rxd_tb
+# 
+# Top level modules:
+# 	UART_Txd_Rxd_tb
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Rxd
+# -- Compiling module UART_Rxd_CTRL
+# -- Compiling module UART_Txd
+# -- Compiling module UART_Txd_CTRL
+# 
+# Top level modules:
+# 	UART_Rxd
+# 	UART_Rxd_CTRL
+# 	UART_Txd
+# 	UART_Txd_CTRL
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -t ns -novopt work.UART_Txd_Rxd_tb 
+# Loading work.UART_Txd_Rxd_tb
+# Loading work.UART_Txd_CTRL
+# Loading work.uart_tx_fifo
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading work.UART_Txd
+# Loading work.UART_Rxd
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_tx_fifo
+# 
+# Top level modules:
+# 	uart_tx_fifo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Txd_Rxd_tb
+# 
+# Top level modules:
+# 	UART_Txd_Rxd_tb
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Rxd
+# -- Compiling module UART_Rxd_CTRL
+# -- Compiling module UART_Txd
+# -- Compiling module UART_Txd_CTRL
+# 
+# Top level modules:
+# 	UART_Rxd
+# 	UART_Rxd_CTRL
+# 	UART_Txd
+# 	UART_Txd_CTRL
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -t ns -novopt work.UART_Txd_Rxd_tb 
+# Loading work.UART_Txd_Rxd_tb
+# Loading work.UART_Txd_CTRL
+# Loading work.uart_tx_fifo
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading work.UART_Txd
+# Loading work.UART_Rxd
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_tx_fifo
+# 
+# Top level modules:
+# 	uart_tx_fifo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Txd_Rxd_tb
+# 
+# Top level modules:
+# 	UART_Txd_Rxd_tb
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Rxd
+# -- Compiling module UART_Rxd_CTRL
+# ** Error: ../src/UART_Rxd_CTRL.v(8): near ")": Missing port in ansi port list.
+# -- Compiling module UART_Txd
+# -- Compiling module UART_Txd_CTRL
+# ** Error: S:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./run.do line 21
+# S:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog	../src/*.v"
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_tx_fifo
+# 
+# Top level modules:
+# 	uart_tx_fifo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Txd_Rxd_tb
+# 
+# Top level modules:
+# 	UART_Txd_Rxd_tb
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Rxd
+# -- Compiling module UART_Txd
+# -- Compiling module UART_Txd_CTRL
+# 
+# Top level modules:
+# 	UART_Rxd
+# 	UART_Txd
+# 	UART_Txd_CTRL
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -t ns -novopt work.UART_Txd_Rxd_tb 
+# Loading work.UART_Txd_Rxd_tb
+# Loading work.UART_Txd_CTRL
+# Loading work.uart_tx_fifo
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading work.UART_Txd
+# Loading work.UART_Rxd
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
+do run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_tx_fifo
+# 
+# Top level modules:
+# 	uart_tx_fifo
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Txd_Rxd_tb
+# 
+# Top level modules:
+# 	UART_Txd_Rxd_tb
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module UART_Rxd
+# -- Compiling module UART_Txd
+# -- Compiling module UART_Txd_CTRL
+# 
+# Top level modules:
+# 	UART_Rxd
+# 	UART_Txd
+# 	UART_Txd_CTRL
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -t ns -novopt work.UART_Txd_Rxd_tb 
+# Loading work.UART_Txd_Rxd_tb
+# Loading work.UART_Txd_CTRL
+# Loading work.uart_tx_fifo
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading work.UART_Txd
+# Loading work.UART_Rxd
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
