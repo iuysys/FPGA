@@ -23,6 +23,8 @@ reg 	[7:0]	step_cnt			;				//步骤计数
 reg		[1:0]	scl_cnt				;				//SCL时钟的计数器
 reg 	[23:0]	latch_data			;				//锁存数据寄存器
 
+	
+
 //------------------------------------------------------
 //-- 参数定义
 //------------------------------------------------------
@@ -80,7 +82,7 @@ begin
 				state_n = S_REG ;
 		end
 		S_DATA : begin
-			if(step_cnt == 'd9) begin
+			if(step_cnt == 'd9 && scl_cnt == 'd3) begin
 				state_n = STOP;
 			end
 			else
@@ -106,6 +108,7 @@ always@(posedge CLK or negedge RST_N) begin
 		SCCB_SCL <= 1'B1 ;
 	end
 	else if(state_n != IDLE) begin
+	// else if(1'b1) begin
 		case(scl_cnt)
 			0 ,1: begin
 				SCCB_SCL <= 1'B1 ;	
@@ -145,10 +148,9 @@ begin
 			START : begin 
 				SCCB_SDA <= 1'B0;
 				latch_data <= data_in ;
-				SCCB_busy <= 1'b1 ;
 			end
 			S_ADDR : begin
-				
+				SCCB_busy <= 1'b1 ;
 				if(step_cnt == 'd9 && scl_cnt == 'd0) begin
 					step_cnt <= 'b0 ;
 				end
@@ -178,6 +180,9 @@ begin
 						end
 						7 : begin
 							SCCB_SDA <= latch_data[16] ;
+						end
+						8 : begin
+							SCCB_SDA <= 1'b1 ;
 						end
 						default :begin
 							SCCB_SDA <= 1'b1 ;
@@ -216,6 +221,9 @@ begin
 						7 : begin
 							SCCB_SDA <= latch_data[8] ;
 						end
+						8 : begin
+							SCCB_SDA <= 1'b1 ;
+						end
 						default :begin
 							SCCB_SDA <= 1'b1 ;
 						end
@@ -249,6 +257,9 @@ begin
 						end
 						7 : begin
 							SCCB_SDA <= latch_data[0] ;
+						end
+						8 : begin
+							SCCB_SDA <= 1'b1 ;
 						end
 						default :begin
 							SCCB_SDA <= 1'b0 ;

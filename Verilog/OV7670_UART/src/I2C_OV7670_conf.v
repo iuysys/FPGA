@@ -55,7 +55,8 @@ always@(*) begin
 			end
 		end
 		RUN : begin
-			if(!SCCB_busy && LUT_INDEX == 165) begin
+			if(!SCCB_busy && LUT_INDEX == 'd168) begin
+			// if(1'b0) begin
 				state_n = STOP ;
 			end
 			else begin
@@ -108,6 +109,7 @@ always@(posedge S_CLK or negedge RST_N) begin
 			STOP : begin
 				SCCB_req <= 'b0 ;
 				init_done <= 'b1 ;
+				step_cnt <= 'b0 ;
 			end
 		endcase
 	end

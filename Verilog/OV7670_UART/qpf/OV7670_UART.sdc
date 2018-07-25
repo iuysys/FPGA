@@ -19,7 +19,7 @@
 ## PROGRAM "Quartus II"
 ## VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version"
 
-## DATE    "Fri Jul 20 21:01:35 2018"
+## DATE    "Wed Jul 25 17:23:16 2018"
 
 ##
 ## DEVICE  "EP2C8Q208C8"
@@ -38,7 +38,6 @@ set_time_format -unit ns -decimal_places 3
 # Create Clock
 #**************************************************************
 
-create_clock -name {altera_reserved_tck} -period 100.000 -waveform { 0.000 50.000 } [get_ports {altera_reserved_tck}]
 create_clock -name {SYS_CLK} -period 50.000 -waveform { 0.000 25.000 } [get_ports {SYS_CLK}]
 
 
@@ -46,8 +45,8 @@ create_clock -name {SYS_CLK} -period 50.000 -waveform { 0.000 25.000 } [get_port
 # Create Generated Clock
 #**************************************************************
 
-create_generated_clock -name {S_CLK} -source [get_ports {SYS_CLK}] -duty_cycle 50.000 -multiply_by 2 -master_clock {SYS_CLK} [get_pins {OV_UART_pll_inst|altpll_component|pll|clk[0]}] 
-create_generated_clock -name {OV_rclk} -source [get_pins {OV_UART_pll_inst|altpll_component|pll|clk[0]}] -duty_cycle 50.000 -multiply_by 1 -master_clock {S_CLK} [get_ports { OV_rclk }] 
+create_generated_clock -name {OV_UART_pll_inst|altpll_component|pll|clk[0]} -source [get_pins {OV_UART_pll_inst|altpll_component|pll|inclk[0]}] -duty_cycle 50.000 -multiply_by 2 -master_clock {SYS_CLK} [get_pins {OV_UART_pll_inst|altpll_component|pll|clk[0]}] 
+create_generated_clock -name {OV_UART_pll_inst|altpll_component|pll|clk[1]} -source [get_pins {OV_UART_pll_inst|altpll_component|pll|inclk[0]}] -duty_cycle 50.000 -multiply_by 5 -master_clock {SYS_CLK} [get_pins {OV_UART_pll_inst|altpll_component|pll|clk[1]}] 
 
 
 #**************************************************************
@@ -78,16 +77,12 @@ create_generated_clock -name {OV_rclk} -source [get_pins {OV_UART_pll_inst|altpl
 # Set Clock Groups
 #**************************************************************
 
-set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}] 
-set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}] 
 
 
 #**************************************************************
 # Set False Path
 #**************************************************************
 
-set_false_path -from [get_keepers {*rdptr_g*}] -to [get_keepers {*ws_dgrp|dffpipe_b09:dffpipe21|dffe22a*}]
-set_false_path -from [get_keepers {*delayed_wrptr_g*}] -to [get_keepers {*rs_dgwp|dffpipe_a09:dffpipe17|dffe18a*}]
 
 
 #**************************************************************

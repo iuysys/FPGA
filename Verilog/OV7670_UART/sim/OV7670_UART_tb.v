@@ -24,14 +24,14 @@ initial begin
 	SYS_CLK = 'b0 ;
 	RST_N = 'b0 ;
 	OV_vsync = 1'b0 ;
-	#200 RST_N = 'b1 ;
+	#500 RST_N = 'b1 ;
 	$display("Begin Simulation!");
 end
 
 always #25 SYS_CLK = ~SYS_CLK ;
 
 always begin
-	#2000 OV_vsync = 1'b1 ;
+	#5000 OV_vsync = 1'b1 ;
 	#40	OV_vsync = 1'b0 ;
 end
 

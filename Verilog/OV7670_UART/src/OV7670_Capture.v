@@ -28,19 +28,26 @@ output		reg		[15:0]		w_data
 //------------------------------------------------------
 //-- 内部信号
 //------------------------------------------------------
-reg					[2:0]		state		;
-reg					[2:0]		state_n		;
-reg					[3:0]		rst_cnt		;
-reg					[2:0]		step_cnt	;
-reg					[1:0]		vsync_cnt	;
-reg					[17:0]		pixel_cnt	;
-
-wire							w_full		;
+reg					[2:0]		state				;
+reg					[2:0]		state_n				;
+reg					[3:0]		rst_cnt				;
+reg					[2:0]		step_cnt			;
+reg								edge_vs_now			;
+reg								edge_vs_pre			;
+wire							flag_pose_edge_vs	;
+reg					[1:0]		vsync_cnt			;
+reg					[17:0]		pixel_cnt			;
+		
+wire							w_full				;
+		
+reg					[16:0]		wait_cnt			;		//等待OV7670上电稳定,2MS
+reg								flag_wait			;
 
 //------------------------------------------------------
 //-- 参数定义
 //------------------------------------------------------
 `define		IMAGE_SIZE 240*320
+`define		WAIT_2MS_TIME 80000
 localparam	INIT = 3'D0 ,IDLE = 3'D1 ,WRST = 3'D2 ,CAPT = 3'D3 ,RRST = 3'D4 ,READ = 3'D5 ;
 
 
@@ -51,6 +58,22 @@ assign	OV_oe = 1'b0 ;
 assign	OV_rclk = (state == READ && w_full == 'b0) ? S_CLK : 1'b0 ;
 assign	w_clk = ~S_CLK ;
 assign 	w_full = (w_usedw > 500 - 1)?1'b1 : 1'b0 ;
+
+//------------------------------------------------------
+//-- 
+//------------------------------------------------------
+always@(posedge S_CLK or negedge RST_N) begin
+	if(!RST_N) begin
+		wait_cnt <= 'b0 ;
+		flag_wait <= 1'b0 ;
+	end
+	else if(wait_cnt == `WAIT_2MS_TIME) begin
+		flag_wait <= 1'b1 ;
+	end
+	else begin
+		wait_cnt <= wait_cnt + 1'b1 ;
+	end
+end
 
 //------------------------------------------------------
 //-- 时序逻辑,状态转换
@@ -69,7 +92,7 @@ end
 always@(*) begin
 	case(state)
 		INIT : begin
-			if(init_done) begin
+			if(init_done && flag_wait) begin
 				state_n <= IDLE ;
 			end
 			else begin
@@ -85,7 +108,7 @@ always@(*) begin
 			end
 		end
 		WRST : begin
-			if(rst_cnt == 'd3) begin
+			if(rst_cnt == 'd6) begin
 				state_n = CAPT ;
 			end
 			else begin
@@ -101,7 +124,7 @@ always@(*) begin
 			end
 		end
 		RRST : begin
-			if(rst_cnt == 'd3) begin
+			if(rst_cnt == 'd6) begin
 				state_n = READ ;
 			end
 			else begin
@@ -128,7 +151,7 @@ always@(posedge S_CLK or negedge RST_N) begin
 		OV_wen <= 1'b0 ;
 		OV_rrst <= 1'b1 ;
 		step_cnt <= 'b0 ;
-		start_init <= 1'b1 ;
+		start_init <= 1'b0 ;
 		rst_cnt <= 'b0 ;
 		pixel_cnt <= 'b0 ;
 		w_req <= 1'b0 ;
@@ -137,12 +160,17 @@ always@(posedge S_CLK or negedge RST_N) begin
 	else begin
 		case(state_n)
 			INIT : begin
-				start_init <= 1'b1 ;
+				if(flag_wait) begin					
+				// if(1) begin							//调试置1
+					start_init <= 1'b1 ;
+				end
+				else begin
+					start_init <= 1'b0 ;
+				end
 				OV_wrst <= 1'b1 ;
 				OV_wen <= 1'b0 ;
 				OV_rrst <= 1'b1 ;
 				step_cnt <= 'b0 ;
-				start_init <= 1'b1 ;
 				rst_cnt <= 'b0 ;
 				pixel_cnt <= 'b0 ;
 				w_req <= 1'b0 ;
@@ -188,7 +216,6 @@ always@(posedge S_CLK or negedge RST_N) begin
 					step_cnt <= 'd2 ;
 					w_req <= 1'b0 ;
 				end
-				
 			end
 			
 		endcase
@@ -196,22 +223,32 @@ always@(posedge S_CLK or negedge RST_N) begin
 	
 end
 //------------------------------------------------------
-//-- 
+//-- 场同步信号检测
 //------------------------------------------------------
-always@(posedge OV_vsync or negedge RST_N) begin
+always@(posedge S_CLK or negedge RST_N) begin
+	if(!RST_N) begin
+		edge_vs_now <= 'b0 ;
+		edge_vs_pre <= 'b0 ;
+	end
+	else begin
+		edge_vs_now <= OV_vsync ;
+		edge_vs_pre <= edge_vs_now ;
+	end
+end
+
+assign flag_pose_edge_vs = (!edge_vs_pre & edge_vs_now) ? 1'b1 : 1'b0 ;
+
+always@(posedge S_CLK or negedge RST_N) begin
 	if(!RST_N) begin
 		vsync_cnt <= 'b0 ;
 	end
-	else if(state != INIT && state != READ)begin
+	else if(flag_pose_edge_vs && state != INIT && state != READ)begin
 		vsync_cnt <= vsync_cnt + 1'b1 ;
 	end
 	else begin
 		vsync_cnt <= 'b0 ;
 	end
-
 end
-
-
 
 
 
