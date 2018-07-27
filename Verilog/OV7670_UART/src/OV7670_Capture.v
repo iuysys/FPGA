@@ -38,36 +38,38 @@ wire							flag_pose_edge_vs	;
 reg					[1:0]		vsync_cnt			;
 reg					[17:0]		pixel_cnt			;
 		
-wire							w_full				;
+wire							almost_full			;
+wire							almost_empty		;
+reg								ov_rclk_en			;
 		
-reg					[16:0]		wait_cnt			;		//等待OV7670上电稳定,2MS
+reg					[16:0]		wait_cnt			;		//等待OV7670上电稳定,2uS
 reg								flag_wait			;
 
 //------------------------------------------------------
 //-- 参数定义
 //------------------------------------------------------
 `define		IMAGE_SIZE 240*320
-`define		WAIT_2MS_TIME 80000
+`define		WAIT_2US_TIME 80
 localparam	INIT = 3'D0 ,IDLE = 3'D1 ,WRST = 3'D2 ,CAPT = 3'D3 ,RRST = 3'D4 ,READ = 3'D5 ;
-
 
 //------------------------------------------------------
 //-- 
 //------------------------------------------------------
 assign	OV_oe = 1'b0 ;
-assign	OV_rclk = (state == READ && w_full == 'b0) ? S_CLK : 1'b0 ;
+assign	OV_rclk = (state == READ && ov_rclk_en) ? S_CLK : 1'b1 ;
 assign	w_clk = ~S_CLK ;
-assign 	w_full = (w_usedw > 500 - 1)?1'b1 : 1'b0 ;
+assign 	almost_full = (w_usedw >= 480 - 1) ? 1'b1 : 1'b0 ;
+assign	almost_empty = (w_usedw <= 32) ? 1'b1 : 1'b0 ;
 
 //------------------------------------------------------
-//-- 
+//-- 上电等待2us
 //------------------------------------------------------
 always@(posedge S_CLK or negedge RST_N) begin
 	if(!RST_N) begin
 		wait_cnt <= 'b0 ;
 		flag_wait <= 1'b0 ;
 	end
-	else if(wait_cnt == `WAIT_2MS_TIME) begin
+	else if(wait_cnt == `WAIT_2US_TIME) begin
 		flag_wait <= 1'b1 ;
 	end
 	else begin
@@ -100,7 +102,7 @@ always@(*) begin
 			end
 		end
 		IDLE : begin
-			if(vsync_cnt == 'd1) begin
+			if(flag_pose_edge_vs && w_usedw == 'd0) begin					//等一帧图像发送完成在采集下一帧图像
 				state_n = WRST ;
 			end
 			else begin
@@ -156,6 +158,7 @@ always@(posedge S_CLK or negedge RST_N) begin
 		pixel_cnt <= 'b0 ;
 		w_req <= 1'b0 ;
 		w_data <= 'b0 ;
+		ov_rclk_en <= 1'b0 ;
 	end
 	else begin
 		case(state_n)
@@ -178,6 +181,11 @@ always@(posedge S_CLK or negedge RST_N) begin
 			end
 			IDLE : begin
 				start_init <= 1'b0 ;
+				step_cnt <= 'b0 ;
+				rst_cnt <= 'b0 ;
+				pixel_cnt <= 'b0 ;
+				w_req <= 1'b0 ;
+				w_data <= 'b0 ;
 			end
 			WRST : begin
 				OV_wrst <= 1'b0 ;
@@ -192,11 +200,12 @@ always@(posedge S_CLK or negedge RST_N) begin
 				OV_wen <= 1'b0 ;
 				OV_rrst <= 1'b0 ;
 				rst_cnt <= rst_cnt + 1'b1 ;
+				ov_rclk_en <= 1'b1 ;				//打开读时钟
 			end
 			READ : begin
 				OV_rrst <= 1'b1 ;
 				rst_cnt <= 'b0 ;
-				if(!w_full) begin									//还需优化fifo满后个别数据错位的BUG
+				if(ov_rclk_en) begin								
 					step_cnt <= step_cnt + 1'b1 ;
 					if(step_cnt == 'd1) begin
 						w_req <= 1'b0 ;
@@ -207,17 +216,26 @@ always@(posedge S_CLK or negedge RST_N) begin
 						step_cnt <= 'd1 ;
 						w_data[7:0] <= OV_data ;
 						pixel_cnt <= pixel_cnt + 1'b1 ;
+						
+						if(almost_full) begin						//此处调试修改			
+							ov_rclk_en <= 1'b0 ;
+						end
+						else begin
+							ov_rclk_en <= 1'b1 ;
+						end
 					end
 					else begin
 						w_req <= 1'b0 ;
 					end
 				end
-				else begin
-					step_cnt <= 'd2 ;
+				else if(almost_empty) begin
+					ov_rclk_en <= 1'b1 ;
 					w_req <= 1'b0 ;
 				end
-			end
-			
+				else begin
+					w_req <= 1'b0 ;
+				end
+			end	
 		endcase
 	end
 	
@@ -245,7 +263,7 @@ always@(posedge S_CLK or negedge RST_N) begin
 	else if(flag_pose_edge_vs && state != INIT && state != READ)begin
 		vsync_cnt <= vsync_cnt + 1'b1 ;
 	end
-	else begin
+	else if(state == IDLE) begin
 		vsync_cnt <= 'b0 ;
 	end
 end

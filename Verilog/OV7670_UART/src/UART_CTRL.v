@@ -55,7 +55,7 @@ end
 always@(*) begin
 	case(state)
 		IDLE: begin
-			if(!rd_empty && !rd_req ) begin					//fifo非空,但是fifo读请求被置低,则次态为发送指令状态
+			if((!rd_empty && !rd_req )||(send_cnt == `IMAGE_SIZE)) begin					//fifo非空,但是fifo读请求被置低,则次态为发送指令状态
 				state_n = CMD ;
 			end
 			else if(rd_req)begin							//fifo读请求置高,次态为锁存状态
@@ -181,25 +181,6 @@ end
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 endmodule
+
+

@@ -47,7 +47,7 @@ begin
 	SET_OV7670 + 8 	: 	LUT_DATA	= 	{8'h03, 8'h06};	
 	SET_OV7670 + 9 	: 	LUT_DATA	= 	{8'h0c, 8'h00};
 	SET_OV7670 + 10 : 	LUT_DATA	= 	{8'h15, 8'h00};
-	SET_OV7670 + 11 : 	LUT_DATA	= 	{8'h3e, 8'h00};			//
+	SET_OV7670 + 11 : 	LUT_DATA	= 	{8'h3e, 8'h10};			//
 	SET_OV7670 + 12 : 	LUT_DATA	= 	{8'h70, 8'h3a};	
 	SET_OV7670 + 13 : 	LUT_DATA	= 	{8'h71, 8'h35};
 	SET_OV7670 + 14 : 	LUT_DATA	= 	{8'h72, 8'h11};

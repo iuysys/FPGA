@@ -1,9 +1,11 @@
 module I2C_Write(
-input 							CLK			,				//3MHz > CLK > 1.1MHz
+input 							CLK			,				//
 input 							RST_N		,
 input 				[23:0] 		data_in		,				//从机地址+寄存器地址+数据
 input 							SCCB_req	,
-				                            
+// input							SCCB_wr		,				//0:写 1:读
+
+// output		reg		[7:0]		SCCB_rdata	,				//读出数据			                            
 output 		reg					SCCB_SDA	,				
 output 		reg					SCCB_SCL	,				//输入时钟/4
 output 		reg					SCCB_busy					//

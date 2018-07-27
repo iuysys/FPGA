@@ -31,7 +31,7 @@ end
 always #25 SYS_CLK = ~SYS_CLK ;
 
 always begin
-	#5000 OV_vsync = 1'b1 ;
+	#90000 OV_vsync = 1'b1 ;
 	#40	OV_vsync = 1'b0 ;
 end
 

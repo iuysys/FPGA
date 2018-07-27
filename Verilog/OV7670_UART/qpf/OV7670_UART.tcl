@@ -14,7 +14,7 @@
 
 # Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 # File: F:\FPGA\Verilog\OV7670_UART\qpf\OV7670_UART.tcl
-# Generated on: Fri Jul 20 15:46:42 2018
+# Generated on: Wed Jul 25 21:49:45 2018
 
 package require ::quartus::project
 
@@ -37,3 +37,5 @@ set_location_assignment PIN_35 -to OV_data[7]
 set_location_assignment PIN_34 -to OV_rclk
 set_location_assignment PIN_33 -to OV_vsync
 set_location_assignment PIN_31 -to OV_wen
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SCCB_SCL
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to SCCB_SDA
