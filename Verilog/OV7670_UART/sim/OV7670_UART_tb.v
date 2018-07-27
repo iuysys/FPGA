@@ -35,12 +35,12 @@ always begin
 	#40	OV_vsync = 1'b0 ;
 end
 
-always@(negedge OV_rclk or negedge RST_N) begin
+always@(posedge OV_rclk or negedge RST_N) begin
 	if(!RST_N) begin
 		OV_data <= 'b0 ;
 	end
 	else begin
-		OV_data <= OV_data + 1'b1 ;
+		OV_data <= #15 OV_data + 1'b1 ;				//模拟数据及延时输出
 	end
 end
 

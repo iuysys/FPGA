@@ -49,6 +49,7 @@ reg								flag_wait			;
 //-- 参数定义
 //------------------------------------------------------
 `define		IMAGE_SIZE 240*320
+// `define		IMAGE_SIZE 176*144
 `define		WAIT_2US_TIME 80
 localparam	INIT = 3'D0 ,IDLE = 3'D1 ,WRST = 3'D2 ,CAPT = 3'D3 ,RRST = 3'D4 ,READ = 3'D5 ;
 
@@ -56,7 +57,7 @@ localparam	INIT = 3'D0 ,IDLE = 3'D1 ,WRST = 3'D2 ,CAPT = 3'D3 ,RRST = 3'D4 ,READ
 //-- 
 //------------------------------------------------------
 assign	OV_oe = 1'b0 ;
-assign	OV_rclk = (state == READ && ov_rclk_en) ? S_CLK : 1'b1 ;
+assign	OV_rclk = (state == READ && ov_rclk_en) ? S_CLK : 1'b0 ;
 assign	w_clk = ~S_CLK ;
 assign 	almost_full = (w_usedw >= 480 - 1) ? 1'b1 : 1'b0 ;
 assign	almost_empty = (w_usedw <= 32) ? 1'b1 : 1'b0 ;

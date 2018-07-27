@@ -55,7 +55,7 @@ always@(*) begin
 			end
 		end
 		RUN : begin
-			if(!SCCB_busy && LUT_INDEX == 'd168) begin
+			if(!SCCB_busy && LUT_INDEX == 'd164) begin
 			// if(1'b0) begin
 				state_n = STOP ;
 			end

@@ -17,7 +17,7 @@ Z8 OV;L;10.1d;51
 r1
 !s85 0
 31
-Z9 !s108 1532607275.787000
+Z9 !s108 1532655435.818000
 Z10 !s107 ../src/UART_Txd.v|../src/UART_CTRL.v|../src/OV7670_top.v|../src/OV7670_UART.v|../src/OV7670_Capture.v|../src/I2C_Write.v|../src/I2C_OV7670_conf.v|../src/I2C_OV7670_LUT.v|../src/CLK_DIV_EVEN.v|
 Z11 !s90 -reportprogress|300|../src/CLK_DIV_EVEN.v|../src/I2C_OV7670_LUT.v|../src/I2C_OV7670_conf.v|../src/I2C_Write.v|../src/OV7670_Capture.v|../src/OV7670_UART.v|../src/OV7670_top.v|../src/UART_CTRL.v|../src/UART_Txd.v|
 !s101 -O0
@@ -49,7 +49,7 @@ Z20 !s100 U<ZFgf]DL96fcLG]5FAfN3
 Z21 IJEbl3KEHiiQ?mHCH8Xfzz0
 Z22 VJPK[851kzYg=hWeVn47F?0
 R4
-Z23 w1532587244
+Z23 w1532612396
 Z24 8../src/I2C_OV7670_LUT.v
 Z25 F../src/I2C_OV7670_LUT.v
 L0 20
@@ -85,11 +85,11 @@ o-O0
 Z33 n@i2@c_@write
 vOV7670_Capture
 !i10b 1
-!s100 TCoO<Ufi;K`0eeVX4CM0Z2
-I9?_GdzUPKg82`Uf86=Nn52
+!s100 S27H32z8GmYeHiF2;E]?`0
+I6U[1TXB40B`2mDeRRJXh00
 Z34 VGJNCGP4j;YmMGzCTl];YO2
 R4
-w1532607269
+w1532655412
 Z35 8../src/OV7670_Capture.v
 Z36 F../src/OV7670_Capture.v
 L0 1
@@ -109,7 +109,7 @@ Z38 !s100 `6SUQJ;k:aI5LMPnY_Wak3
 Z39 I9UW:WW5Pg1z`^zFWWV>Bg0
 Z40 VH;1MQe679^_g@Z[1JZPeg0
 R4
-Z41 w1532606376
+Z41 w1532655015
 Z42 8../src/OV7670_top.v
 Z43 F../src/OV7670_top.v
 L0 1
@@ -144,11 +144,11 @@ R11
 o-O0
 Z51 n@o@v7670_@u@a@r@t
 vOV7670_UART_tb
-Z52 !s100 CK<lS821XojJzgjOjW_I43
-Z53 IjnlzDkAdTUE9BZQzi>eEW1
+Z52 !s100 O@_4R5DV8g6D83`V0]BJ:0
+Z53 I=PK0I4Nz:SHO[8NfKEE[a0
 Z54 VLQG[]JO0l_l=^Wd<:9c8n3
 R4
-Z55 w1532606365
+Z55 w1532655250
 Z56 8../sim/OV7670_UART_tb.v
 Z57 F../sim/OV7670_UART_tb.v
 L0 3
@@ -160,22 +160,22 @@ o-O0
 Z59 n@o@v7670_@u@a@r@t_tb
 !i10b 1
 !s85 0
-Z60 !s108 1532607275.663000
+Z60 !s108 1532655435.693000
 Z61 !s107 ../sim/OV7670_UART_tb.v|
 !s101 -O0
 vOV_UART_pll
-Z62 !s100 IKff@2kA3Q;T46DW6SYB;1
-Z63 IDCCGU[g>>LP<MF9ibVS9H0
+Z62 !s100 F1oP5^0Za5bHTW;T5_j_D3
+Z63 IGHn7olj^Cm6lbI;zWP5LE2
 Z64 V@@jd?iZ8z?G:aX7ikRRYQ2
 R4
-Z65 w1532139345
+Z65 w1532654322
 Z66 8../core/OV_UART_pll.v
 Z67 F../core/OV_UART_pll.v
 L0 39
 R8
 r1
 31
-Z68 !s108 1532607275.446000
+Z68 !s108 1532655434.835000
 Z69 !s107 ../core/uart_send_fifo.v|../core/OV_UART_pll.v|
 Z70 !s90 -reportprogress|300|../core/OV_UART_pll.v|../core/uart_send_fifo.v|
 o-O0
@@ -189,7 +189,7 @@ Z72 !s100 9P3_mZj<7_CnTVk7Qd?Hd1
 Z73 I]<8=lmzl0ffh@zMDUm2>Y1
 Z74 VHl`LZ]PDTYoIlG5F`lMNH3
 R4
-Z75 w1532589632
+Z75 w1532611632
 Z76 8../src/UART_CTRL.v
 Z77 F../src/UART_CTRL.v
 L0 1

@@ -48,10 +48,10 @@ begin
 	SET_OV7670 + 9 	: 	LUT_DATA	= 	16'h0c00;	//DCW使能 禁止(00)
 	SET_OV7670 + 10 : 	LUT_DATA	= 	16'h3e00;	//PCLK分频00 Normal，10（1分频）,11（2分频）,12（4分频）,13（8分频）14（16分频）
 	SET_OV7670 + 11 : 	LUT_DATA	= 	16'h7000;	//00:Normal, 80:移位1, 00:彩条, 80:渐变彩条
-	SET_OV7670 + 12 : 	LUT_DATA	= 	16'h7180;	//00:Normal, 00:移位1, 80:彩条, 80：渐变彩条
+	SET_OV7670 + 12 : 	LUT_DATA	= 	16'h7100;	//00:Normal, 00:移位1, 80:彩条, 80：渐变彩条
 	SET_OV7670 + 13 : 	LUT_DATA	= 	16'h7211;	//默认 水平，垂直8抽样(11)	        
 	SET_OV7670 + 14 : 	LUT_DATA	= 	16'h7300;	//DSP缩放时钟分频00 Normal，10（1分频）,11（2分频）,12（4分频）,13（8分频）14（16分频） 
-	SET_OV7670 + 15 : 	LUT_DATA	= 	16'ha202;	//默认 像素始终延迟	(02)） 
+	SET_OV7670 + 15 : 	LUT_DATA	= 	16'ha202;	//默认 像素始终延迟	(02)
 	SET_OV7670 + 16 : 	LUT_DATA	= 	16'h1180;	//内部工作时钟设置，直接使用外部时钟源(80)
 	SET_OV7670 + 17 : 	LUT_DATA	= 	16'h7a20;
 	SET_OV7670 + 18 : 	LUT_DATA	= 	16'h7b1c;
@@ -91,7 +91,7 @@ begin
 	SET_OV7670 + 52 : 	LUT_DATA	= 	16'h0e61;
 	SET_OV7670 + 53 : 	LUT_DATA	= 	16'h0f4b;
 	SET_OV7670 + 54 : 	LUT_DATA	= 	16'h1602;
-	SET_OV7670 + 55 : 	LUT_DATA	= 	16'h1e20;	//默认01，Bit[5]水平镜像，Bit[4]竖直镜像
+	SET_OV7670 + 55 : 	LUT_DATA	= 	16'h1e30;	//默认01，Bit[5]水平镜像，Bit[4]竖直镜像   
 	SET_OV7670 + 56 : 	LUT_DATA	= 	16'h2102;
 	SET_OV7670 + 57 : 	LUT_DATA	= 	16'h2291;
 	SET_OV7670 + 58 : 	LUT_DATA	= 	16'h2907;
@@ -104,7 +104,7 @@ begin
 	SET_OV7670 + 65 : 	LUT_DATA	= 	16'h4d40;
 	SET_OV7670 + 66 : 	LUT_DATA	= 	16'h4e20;
 	SET_OV7670 + 67 : 	LUT_DATA	= 	16'h6900;
-	SET_OV7670 + 68 : 	LUT_DATA	= 	16'h6b00;	//旁路PLL倍频；0x0A：关闭内部LDO；0x00：打开LDO	
+	SET_OV7670 + 68 : 	LUT_DATA	= 	16'h6b40;	//旁路PLL倍频；0x0A：关闭内部LDO；0x00：打开LDO	
 	SET_OV7670 + 69 : 	LUT_DATA	= 	16'h7419;
 	SET_OV7670 + 70 : 	LUT_DATA	= 	16'h8d4f;
 	SET_OV7670 + 71 : 	LUT_DATA	= 	16'h8e00;
@@ -118,7 +118,7 @@ begin
 	SET_OV7670 + 79 : 	LUT_DATA	= 	16'hb10c;
 	SET_OV7670 + 80 : 	LUT_DATA	= 	16'hb20e;
 	SET_OV7670 + 81 : 	LUT_DATA	= 	16'hb382;
-	SET_OV7670 + 82 : 	LUT_DATA	= 	16'hb80a;
+	SET_OV7670 + 82 : 	LUT_DATA	= 	16'hb80a; 
 	SET_OV7670 + 83  :	LUT_DATA	=	16'h4314;
 	SET_OV7670 + 84  :	LUT_DATA	=	16'h44f0;
 	SET_OV7670 + 85  :	LUT_DATA	=	16'h4534;
@@ -144,14 +144,14 @@ begin
 	SET_OV7670 + 105 :	LUT_DATA	=	16'h0140;
 	SET_OV7670 + 106 :	LUT_DATA	=	16'h0240;
 	SET_OV7670 + 107 :	LUT_DATA	=	16'h13e7;
-	SET_OV7670 + 108 :	LUT_DATA	=	16'h1500;
+	SET_OV7670 + 108 :	LUT_DATA	=	16'h1500; 
 	SET_OV7670 + 109 :	LUT_DATA	= 	16'h4f80;
 	SET_OV7670 + 110 :	LUT_DATA	= 	16'h5080;
 	SET_OV7670 + 111 :	LUT_DATA	= 	16'h5100;
 	SET_OV7670 + 112 :	LUT_DATA	= 	16'h5222;
 	SET_OV7670 + 113 :	LUT_DATA	= 	16'h535e;
 	SET_OV7670 + 114 :	LUT_DATA	= 	16'h5480;
-	SET_OV7670 + 115 :	LUT_DATA	= 	16'h589e;
+	SET_OV7670 + 115 :	LUT_DATA	= 	16'h589e; 
 	SET_OV7670 + 116 : 	LUT_DATA	=	16'h4108;
 	SET_OV7670 + 117 : 	LUT_DATA	=	16'h3f00;
 	SET_OV7670 + 118 : 	LUT_DATA	=	16'h7505;
@@ -162,7 +162,7 @@ begin
 	SET_OV7670 + 123 : 	LUT_DATA	=	16'h4b09;
 	SET_OV7670 + 124 : 	LUT_DATA	=	16'hc960;
 	SET_OV7670 + 125 : 	LUT_DATA	=	16'h4138;
-	SET_OV7670 + 126 : 	LUT_DATA	=	16'h5640;
+	SET_OV7670 + 126 : 	LUT_DATA	=	16'h5640; 
 	SET_OV7670 + 127 : 	LUT_DATA	=	16'h3411;
 	SET_OV7670 + 128 : 	LUT_DATA	=	16'h3b02;
 	SET_OV7670 + 129 : 	LUT_DATA	=	16'ha489;
@@ -198,14 +198,8 @@ begin
 	SET_OV7670 + 159 :	LUT_DATA	= 	16'hc840;
 	SET_OV7670 + 160 :	LUT_DATA	= 	16'h7905;
 	SET_OV7670 + 161 :	LUT_DATA	= 	16'hc830; 
-	SET_OV7670 + 162 :	LUT_DATA	= 	16'h7926;
+	SET_OV7670 + 162 :	LUT_DATA	= 	16'h7926; 
 	SET_OV7670 + 163 :	LUT_DATA	= 	16'h0903;
-	SET_OV7670 + 164 :	LUT_DATA	=   16'h3b42;
-	// SET_OV7670 + 165 :	LUT_DATA	=   
-	// SET_OV7670 + 166 :	LUT_DATA	=   
-	// SET_OV7670 + 167 :	LUT_DATA	=   
-	
-	
 	default		 :	LUT_DATA	= {8'h00,8'haf};  
 	endcase                             
 end                                     

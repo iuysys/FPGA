@@ -28,7 +28,8 @@ reg							cmd_flag	;
 //-- 参数定义
 //------------------------------------------------------
 
-`define		IMAGE_SIZE 240*320										//定义数据包大小
+`define		IMAGE_SIZE 240*320
+// `define		IMAGE_SIZE 176*144										//定义数据包大小
 localparam UART_SEND_MODE = 8'h01 ;							//配合山外的调试助手,1:发送图像 2:CCD图像 3:波形
 localparam	IDLE = 2'D0 ,LATCH = 2'D1 ,CMD = 2'D2 ,SEND = 2'D3 ;
 

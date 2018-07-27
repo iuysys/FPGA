@@ -30,7 +30,7 @@ add wave -noupdate /OV7670_UART_tb/RST_N
 add wave -noupdate /OV7670_UART_tb/OV7670_UART_inst/OV7670_top_inst/S_CLK
 add wave -noupdate -divider OV7670_Capture
 add wave -noupdate -expand -group OV7670_Capture /OV7670_UART_tb/OV7670_UART_inst/OV7670_top_inst/OV_vsync
-add wave -noupdate -expand -group OV7670_Capture -radix unsigned /OV7670_UART_tb/OV7670_UART_inst/OV7670_top_inst/OV7670_Capture_inst/OV_data
+add wave -noupdate -expand -group OV7670_Capture -radix hexadecimal /OV7670_UART_tb/OV7670_UART_inst/OV7670_top_inst/OV7670_Capture_inst/OV_data
 add wave -noupdate -expand -group OV7670_Capture /OV7670_UART_tb/OV_rclk
 add wave -noupdate -expand -group OV7670_Capture -radix unsigned /OV7670_UART_tb/OV7670_UART_inst/OV7670_top_inst/OV7670_Capture_inst/w_usedw
 add wave -noupdate -expand -group OV7670_Capture /OV7670_UART_tb/OV7670_UART_inst/OV7670_top_inst/OV7670_Capture_inst/w_req
@@ -65,4 +65,4 @@ add wave -noupdate -radix unsigned /OV7670_UART_tb/OV7670_UART_inst/OV7670_top_i
 add wave -noupdate -radix unsigned /OV7670_UART_tb/OV7670_UART_inst/OV7670_top_inst/I2C_Write_inst/latch_data
 #==============================================
 # run the simulation
-run 900us
+run 400us
