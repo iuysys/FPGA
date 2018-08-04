@@ -17,13 +17,13 @@ input							flag_init				//初始化完成信号
 //---------------------------------------------------
 //--内部信号
 //---------------------------------------------------
-reg		[8:0]		aref_cnt ;							//自刷新计数器
-reg		[3:0]		step_cnt ;												
+reg		[10:0]		aref_cnt ;							//自刷新计数器
+reg		[4:0]		step_cnt ;												
 
 //---------------------------------------------------
 //--参数定义
 //---------------------------------------------------
-`define		AREF_CNT_NUM	300 						//自刷新周期计数值
+`define		AREF_CNT_NUM	12_000 / 10 						//自刷新周期计数值
 localparam		NOP = 5'B10111 ,PREC = 5'B10010	,AREF = 5'B10001 ;
 
 //---------------------------------------------------
@@ -70,12 +70,12 @@ always@(posedge S_CLK or negedge RST_N ) begin
 			case(step_cnt)
 			0 :begin
 				aref_cmd <= PREC ;
-				aref_addr <= 12'b0100_0010_0010 ;
+				aref_addr <= 12'b0100_0000_0000 ;
 			end
-			1 ,3:begin
+			2 ,9:begin
 				aref_cmd <= AREF ;
 			end
-			5 :begin
+			16 :begin
 				aref_ack <= 1'b1 ;
 			end
 			default :begin

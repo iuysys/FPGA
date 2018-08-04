@@ -50,30 +50,32 @@ wire					write_fifo_wrreq	 	;
 wire	[8:0]			write_fifo_wrusedw      ;
 
 reg						write_clk				;
+reg						read_clk 				;
 reg		[15:0]			w_fifo_data				;
 
 initial begin
 	S_CLK = 1'b1 ;
-	RST_N = 1'b0 ;
+	RST_N = 1'b1 ;
 	#100 RST_N = 1'B0 ;
-	RST_N = 1'B1 ;
+	#100 RST_N = 1'B1 ;
 end 
 
-always #25 S_CLK = ~ S_CLK ;
+always #5 S_CLK = ~ S_CLK ;
+
 
 
 
 
 
 // assign sys_write_data = 16'haffa ;
-assign	image_rd_en = write_fifo_wrusedw > 255 ? 1'b1 : 1'b0 ;
+
 
 
 
 //写fifo的写时钟
 always begin 
-	#25 write_clk = 1'b1 ;		 
-	#25 write_clk = 1'b0 ;
+	#20 write_clk = 1'b1 ;		 
+	#20 write_clk = 1'b0 ;
 end
 assign	write_fifo_wrclk = write_clk ;
 
@@ -83,22 +85,37 @@ always@(posedge S_CLK or negedge RST_N) begin
 		w_fifo_data <= 'b0 ;
 	end
 	else begin
-		if(write_fifo_wrusedw < 256) begin
+		if(write_fifo_wrusedw < 256 ) begin
 			w_fifo_data <= w_fifo_data + 1'b1 ;
+		end
+		else begin
+			w_fifo_data <= 'b0 ;
 		end
 	end
 end
-
 assign write_fifo_data = w_fifo_data ;
-assign write_fifo_wrreq = write_fifo_wrusedw < 256 ? 1'b1 : 1'b0 ;
+assign write_fifo_wrreq = (write_fifo_wrusedw < 256) ? 1'b1 : 1'b0 ;
+//---------------------------------------------------
+//-- 模拟VGA读数据
+
+always begin 
+	#12 read_clk = 1'b1 ;		 
+	#12 read_clk = 1'b0 ;
+end
+
+assign read_fifo_rdreq = (read_fifo_wrusedw >2) ? 1'b1 : 1'b0 ;
+assign read_fifo_rdclk = read_clk ;
+
+
+
 
 
 SDRAM_CTRL	SDRAM_CTRL_inst(
 .S_CLK					(S_CLK			),				//系统时钟
 .RST_N					(RST_N			),				//系统复位输入
                         
-.image_rd_en			(image_rd_en	),
-.fifo_rd_en				(fifo_rd_en		),
+.w_fifo_usedw			(write_fifo_wrusedw		),				//写fifo使用深度
+.r_fifo_usedw			(read_fifo_wrusedw		),				//读fifo使用深度
 .addr					(sdram_addr		),
 .bank					(sys_bank		),
 .write_ack				(write_ack		),

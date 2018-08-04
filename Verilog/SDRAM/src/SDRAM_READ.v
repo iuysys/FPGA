@@ -18,7 +18,7 @@ reg			[2:0]					STATE 					;				//状态寄存器
 reg			[2:0]					STATE_n 				;				//次状态寄存器
 reg			[2:0]					burst_cnt				;				//突发长度计数器
 reg			[2:0]					cas_cnt					;				//潜伏期计数
-
+reg			[2:0]					step_cnt				;
 
 //--------------------------------------------------------
 //--参数定义
@@ -45,36 +45,47 @@ always@(*) begin
 	case(STATE)
 		IDLE :begin
 			if(read_en) begin
-				STATE_n <= PREC ;
+				STATE_n = PREC ;
 			end
 			else begin
-				STATE_n <= IDLE ;
+				STATE_n = IDLE ;
 			end
 		end
 		PREC :begin
-			STATE_n <= ACT ;
+			if (step_cnt == 'd2) begin
+				STATE_n = ACT ;
+			end
+			else begin
+				STATE_n = PREC ;
+			end
+			
 		end
 		ACT :begin
-			STATE_n <= CAS ;	
+			if (step_cnt == 'd4) begin
+				STATE_n = CAS ;
+			end
+			else begin
+				STATE_n = ACT ;
+			end
 		end
 		CAS :begin
 			if(cas_cnt == `CAS_LATENCY) begin
-				STATE_n <= RD ;
+				STATE_n = RD ;
 			end
 			else begin
-				STATE_n <= CAS ;
+				STATE_n = CAS ;
 			end
 		end
 		RD :begin
 			if(burst_cnt == `BURST_LENGHT  ) begin							//突发结束	
-				STATE_n <= IDLE ;
+				STATE_n = IDLE ;
 			end
 			else begin
-				STATE_n <= RD ;
+				STATE_n = RD ;
 			end		
 		end
 		default :begin
-			STATE_n <= IDLE ;
+			STATE_n = IDLE ;
 		end
 	endcase
 end
@@ -91,10 +102,18 @@ always@(posedge S_CLK or negedge RST_N) begin
 			read_addr <= 12'b0100_0000_0000;
 			burst_cnt <= 'b0 ;	
 			cas_cnt <= 'b0 ;
+			step_cnt <= 'b0 ;
 		end
 		ACT :begin
-			read_cmd <= CMD_ACT ;
-			read_addr <= sdram_addr[11:0] ;
+			if (step_cnt == 'd2) begin
+				read_cmd <= CMD_ACT ;
+				read_addr <= sdram_addr[11:0] ;
+			end
+			else begin
+				read_cmd <= CMD_NOP ;
+				read_addr <= 12'b0100_0000_0000;
+			end
+			step_cnt <= step_cnt + 1'b1 ;
 			
 		end
 		CAS :begin
@@ -132,8 +151,15 @@ always@(posedge S_CLK or negedge RST_N) begin
 			end
 		end
 		PREC :begin
-			read_cmd <= CMD_PREC ;
-			read_addr <= 12'b0100_0000_0000;
+			if (step_cnt == 'd0) begin
+				read_cmd <= CMD_PREC ;
+				read_addr <= 12'b0100_0000_0000;
+			end
+			else begin
+				read_cmd <= CMD_NOP ;
+				read_addr <= 12'b0100_0000_0000;
+			end
+			step_cnt <= step_cnt + 1'b1 ;
 		end
 		default :begin	
 			STATE <= IDLE ;

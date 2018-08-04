@@ -3,10 +3,20 @@ quietly WaveActivateNextPane {} 0
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/S_CLK
 add wave -noupdate /SDRAM_TOP_tb/RST_N
 add wave -noupdate -divider SDRAM_CTRL_inst
-add wave -noupdate -group SDRAM_CTRL /SDRAM_TOP_tb/SDRAM_CTRL_inst/write_en
-add wave -noupdate -group SDRAM_CTRL /SDRAM_TOP_tb/SDRAM_CTRL_inst/read_en
-add wave -noupdate -group SDRAM_CTRL -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/write_image_pixel_cnt
-add wave -noupdate -group SDRAM_CTRL -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/read_image_pixel_cnt
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/w_fifo_usedw
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/r_fifo_usedw
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/addr
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/bank
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_CTRL_inst/write_ack
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_CTRL_inst/write_en
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_CTRL_inst/read_ack
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_CTRL_inst/read_en
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/STATE
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/addr_w
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/addr_r
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_CTRL_inst/w_bank_flag
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_CTRL_inst/r_bank_flag
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_CTRL_inst/pp_flag
 add wave -noupdate -divider SDRAM_TOP_tb
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/write_en
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/read_en
@@ -45,9 +55,9 @@ add wave -noupdate -group write_fifo /SDRAM_TOP_tb/write_fifo_inst/wrreq
 add wave -noupdate -group write_fifo -radix unsigned /SDRAM_TOP_tb/write_fifo_inst/q
 add wave -noupdate -group write_fifo -radix unsigned /SDRAM_TOP_tb/write_fifo_inst/wrusedw
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {223750 ns} 0}
+WaveRestoreCursors {{Cursor 1} {199920 ns} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 194
+configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
 configure wave -signalnamewidth 1
@@ -61,4 +71,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {222010 ns} {225490 ns}
+WaveRestoreZoom {199528 ns} {203138 ns}

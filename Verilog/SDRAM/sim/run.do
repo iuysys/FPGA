@@ -29,10 +29,20 @@ vsim  -t ns -novopt -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L al
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/S_CLK
 add wave -noupdate /SDRAM_TOP_tb/RST_N
 add wave -noupdate -divider SDRAM_CTRL_inst
-add wave -noupdate -group SDRAM_CTRL /SDRAM_TOP_tb/SDRAM_CTRL_inst/write_en
-add wave -noupdate -group SDRAM_CTRL /SDRAM_TOP_tb/SDRAM_CTRL_inst/read_en
-add wave -noupdate -group SDRAM_CTRL -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/write_image_pixel_cnt
-add wave -noupdate -group SDRAM_CTRL -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/read_image_pixel_cnt
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/w_fifo_usedw
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/r_fifo_usedw
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/addr
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/bank
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_CTRL_inst/write_ack
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_CTRL_inst/write_en
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_CTRL_inst/read_ack
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_CTRL_inst/read_en
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/STATE
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/addr_w
+add wave -noupdate -radix unsigned /SDRAM_TOP_tb/SDRAM_CTRL_inst/addr_r
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_CTRL_inst/w_bank_flag
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_CTRL_inst/r_bank_flag
+add wave -noupdate /SDRAM_TOP_tb/SDRAM_CTRL_inst/pp_flag
 add wave -noupdate -divider SDRAM_TOP_tb
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/write_en
 add wave -noupdate /SDRAM_TOP_tb/SDRAM_TOP_inst/read_en
@@ -72,4 +82,4 @@ add wave -noupdate -group write_fifo -radix unsigned /SDRAM_TOP_tb/write_fifo_in
 add wave -noupdate -group write_fifo -radix unsigned /SDRAM_TOP_tb/write_fifo_inst/wrusedw
 #==============================================
 # run the simulation
-run		320us
+run		220us

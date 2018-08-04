@@ -11,13 +11,13 @@ module SDRAM_init(
 //--------------------------------------------------------
 //--内部信号
 //--------------------------------------------------------
-reg		[11:0]		cnt_200us		;				//200us起始等待时间计数器
+reg		[15:0]		cnt_200us		;				//200us起始等待时间计数器
 wire				flag_200us		;				//200us计时完成信号
-reg		[3:0]		step_cnt		;				//步骤计数器
+reg		[4:0]		step_cnt		;				//步骤计数器
 //--------------------------------------------------------
 //--参数定义
 //--------------------------------------------------------
-`define	cnt_200us_num	4000 				//200us计数个数
+`define	cnt_200us_num	200_000 / 10 				//200us计数个数
 //CS RAS CAS WE
 localparam	MRS = 5'B10000	,NOP = 5'B10111 ,	PREC = 5'B10010	,AREF = 5'B10001;
 
@@ -43,25 +43,25 @@ assign	flag_200us = (cnt_200us == `cnt_200us_num) ? 1'b1 : 1'b0 ;
 //--------------------------------------------------------
 //--输出初始化配置命令
 //--------------------------------------------------------
-always@(posedge S_CLK or negedge RST_N)begin
+always@(posedge S_CLK or negedge RST_N) begin
 	if(!RST_N)	begin
 		init_cmd <= NOP ;
 		step_cnt <= 'b0 ;
-		flag_init <= 1'b0 ;
+		flag_init <= 'b0 ;
 	end
 	else	begin
-		if(flag_200us && (flag_init == 1'b0))	begin
+		if(flag_200us && !flag_init) begin
 			case(step_cnt)
 				0 :begin
 					init_cmd <= PREC ;
 				end
-				1 ,3:begin
+				2 ,9:begin
 					init_cmd <= AREF ;
 				end
-				5 :begin
+				16 :begin
 					init_cmd <= MRS ;
 				end
-				6 :begin
+				18 :begin
 					flag_init <= 1'b1 ;
 					init_cmd <= NOP ;
 				end
@@ -75,25 +75,6 @@ always@(posedge S_CLK or negedge RST_N)begin
 end
 //地址线命令输出
 assign init_addr = (init_cmd == MRS) ? 12'b0100_0010_0010 : 12'b0100_0000_0000 ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

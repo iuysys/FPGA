@@ -23,7 +23,7 @@ output								fifo_rd_clk				,			//写fifo的读时钟
 output 								fifo_wd_req				,           //写读fifo请求
 output								fifo_wd_clk				,			//fifo的写时钟
 output				[15:0]			sys_read_data			,    		                                         
-//Read SDRAM fifo interfaces															
+														
 
 //ctrler interfaces															
 input								write_req				,			//控制器输入写SDRAM请求
@@ -36,6 +36,7 @@ output								read_ack							//SDRAM突发读结束
 //--内部信号
 //--------------------------------------------------------
 reg					[2:0]			STATE					;
+reg					[2:0]			STATE_n					;
 wire								flag_init				;				//初始化完成标志
 wire				[4:0]			init_cmd				;
 wire				[11:0]			init_addr	            ;
@@ -58,86 +59,122 @@ wire				[4:0]			read_cmd	            ;
 //--参数定义
 //--------------------------------------------------------
 localparam		INIT = 3'D0 ,IDLE = 3'D1 ,AREF = 3'D2 ,WRITE = 3'D3,READ = 3'D4;
+//---------------------------------------------------
+//-- 
+//---------------------------------------------------
 
+always @ (posedge S_CLK or negedge RST_N)begin
+    if(!RST_N) begin
+    	STATE <= INIT ;
+    end
+    else begin
+    	STATE <= STATE_n ;
+    end
+end
 
+//---------------------------------------------------
+//-- 
+//---------------------------------------------------
+
+always@(*) begin
+	case(STATE)
+		INIT :begin
+			if(flag_init) begin
+				STATE_n <= IDLE ;
+			end
+			else begin
+				STATE_n <= INIT ;
+			end
+		end
+		IDLE :begin
+			if(aref_req) begin
+				STATE_n <= AREF ;
+			end
+			else if(write_req) begin
+				STATE_n <= WRITE ;
+			end
+			else if(read_req) begin
+				STATE_n <= READ ;
+			end
+			else begin
+				STATE_n <= IDLE ;
+			end
+		end
+		AREF :begin
+			if(aref_ack) begin
+				STATE_n <= IDLE ;
+			end
+			else begin
+				STATE_n <= AREF ;
+			end
+		end
+		WRITE :begin
+			if(aref_req && write_ack) begin
+				STATE_n <= AREF ;
+			end
+			else if(write_ack ) begin
+				STATE_n <= IDLE ;				
+			end
+			else begin
+				STATE_n <= WRITE ;
+			end
+		end
+		READ :begin
+			if(aref_req && read_ack) begin
+				STATE_n <= AREF ;
+			end
+			else if(read_ack ) begin
+				STATE_n <= IDLE ;
+			end
+			else begin
+				STATE_n <= READ ;
+			end
+		end
+		default :begin
+			STATE_n <= INIT ;
+		end
+	endcase
+end
+//---------------------------------------------------
+//-- 
+//---------------------------------------------------
 always@(posedge S_CLK or negedge RST_N) begin
-	if(!RST_N)	begin
-		STATE <= INIT ;
-		aref_en <= 1'b0 ;
-		write_en <= 1'b0 ;
-		read_en <= 1'b0 ;
+	if (!RST_N) begin
+		
 	end
 	else begin
-		case(STATE)
-			INIT :begin
-				if(flag_init) begin
-					STATE <= IDLE ;
-				end
-				else begin
-					STATE <= INIT ;
-				end
-			end
+		case(STATE_n)
 			IDLE :begin
-				if(aref_req) begin
-					STATE <= AREF ;
-				end
-				else if(write_req) begin
-					STATE <= WRITE ;
-				end
-				else if(read_req) begin
-					STATE <= READ ;
-				end
-				else begin
-					STATE <= IDLE ;
-				end
+				aref_en <= 1'b0 ;
+				write_en <= 1'b0 ;
+				read_en <= 1'b0 ;
 			end
 			AREF :begin
-				if(aref_ack) begin
-					aref_en <= 1'b0 ;
-					STATE <= IDLE ;
-				end
-				else begin
-					aref_en <= 1'b1 ;
-				end
+				aref_en <= 1'b1 ;
+				write_en <= 1'b0 ;
+				read_en <= 1'b0 ;
 			end
 			WRITE :begin
-				if(~write_req && write_ack ) begin
-					STATE <= IDLE ;
-					write_en <= 1'b0 ;
-					
-				end
-				else if(aref_req && write_ack) begin
-					STATE <= AREF ;
-					write_en <= 1'b0 ;
-				end
-				else begin
-					STATE <= WRITE ;
-					write_en <= 1'b1 ;
-				end
+				aref_en <= 1'b0 ;
+				write_en <= 1'b1 ;
+				read_en <= 1'b0 ;
 			end
 			READ :begin
-				if(~read_req && read_ack ) begin
-					STATE <= IDLE ;
-					read_en <= 1'b0 ;
-					
-				end
-				else if(aref_req && read_ack) begin
-					STATE <= AREF ;
-					read_en <= 1'b0 ;
-				end
-				else begin
-					STATE <= READ ;
-					read_en <= 1'b1 ;
-				end
+				aref_en <= 1'b0 ;
+				write_en <= 1'b0 ;
+				read_en <= 1'b1 ;
 			end
 			default :begin
-				STATE <= INIT ;
+				aref_en <= 1'b0 ;
+				write_en <= 1'b0 ;
+				read_en <= 1'b0 ;
 			end
 		endcase
 	end
 end
 
-//控制线命令输出
+//---------------------------------------------------
+//-- 控制线命令输出
 always@(*)begin
 	case(STATE)
 		INIT :begin
@@ -159,6 +196,10 @@ always@(*)begin
 	endcase
 
 end
+//---------------------------------------------------
+//-- 
+//---------------------------------------------------
+
 assign	SDRAM_BANK = sys_bank ;
 assign SDRAM_CLK = ~ S_CLK ;
 assign SDRAM_DQ = (STATE == WRITE) ? sys_write_data : 16'bZ ;
@@ -166,7 +207,8 @@ assign	sys_read_data = SDRAM_DQ ;
 assign	SDRAM_DQM = 2'b0 ;
 assign fifo_rd_clk = S_CLK ;
 assign fifo_wd_clk = S_CLK ;
-
+//---------------------------------------------------
+//-- 
 SDRAM_init SDRAM_init_inst(
 	.S_CLK			(S_CLK		)		,				//系统时钟
 	.RST_N			(RST_N		)		,				//系统复位输入
@@ -178,7 +220,8 @@ SDRAM_init SDRAM_init_inst(
 );
 
 
-
+//---------------------------------------------------
+//-- 
 SDRAM_AREF SDRAM_AREF_inst(
 	.S_CLK			(S_CLK		)	,
 	.RST_N			(RST_N		)	,
@@ -191,7 +234,8 @@ SDRAM_AREF SDRAM_AREF_inst(
 	.flag_init		(flag_init	)		//初始化完成信号	
 );
 
-
+//---------------------------------------------------
+//-- 
 SDRAM_WRITE SDRAM_WRITE_inst(
 	.S_CLK					(S_CLK			),				//系统时钟
 	.RST_N					(RST_N			),				//系统复位输入
@@ -204,7 +248,8 @@ SDRAM_WRITE SDRAM_WRITE_inst(
 	.write_addr				(write_addr		),
 	.write_cmd			    (write_cmd		)
 ); 
-
+//---------------------------------------------------
+//-- 
 SDRAM_READ SDRAM_READ_inst(
 	.S_CLK					(S_CLK			),				//系统时钟
 	.RST_N					(RST_N			),				//系统复位输入
