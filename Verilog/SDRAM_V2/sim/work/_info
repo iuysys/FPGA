@@ -1,0 +1,120 @@
+m255
+K3
+13
+cModel Technology
+Z0 dF:\FPGA\Verilog\SDRAM_V2\sim
+vsdram_2port_top
+!i10b 1
+Z1 !s100 Lmf;6Jia:2l=M5a[23>Pd3
+Z2 I20kzj3S<X8zH8GRT3a@IG1
+Z3 VNhe4ngPc13G<MT=>7hFZg2
+Z4 dF:\FPGA\Verilog\SDRAM_V2\sim
+Z5 w1533554603
+Z6 8../src/sdram_2port_top.v
+Z7 F../src/sdram_2port_top.v
+L0 6
+Z8 OV;L;10.1d;51
+r1
+!s85 0
+31
+Z9 !s108 1533555636.545000
+Z10 !s107 F:/FPGA/Verilog/SDRAM_V2/src/sdram_para.v|../src/sdram_para.v|../src/sdram_fifo.v|../src/sdram_ctrl.v|../src/sdram_cmd.v|../src/sdram_2port_top.v|
+Z11 !s90 -reportprogress|300|../src/sdram_2port_top.v|../src/sdram_cmd.v|../src/sdram_ctrl.v|../src/sdram_fifo.v|../src/sdram_para.v|
+!s101 -O0
+o-O0
+vsdram_cmd
+!i10b 1
+Z12 !s100 Cc>caXJZ?WZDYz_1K[23T1
+Z13 ID:Q;l[OQ`P03eWl6WEL?k3
+Z14 VBb:bSdE06L=Cfdm9B`k4?3
+R4
+Z15 w1533554562
+Z16 8../src/sdram_cmd.v
+Z17 F../src/sdram_cmd.v
+L0 7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+o-O0
+vsdram_ctrl
+!i10b 1
+Z18 !s100 MG73AZRKFAYQEeh>VQOXa1
+Z19 Ih[2b93=TZ_Ejg]dQD:fM[2
+Z20 V=YdhlZ]O@1O<`OO?TOTo?0
+R4
+Z21 w1533545030
+Z22 8../src/sdram_ctrl.v
+Z23 F../src/sdram_ctrl.v
+L0 1
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+o-O0
+vsdram_fifo
+!i10b 1
+Z24 !s100 j6CIcRJK[ZB[?7bR6i1h;0
+Z25 I3DI`RM6[3e7dBF=N?CR==3
+Z26 V5d9DmAN1@2A7o;ALi3^>=3
+R4
+Z27 w1533532591
+Z28 8../src/sdram_fifo.v
+Z29 F../src/sdram_fifo.v
+L0 39
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!s101 -O0
+o-O0
+vsdram_model_plus
+Z30 !s100 gf35AB9I1>6zdZa^1WO851
+Z31 IljNEhJ7hoZmNIfaE0f1nK1
+Z32 V<oGd@Kk?DZ5H3H<1jKfY:2
+R4
+Z33 w1533107735
+Z34 8../sim/sdram_model_plus.v
+Z35 F../sim/sdram_model_plus.v
+L0 56
+R8
+r1
+31
+Z36 !s90 -reportprogress|300|../sim/sdram_model_plus.v|
+o-O0
+!i10b 1
+!s85 0
+Z37 !s108 1533555636.335000
+Z38 !s107 ../sim/sdram_model_plus.v|
+!s101 -O0
+vSDRAM_tb
+Z39 !s100 IUX=:UT;LS[e;BdV>cZ462
+Z40 Id0MQHN8AXLghThA_Fom@>3
+Z41 VcT[1LKb2_lCdMb6KBML3?3
+R4
+Z42 w1533549972
+Z43 8../sim/SDRAM_tb.v
+Z44 F../sim/SDRAM_tb.v
+L0 6
+R8
+r1
+31
+Z45 !s90 -reportprogress|300|../sim/SDRAM_tb.v|
+o-O0
+Z46 n@s@d@r@a@m_tb
+Z47 !s108 1533555636.175000
+Z48 !s107 F:/FPGA/Verilog/SDRAM_V2/src/sdram_para.v|../sim/SDRAM_tb.v|
+!i10b 1
+!s85 0
+!s101 -O0
