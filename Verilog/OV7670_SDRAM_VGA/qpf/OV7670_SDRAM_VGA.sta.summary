@@ -1,0 +1,117 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'sdram_pll_inst|altpll_component|pll|clk[0]'
+Slack : -1.970
+TNS   : -30.749
+
+Type  : Slow Model Setup 'sdram_pll_inst|altpll_component|pll|clk[2]'
+Slack : 2.432
+TNS   : 0.000
+
+Type  : Slow Model Setup 'sys_clk'
+Slack : 14.392
+TNS   : 0.000
+
+Type  : Slow Model Hold 'sdram_pll_inst|altpll_component|pll|clk[0]'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Slow Model Hold 'sdram_pll_inst|altpll_component|pll|clk[2]'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Slow Model Hold 'sys_clk'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'sdram_pll_inst|altpll_component|pll|clk[0]'
+Slack : 3.102
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'sdram_pll_inst|altpll_component|pll|clk[2]'
+Slack : 10.203
+TNS   : 0.000
+
+Type  : Slow Model Removal 'sdram_pll_inst|altpll_component|pll|clk[0]'
+Slack : 6.356
+TNS   : 0.000
+
+Type  : Slow Model Removal 'sdram_pll_inst|altpll_component|pll|clk[2]'
+Slack : 13.842
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'sdram_pll_inst|altpll_component|pll|clk[0]'
+Slack : 1.933
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'sdram_pll_inst|altpll_component|pll|clk[2]'
+Slack : 9.433
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'sys_clk'
+Slack : 21.933
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 97.223
+TNS   : 0.000
+
+Type  : Fast Model Setup 'sdram_pll_inst|altpll_component|pll|clk[0]'
+Slack : 1.971
+TNS   : 0.000
+
+Type  : Fast Model Setup 'sdram_pll_inst|altpll_component|pll|clk[2]'
+Slack : 9.329
+TNS   : 0.000
+
+Type  : Fast Model Setup 'sys_clk'
+Slack : 21.696
+TNS   : 0.000
+
+Type  : Fast Model Hold 'sdram_pll_inst|altpll_component|pll|clk[0]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'sdram_pll_inst|altpll_component|pll|clk[2]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'sys_clk'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'sdram_pll_inst|altpll_component|pll|clk[0]'
+Slack : 4.218
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'sdram_pll_inst|altpll_component|pll|clk[2]'
+Slack : 11.589
+TNS   : 0.000
+
+Type  : Fast Model Removal 'sdram_pll_inst|altpll_component|pll|clk[0]'
+Slack : 5.593
+TNS   : 0.000
+
+Type  : Fast Model Removal 'sdram_pll_inst|altpll_component|pll|clk[2]'
+Slack : 13.085
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'sdram_pll_inst|altpll_component|pll|clk[0]'
+Slack : 2.873
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'sdram_pll_inst|altpll_component|pll|clk[2]'
+Slack : 10.373
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'sys_clk'
+Slack : 22.873
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 97.778
+TNS   : 0.000
+
+------------------------------------------------------------
