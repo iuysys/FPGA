@@ -19,7 +19,7 @@
 ## PROGRAM "Quartus II"
 ## VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version"
 
-## DATE    "Mon Aug 06 20:27:04 2018"
+## DATE    "Thu Aug 09 14:55:39 2018"
 
 ##
 ## DEVICE  "EP2C8Q208C8"
@@ -38,6 +38,7 @@ set_time_format -unit ns -decimal_places 3
 # Create Clock
 #**************************************************************
 
+#create_clock -name {altera_reserved_tck} -period 100.000 -waveform { 0.000 50.000 } [get_ports {altera_reserved_tck}]
 create_clock -name {SYS_CLK} -period 50.000 -waveform { 0.000 25.000 } [get_ports {SYS_CLK}]
 
 
@@ -45,9 +46,9 @@ create_clock -name {SYS_CLK} -period 50.000 -waveform { 0.000 25.000 } [get_port
 # Create Generated Clock
 #**************************************************************
 
-create_generated_clock -name {sdram_ctrl_clk} -source [get_ports {SYS_CLK}] -multiply_by 5 -master_clock {SYS_CLK} [get_pins {sdram_pll_inst|altpll_component|pll|clk[0]}] 
-create_generated_clock -name {sdram_clk} -source [get_ports {SYS_CLK}] -multiply_by 5 -phase 180.000 -master_clock {SYS_CLK} [get_pins {sdram_pll_inst|altpll_component|pll|clk[1]}] 
-
+#create_generated_clock -name {sdram_pll_inst|altpll_component|pll|clk[0]} -source [get_pins {sdram_pll_inst|altpll_component|pll|inclk[0]}] -duty_cycle 50.000 -multiply_by 5 -master_clock {SYS_CLK} [get_pins {sdram_pll_inst|altpll_component|pll|clk[0]}] 
+#create_generated_clock -name {sdram_pll_inst|altpll_component|pll|clk[1]} -source [get_pins {sdram_pll_inst|altpll_component|pll|inclk[0]}] -duty_cycle 50.000 -multiply_by 5 -offset 180.000 -master_clock {SYS_CLK} [get_pins { sdram_pll_inst|altpll_component|pll|clk[1] }] 
+derive_pll_clocks -create_base_clocks
 
 #**************************************************************
 # Set Clock Latency
@@ -77,14 +78,15 @@ create_generated_clock -name {sdram_clk} -source [get_ports {SYS_CLK}] -multiply
 # Set Clock Groups
 #**************************************************************
 
+#set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}] 
 
 
 #**************************************************************
 # Set False Path
 #**************************************************************
 
-set_false_path -from [get_keepers {*rdptr_g*}] -to [get_keepers {*ws_dgrp|dffpipe_d09:dffpipe21|dffe22a*}]
-set_false_path -from [get_keepers {*delayed_wrptr_g*}] -to [get_keepers {*rs_dgwp|dffpipe_c09:dffpipe18|dffe19a*}]
+#set_false_path -from [get_keepers {*rdptr_g*}] -to [get_keepers {*ws_dgrp|dffpipe_se9:dffpipe19|dffe20a*}]
+#set_false_path -from [get_keepers {*delayed_wrptr_g*}] -to [get_keepers {*rs_dgwp|dffpipe_re9:dffpipe15|dffe16a*}]
 
 
 #**************************************************************

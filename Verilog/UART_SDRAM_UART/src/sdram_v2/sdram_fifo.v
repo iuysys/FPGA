@@ -37,6 +37,7 @@
 `timescale 1 ps / 1 ps
 // synopsys translate_on
 module sdram_fifo (
+	aclr,
 	data,
 	rdclk,
 	rdreq,
@@ -46,6 +47,7 @@ module sdram_fifo (
 	rdusedw,
 	wrusedw);
 
+	input	  aclr;
 	input	[15:0]  data;
 	input	  rdclk;
 	input	  rdreq;
@@ -54,30 +56,37 @@ module sdram_fifo (
 	output	[15:0]  q;
 	output	[10:0]  rdusedw;
 	output	[10:0]  wrusedw;
+`ifndef ALTERA_RESERVED_QIS
+// synopsys translate_off
+`endif
+	tri0	  aclr;
+`ifndef ALTERA_RESERVED_QIS
+// synopsys translate_on
+`endif
 
-	wire [10:0] sub_wire0;
-	wire [15:0] sub_wire1;
+	wire [15:0] sub_wire0;
+	wire [10:0] sub_wire1;
 	wire [10:0] sub_wire2;
-	wire [10:0] rdusedw = sub_wire0[10:0];
-	wire [15:0] q = sub_wire1[15:0];
-	wire [10:0] wrusedw = sub_wire2[10:0];
+	wire [15:0] q = sub_wire0[15:0];
+	wire [10:0] wrusedw = sub_wire1[10:0];
+	wire [10:0] rdusedw = sub_wire2[10:0];
 
 	dcfifo	dcfifo_component (
-				.data (data),
 				.rdclk (rdclk),
-				.rdreq (rdreq),
 				.wrclk (wrclk),
 				.wrreq (wrreq),
-				.rdusedw (sub_wire0),
-				.q (sub_wire1),
-				.wrusedw (sub_wire2),
-				.aclr (),
+				.aclr (aclr),
+				.data (data),
+				.rdreq (rdreq),
+				.q (sub_wire0),
+				.wrusedw (sub_wire1),
+				.rdusedw (sub_wire2),
 				.rdempty (),
 				.rdfull (),
 				.wrempty (),
 				.wrfull ());
 	defparam
-		dcfifo_component.intended_device_family = "Cyclone IV GX",
+		dcfifo_component.intended_device_family = "Cyclone II",
 		dcfifo_component.lpm_numwords = 2048,
 		dcfifo_component.lpm_showahead = "OFF",
 		dcfifo_component.lpm_type = "dcfifo",
@@ -87,6 +96,7 @@ module sdram_fifo (
 		dcfifo_component.rdsync_delaypipe = 4,
 		dcfifo_component.underflow_checking = "ON",
 		dcfifo_component.use_eab = "ON",
+		dcfifo_component.write_aclr_synch = "OFF",
 		dcfifo_component.wrsync_delaypipe = 4;
 
 
@@ -104,7 +114,7 @@ endmodule
 // Retrieval info: PRIVATE: Depth NUMERIC "2048"
 // Retrieval info: PRIVATE: Empty NUMERIC "1"
 // Retrieval info: PRIVATE: Full NUMERIC "1"
-// Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone IV GX"
+// Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
 // Retrieval info: PRIVATE: LE_BasedFIFO NUMERIC "0"
 // Retrieval info: PRIVATE: LegacyRREQ NUMERIC "1"
 // Retrieval info: PRIVATE: MAX_DEPTH_BY_9 NUMERIC "0"
@@ -115,7 +125,7 @@ endmodule
 // Retrieval info: PRIVATE: UNDERFLOW_CHECKING NUMERIC "0"
 // Retrieval info: PRIVATE: UsedW NUMERIC "1"
 // Retrieval info: PRIVATE: Width NUMERIC "16"
-// Retrieval info: PRIVATE: dc_aclr NUMERIC "0"
+// Retrieval info: PRIVATE: dc_aclr NUMERIC "1"
 // Retrieval info: PRIVATE: diff_widths NUMERIC "0"
 // Retrieval info: PRIVATE: msb_usedw NUMERIC "0"
 // Retrieval info: PRIVATE: output_width NUMERIC "16"
@@ -128,7 +138,7 @@ endmodule
 // Retrieval info: PRIVATE: wsFull NUMERIC "0"
 // Retrieval info: PRIVATE: wsUsedW NUMERIC "1"
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
-// Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV GX"
+// Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
 // Retrieval info: CONSTANT: LPM_NUMWORDS NUMERIC "2048"
 // Retrieval info: CONSTANT: LPM_SHOWAHEAD STRING "OFF"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "dcfifo"
@@ -138,7 +148,9 @@ endmodule
 // Retrieval info: CONSTANT: RDSYNC_DELAYPIPE NUMERIC "4"
 // Retrieval info: CONSTANT: UNDERFLOW_CHECKING STRING "ON"
 // Retrieval info: CONSTANT: USE_EAB STRING "ON"
+// Retrieval info: CONSTANT: WRITE_ACLR_SYNCH STRING "OFF"
 // Retrieval info: CONSTANT: WRSYNC_DELAYPIPE NUMERIC "4"
+// Retrieval info: USED_PORT: aclr 0 0 0 0 INPUT GND "aclr"
 // Retrieval info: USED_PORT: data 0 0 16 0 INPUT NODEFVAL "data[15..0]"
 // Retrieval info: USED_PORT: q 0 0 16 0 OUTPUT NODEFVAL "q[15..0]"
 // Retrieval info: USED_PORT: rdclk 0 0 0 0 INPUT NODEFVAL "rdclk"
@@ -147,6 +159,7 @@ endmodule
 // Retrieval info: USED_PORT: wrclk 0 0 0 0 INPUT NODEFVAL "wrclk"
 // Retrieval info: USED_PORT: wrreq 0 0 0 0 INPUT NODEFVAL "wrreq"
 // Retrieval info: USED_PORT: wrusedw 0 0 11 0 OUTPUT NODEFVAL "wrusedw[10..0]"
+// Retrieval info: CONNECT: @aclr 0 0 0 0 aclr 0 0 0 0
 // Retrieval info: CONNECT: @data 0 0 16 0 data 0 0 16 0
 // Retrieval info: CONNECT: @rdclk 0 0 0 0 rdclk 0 0 0 0
 // Retrieval info: CONNECT: @rdreq 0 0 0 0 rdreq 0 0 0 0

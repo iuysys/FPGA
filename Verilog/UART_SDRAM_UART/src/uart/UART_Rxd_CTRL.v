@@ -51,6 +51,7 @@ always@(posedge SYS_CLK or negedge RST_N) begin
 	if(!RST_N) begin
 		w_req <= 1'b0 ;
 		rx_data_out <= 'b0 ;
+		bit_flag <= 1'b0 ;
 	end
 	else if(flag_receive_data) begin
 		if(!bit_flag) begin

@@ -1,12 +1,15 @@
 `timescale 1ns / 1ps
+
 //---------------------------------------------------
 //-- 
-`include "F:/FPGA/Verilog/SDRAM_V2/src/sdram_para.v"
-
+`include "F:/FPGA/Verilog/UART_SDRAM_UART/src/sdram_v2/sdram_para.v"
+//---------------------------------------------------
+//-- 
 module sdram_2port_top(
 input 	 						clk			,
 input							rst_n		,
 input							sdram_clk_in,
+
 
 //write fifo interface
 input							w_fifo_wreq	,
@@ -32,6 +35,14 @@ output				[`ROWSIZE-1:0]		SDRAM_ADDR
 
 
 );
+
+
+
+//---------------------------------------------------
+//-- debug
+//---------------------------------------------------
+// wire                                    sdram_clk_in    ;
+// assign  sdram_clk_in = ~clk ;
 
 //---------------------------------------------------
 //-- 
@@ -71,12 +82,14 @@ reg										write_flag		;
 reg										m_w_req			;
 reg										m_r_req			;
 
+reg                 [15:0]              m_sdram_dq_in   ;
+reg                 [15:0]              m_sdram_dq_out  ;
+
 
 //---------------------------------------------------
 //-- 
 //---------------------------------------------------
-`define 	BUFF_SIZE		16
-
+`define 	BUFF_SIZE		512
 //---------------------------------------------------
 //-- 
 //---------------------------------------------------
@@ -87,15 +100,29 @@ assign 		sys_wr_addr = sys_w_req ? write_addr : read_addr ;
 assign		sys_w_req = m_w_req ;
 assign 		sys_r_req = m_r_req	;
 
-assign   	w_fifo_rclk = clk ;
+assign   	w_fifo_rclk = ~clk ;
 assign		r_fifo_wclk	= ~clk ;
 
-assign     	SDRAM_DQ = dq_oe ? w_fifo_rdata : 16'bz ;
+assign     	SDRAM_DQ = dq_oe ? m_sdram_dq_in : 16'bz ;
 assign		r_fifo_wdata = SDRAM_DQ ;
+
+//---------------------------------------------------
+//-- 
+always @ (posedge clk or negedge rst_n) begin
+    if(!rst_n) begin
+        m_sdram_dq_in <= 'b0 ;
+    end
+    else if (w_fifo_rreq)begin
+        m_sdram_dq_in <= w_fifo_rdata ;
+    end
+    else begin
+        m_sdram_dq_in <= 'b0 ;
+    end
+end
 
 
 //---------------------------------------------------
-//-- 鑷姩璇诲啓鎺у埗
+//-- 
 //---------------------------------------------------
 always @ (posedge clk or negedge rst_n) begin
     if(!rst_n) begin
@@ -151,12 +178,13 @@ always @ (posedge clk or negedge rst_n) begin
     	end
     end
     else if (ctrl_cmd == 'b00) begin
-    	if (w_fifo_rusedw >= `BURST_LENGTH) begin
+    	if(r_fifo_wusedw <= 2*`BURST_LENGTH && read_en) begin
+            read_flag <= 'b1 ;
+        end
+        else if (w_fifo_rusedw >= `BURST_LENGTH) begin
     		write_flag <= 'b1 ;
     	end
-    	else if(r_fifo_wusedw <= `BURST_LENGTH && read_en) begin
-    		read_flag <= 'b1 ;
-    	end
+    	
     end
     
 end
@@ -165,9 +193,11 @@ end
 
 
 
+
 //------------------------------------ ---------------
 //-- 
 sdram_fifo		sdram_fifo_write(
+.aclr           (~rst_n                     ),                  //系统复位或者数据对齐清零
 .data			(sys_w_data					),
 .rdclk			(w_fifo_rclk				),
 .rdreq			(w_fifo_rreq				),
@@ -181,6 +211,7 @@ sdram_fifo		sdram_fifo_write(
 //---------------------------------------------------
 //-- 
 sdram_fifo 		sdram_fifo_read(
+.aclr           (~rst_n                     ),
 .data			(r_fifo_wdata				),
 .rdclk			(r_fifo_rclk				),
 .rdreq			(r_fifo_rreq				),
@@ -219,13 +250,13 @@ sdram_cmd		sdram_cmd_inst(
 // .cmd_busy		(					),
 .cmd_ack		(cmd_ack				),
 
-.dq_oe			(dq_oe					),					//鏁版嵁绾夸笁鎬佹帶鍒
+.dq_oe			(dq_oe					),					//闁轰胶澧楀畵浣虹棯婢跺摜鐟忛柟顑跨劍鐢爼宕
 	
 .sdram_init_done(sdram_init_done		),
 			
-//鍐檉ifo		
+//闁告劖鐛昳fo		
 .w_fifo_rreq 	(w_fifo_rreq			),
-//璇籪ifo			
+//閻犲洨璞筰fo			
 .r_fifo_wreq	(r_fifo_wreq			),
 		
 //sdram					

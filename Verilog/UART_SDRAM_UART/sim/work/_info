@@ -63,41 +63,41 @@ Z28 !s107 ../core/read_fifo.v|
 !s85 0
 !s101 -O0
 vsdram_2port_top
-Z29 !s100 R=AzP8@[aF8e6I8d;OYCz1
-Z30 IDIHg8NASDaFZ=VFd[Q]CM1
-Z31 VNhe4ngPc13G<MT=>7hFZg2
+Z29 I[V<YAY2IJ7dXlV;RidN^>3
+Z30 VNhe4ngPc13G<MT=>7hFZg2
 R3
-Z32 w1533554603
-Z33 8../src/sdram_v2/sdram_2port_top.v
-Z34 F../src/sdram_v2/sdram_2port_top.v
-L0 6
+Z31 w1533798249
+Z32 8../src/sdram_v2/sdram_2port_top.v
+Z33 F../src/sdram_v2/sdram_2port_top.v
+L0 8
 R8
 r1
 31
-Z35 !s108 1533557903.084000
-Z36 !s107 F:/FPGA/Verilog/SDRAM_V2/src/sdram_para.v|../src/sdram_v2/sdram_para.v|../src/sdram_v2/sdram_fifo.v|../src/sdram_v2/sdram_ctrl.v|../src/sdram_v2/sdram_cmd.v|../src/sdram_v2/sdram_2port_top.v|
-Z37 !s90 -reportprogress|300|../src/sdram_v2/sdram_2port_top.v|../src/sdram_v2/sdram_cmd.v|../src/sdram_v2/sdram_ctrl.v|../src/sdram_v2/sdram_fifo.v|../src/sdram_v2/sdram_para.v|
+Z34 !s108 1533798264.706000
+Z35 !s107 F:/FPGA/Verilog/UART_SDRAM_UART/src/sdram_v2/sdram_para.v|../src/sdram_v2/sdram_para.v|../src/sdram_v2/sdram_fifo.v|../src/sdram_v2/sdram_ctrl.v|../src/sdram_v2/sdram_cmd.v|../src/sdram_v2/sdram_2port_top.v|
+Z36 !s90 -reportprogress|300|../src/sdram_v2/sdram_2port_top.v|../src/sdram_v2/sdram_cmd.v|../src/sdram_v2/sdram_ctrl.v|../src/sdram_v2/sdram_fifo.v|../src/sdram_v2/sdram_para.v|
 o-O0
 !i10b 1
+Z37 !s100 ^K6Og3^4ORodP:ZU21f2i3
 !s85 0
 !s101 -O0
 vsdram_cmd
-Z38 ID<;IRGBmh4aS2TMJ8jERX1
-Z39 VBb:bSdE06L=Cfdm9B`k4?3
+Z38 !s100 W<b:Rc]@UF1`f_LTEEMDe0
+Z39 I2cmW`R0PU;O8Ucf?dhc1>3
+Z40 VBb:bSdE06L=Cfdm9B`k4?3
 R3
-Z40 w1533557890
-Z41 8../src/sdram_v2/sdram_cmd.v
-Z42 F../src/sdram_v2/sdram_cmd.v
+Z41 w1533798176
+Z42 8../src/sdram_v2/sdram_cmd.v
+Z43 F../src/sdram_v2/sdram_cmd.v
 L0 7
 R8
 r1
 31
+R34
 R35
 R36
-R37
 o-O0
 !i10b 1
-Z43 !s100 JNeNRefG8DYM6]a4Z^W6;2
 !s85 0
 !s101 -O0
 vSdram_Control_2Port
@@ -122,20 +122,20 @@ Z50 n@sdram_@control_2@port
 !s85 0
 !s101 -O0
 vsdram_ctrl
-Z51 !s100 XYNBISjk0PM]k?Ga<hWY80
-Z52 I6e_Qa0IaVk;TmfbEI?I@m0
+Z51 !s100 FJ``h]Qe[WXnXWAO>]JW<2
+Z52 I5QDHn7Y14Ff31]F5OCjGM2
 Z53 V=YdhlZ]O@1O<`OO?TOTo?0
 R3
-Z54 w1533545030
+Z54 w1533631937
 Z55 8../src/sdram_v2/sdram_ctrl.v
 Z56 F../src/sdram_v2/sdram_ctrl.v
-L0 1
+L0 5
 R8
 r1
 31
+R34
 R35
 R36
-R37
 o-O0
 !i10b 1
 !s85 0
@@ -161,20 +161,20 @@ Z66 n@s@d@r@a@m_@c@t@r@l
 !s85 0
 !s101 -O0
 vsdram_fifo
-Z67 !s100 h_L<7C@ESU>E[HR9YCUfO0
-Z68 Ino>lSbMA6ckmXlFBJOh`F3
-Z69 V5d9DmAN1@2A7o;ALi3^>=3
+Z67 !s100 YcNioIg=9A4MWa?lf4ldN2
+Z68 Ii6d17;KITVUR<OAOLl^G51
+Z69 V0Wa9`jn0E5YnBYYiW9D^S3
 R3
-Z70 w1533532591
+Z70 w1533734125
 Z71 8../src/sdram_v2/sdram_fifo.v
 Z72 F../src/sdram_v2/sdram_fifo.v
 L0 39
 R8
 r1
 31
+R34
 R35
 R36
-R37
 o-O0
 !i10b 1
 !s85 0
@@ -200,18 +200,18 @@ Z79 n@sdram_@f@i@f@o
 !s85 0
 !s101 -O0
 vsdram_model_plus
-Z80 !s100 lcPVmhlU>BKXFM2[3M5aU0
-Z81 I=zWli<Ld_Dgfe>6YQZRmX1
+Z80 !s100 U0^8WSc]RQm>lE5OL7J4X2
+Z81 Iz8c9[?nHfCKl?kma5O`b[2
 Z82 VT:CBz?8JoCb2b]NhhddK]1
 R3
-Z83 w1533458291
+Z83 w1533699510
 Z84 8../sim/sdram_model_plus.v
 Z85 F../sim/sdram_model_plus.v
-L0 56
+L0 64
 R8
 r1
 31
-Z86 !s108 1533557902.716000
+Z86 !s108 1533798264.323000
 Z87 !s107 ../sim/sdram_model_plus.v|../sim/UART_SDRAM_UART_tb.v|
 Z88 !s90 -reportprogress|300|../sim/UART_SDRAM_UART_tb.v|../sim/sdram_model_plus.v|
 o-O0
@@ -223,7 +223,7 @@ Z89 !s100 VRaSeE^O[lG]iVK=FLQzO3
 Z90 ID56f6_>e<KEh>XHIiaaeX3
 Z91 VM=1Szm]CJ3fa@_F_=OK2g0
 R3
-Z92 w1533556770
+Z92 w1533709958
 Z93 8../core/sdram_pll.v
 Z94 F../core/sdram_pll.v
 L0 39
@@ -232,7 +232,7 @@ r1
 31
 Z95 !s90 -reportprogress|300|../core/sdram_pll.v|
 o-O0
-Z96 !s108 1533557902.584000
+Z96 !s108 1533798264.172000
 Z97 !s107 ../core/sdram_pll.v|
 !i10b 1
 !s85 0
@@ -278,11 +278,11 @@ o-O0
 !s101 -O0
 vUART_Rxd
 !i10b 1
-Z114 !s100 YCGOf@kM^mgdgiSK37FAI2
-Z115 IG0j6Ha>oM?F:m=]n@9nz61
+Z114 !s100 LM<ehUB0@E7lhgd1O<Lob3
+Z115 I0Q];iDQO=ogW`P[=<5D[]0
 Z116 Vezl;m[IFCL:HRNJFm1@[42
 R3
-Z117 w1532264451
+Z117 w1533783265
 Z118 8../src/uart/UART_Rxd.v
 Z119 F../src/uart/UART_Rxd.v
 L0 1
@@ -290,7 +290,7 @@ R8
 r1
 !s85 0
 31
-Z120 !s108 1533557903.508000
+Z120 !s108 1533798265.048000
 Z121 !s107 ../src/uart/UART_Txd_CTRL.v|../src/uart/UART_Txd.v|../src/uart/UART_Rxd_CTRL.v|../src/uart/UART_Rxd.v|
 Z122 !s90 -reportprogress|300|../src/uart/UART_Rxd.v|../src/uart/UART_Rxd_CTRL.v|../src/uart/UART_Txd.v|../src/uart/UART_Txd_CTRL.v|
 !s101 -O0
@@ -298,11 +298,11 @@ o-O0
 Z123 n@u@a@r@t_@rxd
 vUART_Rxd_CTRL
 !i10b 1
-Z124 !s100 Iz^bGA6:n;5A<=nHCb<0B0
-Z125 I2CLWij[UcIn7kZ=Z25QH53
+Z124 !s100 W6B>kLeRlF2Uc?kSA`SAH2
+Z125 IKM5z32KleniV:C47mjE@Z2
 Z126 VH>cf?_FZQN]Q@W0;cIM`63
 R3
-Z127 w1533384732
+Z127 w1533713244
 Z128 8../src/uart/UART_Rxd_CTRL.v
 Z129 F../src/uart/UART_Rxd_CTRL.v
 L0 1
@@ -317,11 +317,11 @@ R122
 o-O0
 Z130 n@u@a@r@t_@rxd_@c@t@r@l
 vUART_SDRAM_UART
-Z131 !s100 PF6WlzOCDXc3_@k7W`68n3
-Z132 IIkmoCehDZLX;Nl6>ZMid[2
+Z131 !s100 =[nHl9geHb^J>aLA>W:TX2
+Z132 INGNlaEbUX>TFFz><FkiCX3
 Z133 VeHk5_6n1c6fP1kYNlNcB00
 R3
-Z134 w1533555452
+Z134 w1533710113
 Z135 8../src/UART_SDRAM_UART.v
 Z136 F../src/UART_SDRAM_UART.v
 L0 1
@@ -331,17 +331,17 @@ r1
 Z137 !s90 -reportprogress|300|../src/UART_SDRAM_UART.v|
 o-O0
 Z138 n@u@a@r@t_@s@d@r@a@m_@u@a@r@t
-Z139 !s108 1533557902.951000
+Z139 !s108 1533798264.562000
 Z140 !s107 ../src/UART_SDRAM_UART.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vUART_SDRAM_UART_tb
-Z141 !s100 ;Z<eD[7PI7WBYTUn2b=Q52
-Z142 IKj^6R2MV6?YY>254U1D?W2
+Z141 !s100 H4X[`^bK7WmSalSLgL_d>1
+Z142 IMZ@7db6jRaao:L[?@7`JB0
 Z143 VFjh2Lh6m4AZ0MkkLPGzcR0
 R3
-Z144 w1533555939
+Z144 w1533713076
 Z145 8../sim/UART_SDRAM_UART_tb.v
 Z146 F../sim/UART_SDRAM_UART_tb.v
 L0 2
@@ -378,11 +378,11 @@ Z157 !s107 ../sim/UART_SDRAM_VGA_tb.v|
 !s101 -O0
 vUART_Txd
 !i10b 1
-Z158 !s100 666EaajRz869[@HWEFa>90
-Z159 I=71oJ_0n[Fbz_U_^7@?oN0
+Z158 !s100 H;iYk0UGXm<g>9nmKhKPK3
+Z159 IKkc`6ICZXk]jbYSb9G2>b0
 Z160 V?:oDI2lX0CIBBNIjnDzoS1
 R3
-Z161 w1532260916
+Z161 w1533783258
 Z162 8../src/uart/UART_Txd.v
 Z163 F../src/uart/UART_Txd.v
 L0 1
@@ -398,13 +398,13 @@ o-O0
 Z164 n@u@a@r@t_@txd
 vUART_Txd_CTRL
 !i10b 1
-Z165 !s100 U7QB0V:eAkSje[?cYISz83
-Z166 ISFcYZ<jo;VNhfa_0AfZLD2
-Z167 V`Z;N?kgN;Z1=o4S5CFj]j0
+!s100 UizO=?oo:7Ib;W?EK2Za73
+IkzbWmH4Q8TbIz1GOW9D^:3
+Z165 VQXaA8b;5<^mi8WlRTVIaF0
 R3
-Z168 w1533555878
-Z169 8../src/uart/UART_Txd_CTRL.v
-Z170 F../src/uart/UART_Txd_CTRL.v
+w1533798258
+Z166 8../src/uart/UART_Txd_CTRL.v
+Z167 F../src/uart/UART_Txd_CTRL.v
 L0 1
 R8
 r1
@@ -415,23 +415,23 @@ R121
 R122
 !s101 -O0
 o-O0
-Z171 n@u@a@r@t_@txd_@c@t@r@l
+Z168 n@u@a@r@t_@txd_@c@t@r@l
 vwrite_fifo
-Z172 !s100 ?Wf:Iz[9lV]0PP2e6@BkN0
-Z173 IQ>Cz8<Cki5>zinN7QGFdN0
-Z174 V[OJWEj4lc30=nUbYaTXe22
+Z169 !s100 ?Wf:Iz[9lV]0PP2e6@BkN0
+Z170 IQ>Cz8<Cki5>zinN7QGFdN0
+Z171 V[OJWEj4lc30=nUbYaTXe22
 R22
-Z175 w1533004245
-Z176 8../core/write_fifo.v
-Z177 F../core/write_fifo.v
+Z172 w1533004245
+Z173 8../core/write_fifo.v
+Z174 F../core/write_fifo.v
 L0 39
 R8
 r1
 31
-Z178 !s90 -reportprogress|300|../core/write_fifo.v|
+Z175 !s90 -reportprogress|300|../core/write_fifo.v|
 o-O0
-Z179 !s108 1533011223.292000
-Z180 !s107 ../core/write_fifo.v|
+Z176 !s108 1533011223.292000
+Z177 !s107 ../core/write_fifo.v|
 !i10b 1
 !s85 0
 !s101 -O0

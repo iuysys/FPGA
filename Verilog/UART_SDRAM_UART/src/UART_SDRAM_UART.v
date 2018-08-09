@@ -31,12 +31,12 @@ wire			[15:0]			rx_data_out				;
 
 wire							sdram_clk_in			;
 wire							sdram_clk_out			;
-// wire							sdram_clk_locked		;
 
 wire							r_req 					;
 wire							r_clk 					;
 wire			[15:0]			r_fifo_q				;
-wire			[8:0]			read_side_fifo_wusedw 	;
+wire			[10:0]			read_side_fifo_wusedw 	;
+wire 			[10:0]			w_fifo_wusedw			;
 
 wire			[7:0]			tx_data_out				;
 wire							tx_req					;
@@ -74,7 +74,6 @@ sdram_pll 		sdram_pll_inst(
 .inclk0				(SYS_CLK					),
 .c0					(sdram_clk_in				),
 .c1					(sdram_clk_out				)
-// .locked				(			)
 );
 //---------------------------------------------------
 //-- SDRAM控制器
@@ -86,24 +85,24 @@ sdram_2port_top		sdram_2port_top_inst(
 //write fifo interface
 .w_fifo_wreq		(w_req							),
 .w_fifo_wclk		(w_clk							),
-.sys_w_data			(rx_data_out							),
-.w_fifo_wusedw		(								),
+.sys_w_data			(rx_data_out					),
+.w_fifo_wusedw		(w_fifo_wusedw					),
 //read fifo interface
-.r_fifo_rreq		(r_req									),
-.r_fifo_rclk		(r_clk									),
-.sys_r_data			(r_fifo_q								),
-.r_fifo_rusedw		(read_side_fifo_wusedw					),
+.r_fifo_rreq		(r_req							),
+.r_fifo_rclk		(r_clk							),
+.sys_r_data			(r_fifo_q						),
+.r_fifo_rusedw		(read_side_fifo_wusedw			),
 //sdram interface		
-.SDRAM_CLK			(SDRAM_CLK								),
-.SDRAM_CKE			(SDRAM_CKE								),
-.SDRAM_CS			(SDRAM_CS								),
-.SDRAM_RAS			(SDRAM_RAS								),
-.SDRAM_CAS			(SDRAM_CAS								),
-.SDRAM_WE			(SDRAM_WE								),
-.SDRAM_BANK			(SDRAM_BANK								),
-.SDRAM_DQ 			(SDRAM_DQ 								),
-.SDRAM_DQM			(SDRAM_DQM								),
-.SDRAM_ADDR			(SDRAM_ADDR								)
+.SDRAM_CLK			(SDRAM_CLK						),
+.SDRAM_CKE			(SDRAM_CKE						),
+.SDRAM_CS			(SDRAM_CS						),
+.SDRAM_RAS			(SDRAM_RAS						),
+.SDRAM_CAS			(SDRAM_CAS						),
+.SDRAM_WE			(SDRAM_WE						),
+.SDRAM_BANK			(SDRAM_BANK						),
+.SDRAM_DQ 			(SDRAM_DQ 						),
+.SDRAM_DQM			(SDRAM_DQM						),
+.SDRAM_ADDR			(SDRAM_ADDR						)
 );
 //---------------------------------------------------
 //-- 

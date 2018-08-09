@@ -23,7 +23,8 @@ reg		[7:0]	tx_data 			;				//TX脚将要发送的数据寄存器
 //------------------------------------------------------
 //-- 参数定义
 //------------------------------------------------------
-`define BAUD  256000 														//波特率
+// `define BAUD  460800 
+`define BAUD  115200 													//波特率
 `define SYS_CLK_PERIOD  50 													//SYS_CLK时钟周期
 `define BAUD_CNT_END  1_000_000_000 / `BAUD / `SYS_CLK_PERIOD 				//波特率计数值
 localparam IDLE = 2'D0 ,LATCH = 2'D1 ,SEND = 2'D2 ;							

@@ -4,7 +4,7 @@ input						SYS_CLK		,					//输入系统时钟
 input 						RST_N		,					//复位
 //FIFO interface
 input			[15:0]		data_in 	,
-input			[8:0]		rd_fifo_usedw	,
+input			[10:0]		rd_fifo_usedw	,
 output						rd_clk		,
 output	reg					rd_req		,
 //other 
@@ -28,7 +28,7 @@ reg							cmd_flag	;
 //-- 参数定义
 //------------------------------------------------------
 
-`define		IMAGE_SIZE 16										//定义数据包大小
+`define		IMAGE_SIZE 512										//定义数据包大小
 localparam UART_SEND_MODE = 8'h01 ;							//配合山外的调试助手,1:发送图像 2:CCD图像 3:波形
 localparam	IDLE = 2'D0 ,LATCH = 2'D1 ,CMD = 2'D2 ,SEND = 2'D3 ;
 

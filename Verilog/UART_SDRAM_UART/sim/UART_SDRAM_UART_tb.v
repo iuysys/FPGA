@@ -29,6 +29,7 @@ wire		[1:0]			SDRAM_DQM				;			//掩码线
 initial begin
 	SYS_CLK = 1'b1 ;
 	RST_N = 1'b1 ;
+	Rxd = 1'b0 ;
 	#50 RST_N = 1'B0 ;
 	#100 RST_N = 1'B1 ;
 end 
@@ -78,7 +79,7 @@ sdram_model_plus 	sdram_model_plus_inst(
 .Cas_n			(SDRAM_CAS			), 
 .We_n			(SDRAM_WE			), 
 .Dqm			(SDRAM_DQM			),
-.Debug			('b1				)
+.Debug			(1'b1				)
 );
 
 

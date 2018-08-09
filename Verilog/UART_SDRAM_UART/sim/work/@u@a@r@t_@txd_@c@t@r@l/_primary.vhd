@@ -5,7 +5,7 @@ entity UART_Txd_CTRL is
         SYS_CLK         : in     vl_logic;
         RST_N           : in     vl_logic;
         data_in         : in     vl_logic_vector(15 downto 0);
-        rd_fifo_usedw   : in     vl_logic_vector(8 downto 0);
+        rd_fifo_usedw   : in     vl_logic_vector(10 downto 0);
         rd_clk          : out    vl_logic;
         rd_req          : out    vl_logic;
         data_out        : out    vl_logic_vector(7 downto 0);

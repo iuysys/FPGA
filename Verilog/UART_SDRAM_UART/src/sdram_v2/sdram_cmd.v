@@ -1,7 +1,7 @@
-`timescale 1ns / 100ps
+`timescale 1ns / 1ps
 //---------------------------------------------------
 //-- 
-`include "F:/FPGA/Verilog/SDRAM_V2/src/sdram_para.v"
+`include "F:/FPGA/Verilog/UART_SDRAM_UART/src/sdram_v2/sdram_para.v"
 //---------------------------------------------------
 //-- 
 module sdram_cmd(
@@ -157,7 +157,7 @@ always @ (posedge clk or negedge rst_n) begin
     						2'b00,
     						3'b010,			//CL
     						1'b0,			//BT
-    						3'b010			//BL
+    						3'b111			//BL
     					};
     		end
     		else if (step_cnt == `Trp + 2*`Trc + `Tmrd) begin
@@ -194,7 +194,7 @@ always @ (posedge clk or negedge rst_n) begin
     		m_addr <= 12'b0000_0000_0000 ;
 	    end
 	end
-	else if ((ctrl_cmd == 'b01 && sdram_init_done) || do_write) begin									//绐佸彂鍐
+	else if ((ctrl_cmd == 'b01 && sdram_init_done) || do_write) begin	//突发写
 		if (step_cnt == 'd0) begin
 			step_cnt <= step_cnt + 1'b1 ;
 			do_write <= 1'b1 ;
@@ -208,7 +208,7 @@ always @ (posedge clk or negedge rst_n) begin
     		m_bank <= sys_bank ;
     		m_addr <= sys_row ;
     	end
-    	else if (step_cnt == `Trp + `Trcd -1) begin						//鎻愬墠涓€涓椂閽熷彂鍑哄啓fifo鐨勮璇锋眰
+    	else if (step_cnt == `Trp + `Trcd -1) begin						//
     		step_cnt <= step_cnt + 1'b1 ;
     		w_fifo_rreq <= 1'b1 ;
     		m_cmd <= `NOP ;
@@ -219,7 +219,7 @@ always @ (posedge clk or negedge rst_n) begin
     		m_bank <= sys_bank ;
     		m_addr <= sys_col ;
     	end
-    	else if (step_cnt == `Trp + `Trcd + `BURST_LENGTH -1) begin		//鍙栨秷鍐檉ifo鐨勮璇锋眰
+    	else if (step_cnt == `Trp + `Trcd + `BURST_LENGTH -1) begin		//
     		step_cnt <= step_cnt + 1'b1 ;
     		w_fifo_rreq <= 'b0 ;
     		cmd_ack <= 1'b1 ;
@@ -240,21 +240,21 @@ always @ (posedge clk or negedge rst_n) begin
     		m_addr <= 12'b0100_0000_0000 ;
     	end
 	end
-	else if ((ctrl_cmd == 'b10 && sdram_init_done) || do_read) begin					//绐佸彂璇
-		if (step_cnt == 'd0) begin														//棰勫厖鐢
+	else if ((ctrl_cmd == 'b10 && sdram_init_done) || do_read) begin					//突发读
+		if (step_cnt == 'd0) begin														//
 			step_cnt <= step_cnt + 1'b1 ;
 			do_read <= 1'b1 ;
     		m_cmd <= `PRE ;
     		m_bank <= 'b00 ;
     		m_addr <= 12'b0100_0000_0000 ;
     	end
-    	else if (step_cnt == `Trp) begin												//婵€娲昏
+    	else if (step_cnt == `Trp) begin												//
     		step_cnt <= step_cnt + 1'b1 ;
     		m_cmd <= `ACT ;
     		m_bank <= sys_bank ;
     		m_addr <= sys_row ;
     	end
-    	else if (step_cnt == `Trp + `Trcd) begin										//鍙戝嚭璇诲懡浠
+    	else if (step_cnt == `Trp + `Trcd) begin										//
     		step_cnt <= step_cnt + 1'b1 ;
     		m_cmd <= `READ ;
     		m_bank <= sys_bank ;														
@@ -286,6 +286,19 @@ always @ (posedge clk or negedge rst_n) begin
     		m_bank <= 'b00 ;
     		m_addr <= 12'b0000_0000_0000 ;
     	end
+    end
+    else begin
+        step_cnt <= 'b0 ;
+        sdram_init_done <= 'b0 ;
+        m_cmd <= `NOP ;
+        m_bank <= 'b00 ;
+        m_addr <= 12'b0000_0000_0000 ;
+        do_write <= 'b0 ;
+        do_read <= 'b0 ;
+        do_aref <= 'b0 ;
+        cmd_ack <= 'b0 ;
+        w_fifo_rreq <= 'b0 ;
+        r_fifo_wreq <= 'b0 ;
     end
 end
 
