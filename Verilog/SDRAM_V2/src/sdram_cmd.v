@@ -1,26 +1,26 @@
-`timescale 1ns / 100ps
+`timescale 1ns / 1ps
 //---------------------------------------------------
 //-- 
 `include "F:/FPGA/Verilog/SDRAM_V2/src/sdram_para.v"
 //---------------------------------------------------
 //-- 
 module sdram_cmd(
-input 									clk			,
-input									rst_n		,
+input 									clk			,                  //控制时钟输入    
+input									rst_n		,                  //复位
 				
-input				[1:0]				ctrl_cmd	,
+input				[1:0]				ctrl_cmd	,                  //控制命令输入
 input				[21:0]				sys_addr	,
-// output									cmd_busy	,
-output		reg							cmd_ack		,
+// output									cmd_busy	,              //SDRAM忙标志
+output		reg							cmd_ack		,                  //控制命令应答信号  
 
-output									dq_oe		,					//鏁版嵁绾夸笁鎬佹帶鍒
+output									dq_oe		,				     //DQ输入输出控制
 	
-output		reg							sdram_init_done	,
+output		reg							sdram_init_done	,             //SDRAM初始化完成标志
 
-//鍐檉ifo
-output		reg							w_fifo_rreq ,
-//璇籪ifo
-output		reg							r_fifo_wreq	,
+//write fifo
+output		reg							w_fifo_rreq ,                 //写入缓存请求
+//read fifo
+output		reg							r_fifo_wreq	,                 //读出缓存请求
 			
 //sdram			
 output									SDRAM_CKE	,
@@ -35,35 +35,37 @@ output				[`ROWSIZE-1:0]		SDRAM_ADDR
 
 
 //---------------------------------------------------
-//-- 
+//-- 内部信号
 //---------------------------------------------------
-reg				[15:0]				power_on_wait_cnt	;
-wire								flag_power_on_wait	;
-reg				[8:0]				step_cnt			;
-reg				[4:0]				m_cmd				;
-reg				[1:0]				m_bank 				;
-reg				[11:0]				m_addr 				;
-reg				[10:0]				aref_time_cnt		;
-reg									aref_req			;
+reg				[15:0]				power_on_wait_cnt	;                //上电等待200us计时器
+wire								flag_power_on_wait	;                //上电等待完成标志
+reg				[8:0]				step_cnt			;                //步骤驱动计数器
+reg				[4:0]				m_cmd				;                //SDRAM 命令寄存器
+reg				[1:0]				m_bank 				;                //SDRAM bank寄存器
+reg				[11:0]				m_addr 				;                //SDRAM 地址寄存器
+reg				[10:0]				aref_time_cnt		;                //自刷新周期计数器
+reg									aref_req			;                //自刷新请求
 
-reg									do_aref				;
-reg									do_write			;
-reg									do_read				;
+reg									do_aref				;                //执行自刷新标志
+reg									do_write			;                //执行写操作标志
+reg									do_read				;                //执行读操作标志
 
-wire			[`BANKSIZE-1:0]		sys_bank			;
+wire			[`BANKSIZE-1:0]		sys_bank			;                //从系统输入地址中分离出的bank信号
 wire 			[`ROWSIZE-1:0]		sys_row				;
 wire			[`COLSIZE-1:0]		sys_col				;
 
 
 
 //---------------------------------------------------
-//-- 
+//-- 组合逻辑
 //---------------------------------------------------
+//---------------------------------------------------
+//-- 地址,命令输出
 assign {SDRAM_CKE,SDRAM_CS,SDRAM_RAS,SDRAM_CAS,SDRAM_WE} = m_cmd ;
 assign SDRAM_BANK = m_bank ;
 assign SDRAM_ADDR = m_addr ;
 //---------------------------------------------------
-//-- 
+//-- 分离出bank,行,列地址
 assign sys_bank = sys_addr[21:20];
 assign sys_row = sys_addr[19:8];
 assign sys_col = sys_addr[7:0];
@@ -71,14 +73,14 @@ assign sys_col = sys_addr[7:0];
 //-- 
 //assign cmd_busy = (do_write || do_read) ? 1'b1 : 1'b0 ;
 //---------------------------------------------------
-//-- 
+//-- 输出DQking之信号
 assign dq_oe = (do_write) ? 1'b1 : 1'b0 ;
 
 //---------------------------------------------------
 //-- 
 //---------------------------------------------------
 //---------------------------------------------------
-//-- 涓婄數绛夊緟200us
+//-- 上电等待200us
 always @ (posedge clk or negedge rst_n) begin
     if(!rst_n) begin
     	power_on_wait_cnt <= 'b0 ;
@@ -94,7 +96,7 @@ assign	flag_power_on_wait = (power_on_wait_cnt == `POWER_ON_WAIT_TIME) ? 1'b1 : 
 //-- 
 //---------------------------------------------------
 //---------------------------------------------------
-//-- 鑷埛鏂板懆鏈熻鏁
+//-- 自刷新周期计数
 always @ (posedge clk or negedge rst_n) begin
     if(!rst_n) begin
     	aref_time_cnt <= 'b0 ;
@@ -107,7 +109,7 @@ always @ (posedge clk or negedge rst_n) begin
     end
 end
 //---------------------------------------------------
-//-- 
+//-- 等待自刷新模块的回复
 always @ (posedge clk or negedge rst_n) begin
     if(!rst_n) begin
     	aref_req <= 'b0 ;
@@ -121,7 +123,7 @@ always @ (posedge clk or negedge rst_n) begin
 end
 
 //---------------------------------------------------
-//-- 
+//-- 控制模块
 always @ (posedge clk or negedge rst_n) begin
     if(!rst_n) begin
     	step_cnt <= 'b0 ;
@@ -136,7 +138,7 @@ always @ (posedge clk or negedge rst_n) begin
     	w_fifo_rreq <= 'b0 ;
     	r_fifo_wreq <= 'b0 ;
     end
-    else if (!sdram_init_done && flag_power_on_wait) begin		//鍒濆鍖
+    else if (!sdram_init_done && flag_power_on_wait) begin		//初始化
     		if(step_cnt == 'd0) begin
     			step_cnt <= step_cnt + 1'b1 ;
     			m_cmd <= `PRE ;
@@ -157,7 +159,7 @@ always @ (posedge clk or negedge rst_n) begin
     						2'b00,
     						3'b010,			//CL
     						1'b0,			//BT
-    						3'b010			//BL
+    						3'b011			//BL
     					};
     		end
     		else if (step_cnt == `Trp + 2*`Trc + `Tmrd) begin
@@ -168,10 +170,10 @@ always @ (posedge clk or negedge rst_n) begin
     			step_cnt <= step_cnt + 1'b1 ;
     			m_cmd <= `NOP ;
     			m_bank <= 'b00 ;
-    			m_addr <= 12'b0100_0000_0000 ;
+    			m_addr <= 12'b0000_0000_0000 ;
     		end
     end
-    else if ((aref_req || do_aref) && !do_write && !do_read ) begin				//鑷埛鏂涓婁竴鐘舵€佷笉鑳戒负璇绘垨鑰呭啓
+    else if ((aref_req || do_aref) && !do_write && !do_read ) begin				//自刷新
     	if (step_cnt == 'd0) begin
     		step_cnt <= step_cnt + 1'b1 ;
     		do_aref <= 1'b1 ;
@@ -179,7 +181,7 @@ always @ (posedge clk or negedge rst_n) begin
     		m_bank <= 'b00 ;
     		m_addr <= 12'b0100_0000_0000 ;
     	end
-    	else if(step_cnt == `Trp || step_cnt == `Trp + `Trc) begin
+    	else if(step_cnt == `Trp || step_cnt == `Trp + `Trc) begin             //两次自刷新请求
     		step_cnt <= step_cnt + 1'b1 ;
     		m_cmd <= `AREF ;
     	end
@@ -194,7 +196,7 @@ always @ (posedge clk or negedge rst_n) begin
     		m_addr <= 12'b0000_0000_0000 ;
 	    end
 	end
-	else if ((ctrl_cmd == 'b01 && sdram_init_done) || do_write) begin									//绐佸彂鍐
+	else if ((ctrl_cmd == 'b01 && sdram_init_done) || do_write) begin		//突发写
 		if (step_cnt == 'd0) begin
 			step_cnt <= step_cnt + 1'b1 ;
 			do_write <= 1'b1 ;
@@ -208,18 +210,18 @@ always @ (posedge clk or negedge rst_n) begin
     		m_bank <= sys_bank ;
     		m_addr <= sys_row ;
     	end
-    	else if (step_cnt == `Trp + `Trcd -1) begin						//鎻愬墠涓€涓椂閽熷彂鍑哄啓fifo鐨勮璇锋眰
+    	else if (step_cnt == `Trp + `Trcd -1) begin						//提前写命令一个时钟发出请求
     		step_cnt <= step_cnt + 1'b1 ;
     		w_fifo_rreq <= 1'b1 ;
     		m_cmd <= `NOP ;
     	end
-    	else if (step_cnt == `Trp + `Trcd) begin
+    	else if (step_cnt == `Trp + `Trcd) begin                       //写命令,行,bank,数据同时送出
     		step_cnt <= step_cnt + 1'b1 ;
     		m_cmd <= `WRITE ;
     		m_bank <= sys_bank ;
     		m_addr <= sys_col ;
     	end
-    	else if (step_cnt == `Trp + `Trcd + `BURST_LENGTH -1) begin		//鍙栨秷鍐檉ifo鐨勮璇锋眰
+    	else if (step_cnt == `Trp + `Trcd + `BURST_LENGTH -1) begin		//
     		step_cnt <= step_cnt + 1'b1 ;
     		w_fifo_rreq <= 'b0 ;
     		cmd_ack <= 1'b1 ;
@@ -237,42 +239,41 @@ always @ (posedge clk or negedge rst_n) begin
     		step_cnt <= step_cnt + 1'b1 ;
     		m_cmd <= `NOP ;
     		m_bank <= 'b00 ;
-    		m_addr <= 12'b0100_0000_0000 ;
+    		m_addr <= 12'b0000_0000_0000 ;
     	end
 	end
-	else if ((ctrl_cmd == 'b10 && sdram_init_done) || do_read) begin					//绐佸彂璇
-		if (step_cnt == 'd0) begin														//棰勫厖鐢
+	else if ((ctrl_cmd == 'b10 && sdram_init_done) || do_read) begin					//突发读
+		if (step_cnt == 'd0) begin														//
 			step_cnt <= step_cnt + 1'b1 ;
 			do_read <= 1'b1 ;
     		m_cmd <= `PRE ;
     		m_bank <= 'b00 ;
     		m_addr <= 12'b0100_0000_0000 ;
     	end
-    	else if (step_cnt == `Trp) begin												//婵€娲昏
+    	else if (step_cnt == `Trp) begin												//
     		step_cnt <= step_cnt + 1'b1 ;
     		m_cmd <= `ACT ;
     		m_bank <= sys_bank ;
     		m_addr <= sys_row ;
     	end
-    	else if (step_cnt == `Trp + `Trcd) begin										//鍙戝嚭璇诲懡浠
+    	else if (step_cnt == `Trp + `Trcd) begin										//
     		step_cnt <= step_cnt + 1'b1 ;
     		m_cmd <= `READ ;
     		m_bank <= sys_bank ;														
     		m_addr <= sys_col ;
     	end
-    	else if (step_cnt == `Trp + `Trcd + `CAS_LATENCY) begin							//绛夊緟娼滀紡鏈熷悗,鍙戝嚭璇籪ifo鐨勫啓璇锋眰
+    	else if (step_cnt == `Trp + `Trcd + `CAS_LATENCY) begin							//
     		step_cnt <= step_cnt + 1'b1 ;
     		r_fifo_wreq <= 1'b1 ;
     	end
-    	else if (step_cnt == `Trp + `Trcd + `CAS_LATENCY + `BURST_LENGTH - 1) begin		//鍙栨秷璇籪ifo鐨勫啓璇锋眰
+    	else if (step_cnt == `Trp + `Trcd + `CAS_LATENCY + `BURST_LENGTH - 1) begin		//
     		step_cnt <= step_cnt + 1'b1 ;
-    		r_fifo_wreq <= 'b0 ;
     		cmd_ack <= 1'b1 ;
     		// do_read <= 'b0 ;
     	end
-    	else if (step_cnt == `Trp + `Trcd + `CAS_LATENCY + `BURST_LENGTH) begin			//缁撴潫绐佸彂璇
-    		step_cnt <= step_cnt + 1'b1 ;
-    		// r_fifo_wreq <= 'b0 ;
+    	else if (step_cnt == `Trp + `Trcd + `CAS_LATENCY + `BURST_LENGTH) begin			//
+    		step_cnt <= 'b0 ;
+            r_fifo_wreq <= 'b0 ;
     		cmd_ack <= 'b0 ;
     		do_read <= 'b0 ;
     		m_cmd <= `NOP ;
@@ -285,6 +286,18 @@ always @ (posedge clk or negedge rst_n) begin
     		m_bank <= 'b00 ;
     		m_addr <= 12'b0000_0000_0000 ;
     	end
+    end
+    else begin
+        step_cnt <= 'b0 ;
+        m_cmd <= `NOP ;
+        m_bank <= 'b00 ;
+        m_addr <= 12'b0000_0000_0000 ;
+        do_write <= 'b0 ;
+        do_read <= 'b0 ;
+        do_aref <= 'b0 ;
+        cmd_ack <= 'b0 ;
+        w_fifo_rreq <= 'b0 ;
+        r_fifo_wreq <= 'b0 ;
     end
 end
 

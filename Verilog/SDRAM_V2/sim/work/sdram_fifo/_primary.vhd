@@ -2,6 +2,7 @@ library verilog;
 use verilog.vl_types.all;
 entity sdram_fifo is
     port(
+        aclr            : in     vl_logic;
         data            : in     vl_logic_vector(15 downto 0);
         rdclk           : in     vl_logic;
         rdreq           : in     vl_logic;

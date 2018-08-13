@@ -1,15 +1,15 @@
 /***************************************************************************************
-×÷Õß£º	ÀîêÉ
-2003-08-27	V0.1	ÀîêÉ 
+ä½œè€…ï¼š	ææ™Ÿ
+2003-08-27	V0.1	ææ™Ÿ 
  
- Ìí¼ÓÄÚ´æÄ£¿éµ¹¿Õ¹¦ÄÜ£¬ÔÚÍâ²¿ĞèÒª´´½¨ÊÂ¼ş£ºsdram_r ,±¾SDRAMµÄÄÚÈİ½«»á°´Bank Ë³Ğòdamp out ÖÁÎÄ¼ş
- sdram_data.txt ÖĞ
-¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á¡Á*/
-//2004-03-04	³ÂÄË¿ü	ĞŞ¸ÄÔ­³ÌĞòÖĞ½«BANKµÄÊı¾İ×ª´æÈëTXTÎÄ¼şµÄ¸ñÊ½
-//2004-03-16	³ÂÄË¿ü	ĞŞ¸ÄSDRAM µÄ³õÊ¼»¯Êı¾İ
-//2004/04/06	³ÂÄË¿ü	½«SDRAMµÄ²Ù×÷ÃüÁîÒÔ×Ö·ûĞÎÊ½±íÊ¾£¬ÒÔ±ãÓÃMODELSIM¼àÊÓ
-//2004/04/19	³ÂÄË¿ü	ĞŞ¸Ä²ÎÊı parameter tAC  =   8;
-//2010/09/17	ÂŞÑş	ĞŞ¸ÄsdramµÄ´óĞ¡£¬Êı¾İÎ»¿í£¬dqm¿í¶È;
+ æ·»åŠ å†…å­˜æ¨¡å—å€’ç©ºåŠŸèƒ½ï¼Œåœ¨å¤–éƒ¨éœ€è¦åˆ›å»ºäº‹ä»¶ï¼šsdram_r ,æœ¬SDRAMçš„å†…å®¹å°†ä¼šæŒ‰Bank é¡ºåºdamp out è‡³æ–‡ä»¶
+ sdram_data.txt ä¸­
+Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—Ã—*/
+//2004-03-04	é™ˆä¹ƒå¥	ä¿®æ”¹åŸç¨‹åºä¸­å°†BANKçš„æ•°æ®è½¬å­˜å…¥TXTæ–‡ä»¶çš„æ ¼å¼
+//2004-03-16	é™ˆä¹ƒå¥	ä¿®æ”¹SDRAM çš„åˆå§‹åŒ–æ•°æ®
+//2004/04/06	é™ˆä¹ƒå¥	å°†SDRAMçš„æ“ä½œå‘½ä»¤ä»¥å­—ç¬¦å½¢å¼è¡¨ç¤ºï¼Œä»¥ä¾¿ç”¨MODELSIMç›‘è§†
+//2004/04/19	é™ˆä¹ƒå¥	ä¿®æ”¹å‚æ•° parameter tAC  =   8;
+//2010/09/17	ç½—ç‘¶	ä¿®æ”¹sdramçš„å¤§å°ï¼Œæ•°æ®ä½å®½ï¼Œdqmå®½åº¦;
 /****************************************************************************************
 *
 *    File Name:  sdram_model.V  
@@ -69,11 +69,11 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
     input                         Ras_n;
     input                         Cas_n;
     input                         We_n;
-    input                 [3 : 0] Dqm;          //¸ßµÍ¸÷8bit
+    input                 [3 : 0] Dqm;          //é«˜ä½å„8bit
     //added by xzli
     input			  Debug;
 
-    reg       [data_bits - 1 : 0] Bank0 [0 : mem_sizes];//´æ´¢Æ÷ÀàĞÍÊı¾İ
+    reg       [data_bits - 1 : 0] Bank0 [0 : mem_sizes];//å­˜å‚¨å™¨ç±»å‹æ•°æ®
     reg       [data_bits - 1 : 0] Bank1 [0 : mem_sizes];
     reg       [data_bits - 1 : 0] Bank2 [0 : mem_sizes];
     reg       [data_bits - 1 : 0] Bank3 [0 : mem_sizes];
@@ -1015,7 +1015,7 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
         end
     endtask
     
-    //**********************½«SDRAMÄÚµÄÊı¾İÖ±½ÓÊä³öµ½Íâ²¿ÎÄ¼ş*******************************//
+    //**********************å°†SDRAMå†…çš„æ•°æ®ç›´æ¥è¾“å‡ºåˆ°å¤–éƒ¨æ–‡ä»¶*******************************//
 
 /*    
    integer	sdram_data,ind;
@@ -1025,16 +1025,16 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
 	begin
 		   sdram_data=$fopen("sdram_data.txt");
 		   $display("Sdram dampout begin ",sdram_data);
-//		   $fdisplay(sdram_data,"Bank0£º");
+//		   $fdisplay(sdram_data,"Bank0ï¼š");
 		   for(ind=0;ind<=mem_sizes;ind=ind+1)
 		            $fdisplay(sdram_data,"%h	%b",ind,Bank0[ind]);
-//		   $fdisplay(sdram_data,"Bank1£º");
+//		   $fdisplay(sdram_data,"Bank1ï¼š");
 		   for(ind=0;ind<=mem_sizes;ind=ind+1)
 		            $fdisplay(sdram_data,"%h	%b",ind,Bank1[ind]);
-//		   $fdisplay(sdram_data,"Bank2£º");
+//		   $fdisplay(sdram_data,"Bank2ï¼š");
 		   for(ind=0;ind<=mem_sizes;ind=ind+1)
 		            $fdisplay(sdram_data,"%h	%b",ind,Bank2[ind]);
-//	           $fdisplay(sdram_data,"Bank3£º");
+//	           $fdisplay(sdram_data,"Bank3ï¼š");
 		   for(ind=0;ind<=mem_sizes;ind=ind+1)
 		            $fdisplay(sdram_data,"%h	%b",ind,Bank3[ind]);
 		  		    	    	    

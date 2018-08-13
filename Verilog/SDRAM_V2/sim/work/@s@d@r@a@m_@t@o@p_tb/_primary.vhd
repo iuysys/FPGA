@@ -1,4 +1,4 @@
 library verilog;
 use verilog.vl_types.all;
-entity SDRAM_tb is
-end SDRAM_tb;
+entity SDRAM_TOP_tb is
+end SDRAM_TOP_tb;

@@ -6,8 +6,10 @@
 `define		BANKSIZE		2
 `define		DQMSIZE			2
 `define		CLK_FREQ		100				//MHz
-`define		BURST_LENGTH	4
+`define		BURST_LENGTH	8
 `define		CAS_LATENCY		2	
+`define		WRITE_LENGTH	320	
+`define		READ_LENGTH		320		
 //---------------------------------------------------
 //-- 控制线命令CKE-CS-RAS-CAS-WE
 `define 	MRS			5'b1_0000

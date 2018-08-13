@@ -1,3 +1,7 @@
+
+`timescale 1ns / 1ps
+//---------------------------------------------------
+//-- 
 module sdram_ctrl(
 input 							clk			,
 input							rst_n		,
@@ -68,6 +72,7 @@ always @ (posedge clk or negedge rst_n) begin
     	        
     	    	if (cmd_ack) begin
     	    		state <= 'b00 ;
+    	    		ctrl_cmd <= 'b00 ;
     	    	end
     	    	else begin
     	    		state <= 'b10 ; 
