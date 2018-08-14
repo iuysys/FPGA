@@ -5,7 +5,7 @@ entity sdram_model_plus is
         addr_bits       : integer := 12;
         data_bits       : integer := 16;
         col_bits        : integer := 8;
-        mem_sizes       : integer := 1048576;
+        mem_sizes       : integer := 1048575;
         tAC             : real    := 6.500000;
         tHZ             : real    := 5.500000;
         tOH             : integer := 2;

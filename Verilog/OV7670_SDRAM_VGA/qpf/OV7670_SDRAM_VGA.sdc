@@ -19,7 +19,7 @@
 ## PROGRAM "Quartus II"
 ## VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version"
 
-## DATE    "Thu Aug 09 17:02:55 2018"
+## DATE    "Mon Aug 13 12:28:44 2018"
 
 ##
 ## DEVICE  "EP2C8Q208C8"
@@ -46,11 +46,11 @@ create_clock -name {sys_clk} -period 50.000 -waveform { 0.000 25.000 } [get_port
 # Create Generated Clock
 #**************************************************************
 
-create_generated_clock -name {sdram_pll_inst|altpll_component|pll|clk[0]} -source [get_pins {sdram_pll_inst|altpll_component|pll|inclk[0]}] -duty_cycle 50.000 -multiply_by 5 -master_clock {sys_clk} [get_pins {sdram_pll_inst|altpll_component|pll|clk[0]}] 
-create_generated_clock -name {sdram_pll_inst|altpll_component|pll|clk[1]} -source [get_pins {sdram_pll_inst|altpll_component|pll|inclk[0]}] -duty_cycle 50.000 -multiply_by 5 -phase 7.500 -master_clock {sys_clk} [get_pins {sdram_pll_inst|altpll_component|pll|clk[1]}] 
-create_generated_clock -name {sdram_pll_inst|altpll_component|pll|clk[2]} -source [get_pins {sdram_pll_inst|altpll_component|pll|inclk[0]}] -duty_cycle 50.000 -multiply_by 2 -master_clock {sys_clk} [get_pins {sdram_pll_inst|altpll_component|pll|clk[2]}] 
-#create_generated_clock -name {clk_div} -source [get_ports {sys_clk}] -divide_by 40 -master_clock {sys_clk} [get_pins {OV7670_top_inst|CLK_DIV_EVEN_inst|CLK_DIV}] 
-
+#create_generated_clock -name {sdram_pll_inst|altpll_component|pll|clk[0]} -source [get_pins {sdram_pll_inst|altpll_component|pll|inclk[0]}] -duty_cycle 50.000 -multiply_by 5 -master_clock {sys_clk} [get_pins {sdram_pll_inst|altpll_component|pll|clk[0]}] 
+#create_generated_clock -name {sdram_pll_inst|altpll_component|pll|clk[1]} -source [get_pins {sdram_pll_inst|altpll_component|pll|inclk[0]}] -duty_cycle 50.000 -multiply_by 5 -offset 180.000 -master_clock {sys_clk} [get_pins { sdram_pll_inst|altpll_component|pll|clk[1] }] 
+#create_generated_clock -name {sdram_pll_inst|altpll_component|pll|clk[2]} -source [get_pins {sdram_pll_inst|altpll_component|pll|inclk[0]}] -duty_cycle 50.000 -multiply_by 2 -master_clock {sys_clk} [get_pins {sdram_pll_inst|altpll_component|pll|clk[2]}] 
+create_generated_clock -name {clk_div} -source [get_ports {sys_clk}] -divide_by 40 -master_clock {sys_clk} [get_pins {OV7670_top_inst|CLK_DIV_EVEN_inst|CLK_DIV|regout}] 
+derive_pll_clocks -create_base_clocks
 
 #**************************************************************
 # Set Clock Latency
@@ -80,6 +80,8 @@ create_generated_clock -name {sdram_pll_inst|altpll_component|pll|clk[2]} -sourc
 # Set Clock Groups
 #**************************************************************
 
+#set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}] 
+#set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}] 
 #set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}] 
 
 

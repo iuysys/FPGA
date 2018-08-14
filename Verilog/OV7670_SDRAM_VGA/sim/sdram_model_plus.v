@@ -53,20 +53,12 @@
 
 `timescale 1ns / 100ps
 
-//---------------------------------------------------
-//-- 取消SDRAM中的宏定义
-// `undef   CMD_ACT       
-// `undef   CMD_NOP       
-// `undef   CMD_READ
-// `undef   CMD_WRITE
-
-
 module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,Debug);
 
     parameter addr_bits =	12;
     parameter data_bits = 	16;
     parameter col_bits  =	8;
-    parameter mem_sizes =	1024*1024;//1 Meg/bank 
+    parameter mem_sizes =	1024*1024-1;//1 Meg 
 
     inout     [data_bits - 1 : 0] Dq;
     input     [addr_bits - 1 : 0] Addr;
@@ -155,16 +147,16 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
     assign    Dq               = Dq_reg;                        // DQ buffer
 
     // Commands Operation
-    `define   CMD_ACT       0
-    `define   CMD_NOP       1
-    `define   CMD_READ      2
-    `define   READ_A        3
-    `define   CMD_WRITE     4
-    `define   WRITE_A       5
-    `define   PRECH         6
-    `define   A_REF         7
-    `define   BST           8
-    `define   LMR           9
+    // `define   ACT       0
+    // `define   NOP       1
+    // `define   READ      2
+    // `define   READ_A    3
+    // `define   WRITE     4
+    // `define   WRITE_A   5
+    // `define   PRECH     6
+    // `define   A_REF     7
+    // `define   BST       8
+    // `define   LMR       9
 
 //    // Timing Parameters for -75 (PC133) and CAS Latency = 2
 //    parameter tAC  =   8;	//test 6.5
@@ -339,7 +331,7 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
         Command[0] = Command[1];
         Command[1] = Command[2];
         Command[2] = Command[3];
-        Command[3] = `CMD_NOP;
+        Command[3] = 1;
 
         Col_addr[0] = Col_addr[1];
         Col_addr[1] = Col_addr[2];
@@ -470,7 +462,7 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
                 B0_row_addr = Addr [addr_bits - 1 : 0];
                 RCD_chk0 = $time;
                 RAS_chk0 = $time;
-                if (Debug) $display ("at time %t CMD_ACT  : Bank = 0 Row = %d", $time, Addr);
+                if (Debug) $display ("at time %t ACT  : Bank = 0 Row = %d", $time, Addr);
                 // Precharge to Activate Bank 0
                 if ($time - RP_chk0 < tRP) begin
                     $display ("at time %t ERROR: tRP violation during Activate bank 0", $time);
@@ -480,7 +472,7 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
                 B1_row_addr = Addr [addr_bits - 1 : 0];
                 RCD_chk1 = $time;
                 RAS_chk1 = $time;
-                if (Debug) $display ("at time %t CMD_ACT  : Bank = 1 Row = %d", $time, Addr);
+                if (Debug) $display ("at time %t ACT  : Bank = 1 Row = %d", $time, Addr);
                 // Precharge to Activate Bank 1
                 if ($time - RP_chk1 < tRP) begin
                     $display ("at time %t ERROR: tRP violation during Activate bank 1", $time);
@@ -490,7 +482,7 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
                 B2_row_addr = Addr [addr_bits - 1 : 0];
                 RCD_chk2 = $time;
                 RAS_chk2 = $time;
-                if (Debug) $display ("at time %t CMD_ACT  : Bank = 2 Row = %d", $time, Addr);
+                if (Debug) $display ("at time %t ACT  : Bank = 2 Row = %d", $time, Addr);
                 // Precharge to Activate Bank 2
                 if ($time - RP_chk2 < tRP) begin
                     $display ("at time %t ERROR: tRP violation during Activate bank 2", $time);
@@ -500,7 +492,7 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
                 B3_row_addr = Addr [addr_bits - 1 : 0];
                 RCD_chk3 = $time;
                 RAS_chk3 = $time;
-                if (Debug) $display ("at time %t CMD_ACT  : Bank = 3 Row = %d", $time, Addr);
+                if (Debug) $display ("at time %t ACT  : Bank = 3 Row = %d", $time, Addr);
                 // Precharge to Activate Bank 3
                 if ($time - RP_chk3 < tRP) begin
                     $display ("at time %t ERROR: tRP violation during Activate bank 3", $time);
@@ -596,11 +588,11 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
             end
             // Precharge Command Pipeline for Read
             if (Cas_latency_3 == 1'b1) begin
-                Command[2] = `PRECH;
+                Command[2] = 6;
                 Bank_precharge[2] = Ba;
                 A10_precharge[2] = Addr[10];
             end else if (Cas_latency_2 == 1'b1) begin
-                Command[1] = `PRECH;
+                Command[1] = 6;
                 Bank_precharge[1] = Ba;
                 A10_precharge[1] = Addr[10];
             end
@@ -614,16 +606,16 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
             end
             // Terminate a Read Depend on CAS Latency
             if (Cas_latency_3 == 1'b1) begin
-                Command[2] = `BST;
+                Command[2] = 8;
             end else if (Cas_latency_2 == 1'b1) begin
-                Command[1] = `BST;
+                Command[1] = 8;
             end
             if (Debug) $display ("at time %t BST  : Burst Terminate",$time);
         end
         
         // Read, Write, Column Latch
         if (Read_enable == 1'b1 || Write_enable == 1'b1) begin
-            // Check to see if bank is open (CMD_ACT)
+            // Check to see if bank is open (ACT)
             if ((Ba == 2'b00 && Pc_b0 == 1'b1) || (Ba == 2'b01 && Pc_b1 == 1'b1) ||
                 (Ba == 2'b10 && Pc_b2 == 1'b1) || (Ba == 2'b11 && Pc_b3 == 1'b1)) begin
                 $display("at time %t ERROR: Cannot Read or Write - Bank %d is not Activated", $time, Ba);
@@ -642,17 +634,17 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
                 // CAS Latency pipeline
                 if (Cas_latency_3 == 1'b1) begin
                     if (Addr[10] == 1'b1) begin
-                        Command[2] = `READ_A;
+                        Command[2] = 3;
                     end else begin
-                        Command[2] = `CMD_READ;
+                        Command[2] = 2;
                     end
                     Col_addr[2] = Addr;
                     Bank_addr[2] = Ba;
                 end else if (Cas_latency_2 == 1'b1) begin
                     if (Addr[10] == 1'b1) begin
-                        Command[1] = `READ_A;
+                        Command[1] = 3;
                     end else begin
-                        Command[1] = `CMD_READ;
+                        Command[1] = 2;
                     end
                     Col_addr[1] = Addr;
                     Bank_addr[1] = Ba;
@@ -666,9 +658,9 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
             // Write Command
             end else if (Write_enable == 1'b1) begin
                 if (Addr[10] == 1'b1) begin
-                    Command[0] = `WRITE_A;
+                    Command[0] = 5;
                 end else begin
-                    Command[0] = `CMD_WRITE;
+                    Command[0] = 4;
                 end
                 Col_addr[0] = Addr;
                 Bank_addr[0] = Ba;
@@ -779,13 +771,13 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
         end
 
         // Internal Precharge or Bst
-        if (Command[0] == `PRECH) begin                         // Precharge terminate a read with same bank or all banks
+        if (Command[0] == 6) begin                         // Precharge terminate a read with same bank or all banks
             if (Bank_precharge[0] == Bank || A10_precharge[0] == 1'b1) begin
                 if (Data_out_enable == 1'b1) begin
                     Data_out_enable = 1'b0;
                 end
             end
-        end else if (Command[0] == `BST) begin                  // BST terminate a read to current bank
+        end else if (Command[0] == 8) begin                  // BST terminate a read to current bank
             if (Data_out_enable == 1'b1) begin
                 Data_out_enable = 1'b0;
             end
@@ -796,7 +788,7 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
         end
 
         // Detect Read or Write command
-        if (Command[0] == `CMD_READ || Command[0] == `READ_A) begin
+        if (Command[0] == 2 || Command[0] == 3) begin
             Bank = Bank_addr[0];
             Col = Col_addr[0];
             Col_brst = Col_addr[0];
@@ -812,7 +804,7 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
             Burst_counter = 0;
             Data_in_enable = 1'b0;
             Data_out_enable = 1'b1;
-        end else if (Command[0] == `CMD_WRITE || Command[0] == `WRITE_A) begin
+        end else if (Command[0] == 4 || Command[0] == 5) begin
             Bank = Bank_addr[0];
             Col = Col_addr[0];
             Col_brst = Col_addr[0];
@@ -848,13 +840,13 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
             if (Bank == 2'b10) Bank2 [{Row, Col}] = Dq_dqm [data_bits - 1  : 0];
             if (Bank == 2'b11) Bank3 [{Row, Col}] = Dq_dqm [data_bits - 1  : 0];
             if (Bank == 2'b11 && Row==10'h3 && Col[7:4]==4'h4)
-            	$display("at time %t CMD_WRITE: Bank = %d Row = %d, Col = %d, Data = Hi-Z due to DQM", $time, Bank, Row, Col);
+            	$display("at time %t WRITE: Bank = %d Row = %d, Col = %d, Data = Hi-Z due to DQM", $time, Bank, Row, Col);
             //$fdisplay(test_file,"bank:%h	row:%h	col:%h	write:%h",Bank,Row,Col,Dq_dqm);
             // Output result
             if (Dqm == 4'b1111) begin
-                if (Debug) $display("at time %t CMD_WRITE: Bank = %d Row = %d, Col = %d, Data = Hi-Z due to DQM", $time, Bank, Row, Col);
+                if (Debug) $display("at time %t WRITE: Bank = %d Row = %d, Col = %d, Data = Hi-Z due to DQM", $time, Bank, Row, Col);
             end else begin
-                if (Debug) $display("at time %t CMD_WRITE: Bank = %d Row = %d, Col = %d, Data = %d, Dqm = %b", $time, Bank, Row, Col, Dq_dqm, Dqm);
+                if (Debug) $display("at time %t WRITE: Bank = %d Row = %d, Col = %d, Data = %d, Dqm = %b", $time, Bank, Row, Col, Dq_dqm, Dqm);
                 // Record tWR time and reset counter
                 WR_chk [Bank] = $time;
                 WR_counter [Bank] = 0;
@@ -877,9 +869,9 @@ module sdram_model_plus (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm,D
             // Display result
             Dq_reg [data_bits - 1  : 0] = #tAC Dq_dqm [data_bits - 1  : 0];
             if (Dqm_reg0 == 4'b1111) begin
-                if (Debug) $display("at time %t CMD_READ : Bank = %d Row = %d, Col = %d, Data = Hi-Z due to DQM", $time, Bank, Row, Col);
+                if (Debug) $display("at time %t READ : Bank = %d Row = %d, Col = %d, Data = Hi-Z due to DQM", $time, Bank, Row, Col);
             end else begin
-                if (Debug) $display("at time %t CMD_READ : Bank = %d Row = %d, Col = %d, Data = %d, Dqm = %b", $time, Bank, Row, Col, Dq_reg, Dqm_reg0);
+                if (Debug) $display("at time %t READ : Bank = %d Row = %d, Col = %d, Data = %d, Dqm = %b", $time, Bank, Row, Col, Dq_reg, Dqm_reg0);
             end
             // Advance burst counter subroutine
             Burst;

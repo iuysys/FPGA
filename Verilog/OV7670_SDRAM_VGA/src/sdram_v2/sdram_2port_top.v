@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 
-// //---------------------------------------------------
-// //-- 
-// `include "F:/FPGA/Verilog/OV7670_SDRAM_UART/src/sdram_v2/sdram_para.v"
+//---------------------------------------------------
+//-- 
+`include "F:/FPGA/Verilog/OV7670_SDRAM_VGA/src/sdram_v2/sdram_para.v"
 //---------------------------------------------------
 //-- 
 module sdram_2port_top(
@@ -86,10 +86,13 @@ reg                 [15:0]              m_sdram_dq_in   ;
 reg                 [15:0]              m_sdram_dq_out  ;
 
 
+    
+
 //---------------------------------------------------
 //-- 
 //---------------------------------------------------
-`define 	BUFF_SIZE		240*320
+`define     BUFF_SIZE       240*320
+// `define 	BUFF_SIZE		1024
 //---------------------------------------------------
 //-- 
 //---------------------------------------------------
@@ -101,13 +104,13 @@ assign		sys_w_req = m_w_req ;
 assign 		sys_r_req = m_r_req	;
 
 assign   	w_fifo_rclk = ~clk ;
-assign		r_fifo_wclk	= ~clk ;
+assign		r_fifo_wclk	= sdram_clk_in ;
 
 assign     	SDRAM_DQ = dq_oe ? m_sdram_dq_in : 16'bz ;
 assign		r_fifo_wdata = SDRAM_DQ ;
 
 //---------------------------------------------------
-//-- 
+//-- 锁存fifo输出的数据
 always @ (posedge clk or negedge rst_n) begin
     if(!rst_n) begin
         m_sdram_dq_in <= 'b0 ;
@@ -135,7 +138,7 @@ always @ (posedge clk or negedge rst_n) begin
     	m_r_req <= 'b0 ;
     	read_en <= 'b0 ;
     end
-    else if (write_flag) begin
+    else if (write_flag) begin												//写状态
     	if (cmd_ack) begin
     		m_w_req <= 'b0 ;
     		write_flag <= 'b0 ;
@@ -155,7 +158,7 @@ always @ (posedge clk or negedge rst_n) begin
     		m_w_req <= 'b1 ;
     	end
     end
-    else if (read_flag) begin
+    else if (read_flag) begin												//读状态
     	if (cmd_ack) begin
     		m_r_req <= 'b0 ;
     		read_flag <= 'b0 ;
@@ -177,8 +180,8 @@ always @ (posedge clk or negedge rst_n) begin
     		read_addr[21:20] <= 2'b10 ;
     	end
     end
-    else if (ctrl_cmd == 'b00) begin
-    	if(r_fifo_wusedw <= 2*`BURST_LENGTH && read_en) begin
+    else if (ctrl_cmd == 'b00) begin										//读写控制
+    	if(r_fifo_wusedw <= 3*`BURST_LENGTH && read_en) begin
             read_flag <= 'b1 ;
         end
         else if (w_fifo_rusedw >= `BURST_LENGTH) begin

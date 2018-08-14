@@ -15,7 +15,7 @@ L0 1
 Z8 OV;L;10.1d;51
 r1
 31
-Z9 !s108 1533702402.346000
+Z9 !s108 1534226203.130000
 Z10 !s107 ../src/OV7670/OV7670_top.v|../src/OV7670/OV7670_Capture.v|../src/OV7670/I2C_Write.v|../src/OV7670/I2C_OV7670_conf.v|../src/OV7670/I2C_OV7670_LUT.v|../src/OV7670/CLK_DIV_EVEN.v|
 Z11 !s90 -reportprogress|300|../src/OV7670/CLK_DIV_EVEN.v|../src/OV7670/I2C_OV7670_LUT.v|../src/OV7670/I2C_OV7670_conf.v|../src/OV7670/I2C_Write.v|../src/OV7670/OV7670_Capture.v|../src/OV7670/OV7670_top.v|
 o-O0
@@ -44,12 +44,13 @@ Z19 n@i2@c_@o@v7670_conf
 !s85 0
 !s101 -O0
 vI2C_OV7670_LUT
-Z20 IP<enEnB`T55;2BXJe1=N13
-Z21 VJPK[851kzYg=hWeVn47F?0
+Z20 !s100 YSmf3Ua4X`n6>5P_d3VjS0
+Z21 IWkjQZ]eOD?<03[PaKMJbJ1
+Z22 VJPK[851kzYg=hWeVn47F?0
 R4
-Z22 w1533701521
-Z23 8../src/OV7670/I2C_OV7670_LUT.v
-Z24 F../src/OV7670/I2C_OV7670_LUT.v
+Z23 w1533884431
+Z24 8../src/OV7670/I2C_OV7670_LUT.v
+Z25 F../src/OV7670/I2C_OV7670_LUT.v
 L0 20
 R8
 r1
@@ -58,8 +59,7 @@ R9
 R10
 R11
 o-O0
-Z25 n@i2@c_@o@v7670_@l@u@t
-Z26 !s100 ANZ59VfR3<`g@ez0S@LaI3
+Z26 n@i2@c_@o@v7670_@l@u@t
 !i10b 1
 !s85 0
 !s101 -O0
@@ -84,12 +84,13 @@ Z33 n@i2@c_@write
 !s85 0
 !s101 -O0
 vOV7670_Capture
-Z34 I7L`Zm]CMFHLDo:T_CH9AU1
-Z35 VGJNCGP4j;YmMGzCTl];YO2
+Z34 !s100 cgXTn0ShkdfAFo4BhNcW[0
+Z35 I1SRC0>6L^:3GWc]Tg]CJS3
+Z36 V=TYMi4X7A_0bD4A5UUihD3
 R4
-Z36 w1533700680
-Z37 8../src/OV7670/OV7670_Capture.v
-Z38 F../src/OV7670/OV7670_Capture.v
+Z37 w1534225515
+Z38 8../src/OV7670/OV7670_Capture.v
+Z39 F../src/OV7670/OV7670_Capture.v
 L0 1
 R8
 r1
@@ -98,8 +99,7 @@ R9
 R10
 R11
 o-O0
-Z39 n@o@v7670_@capture
-Z40 !s100 J4jWV^ffh[d>dkF8ek<e]2
+Z40 n@o@v7670_@capture
 !i10b 1
 !s85 0
 !s101 -O0
@@ -118,37 +118,37 @@ r1
 Z47 !s90 -reportprogress|300|../src/OV7670_SDRAM_VGA.v|
 o-O0
 Z48 n@o@v7670_@s@d@r@a@m_@v@g@a
-Z49 !s108 1533702402.211000
+Z49 !s108 1534226203.015000
 Z50 !s107 F:/FPGA/Verilog/OV7670_SDRAM_VGA/src/sdram_v2/sdram_para.v|../src/OV7670_SDRAM_VGA.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vOV7670_SDRAM_VGA_tb
-Z51 Ifn2UA6E?=H5fV?fI:S1b>3
-Z52 Vn`c2iF@3g?z50O4aSWdZ02
+Z51 !s100 =b5W`LQ`z]=HC`08?8HE[3
+Z52 IjYjURJWF:@oeinfk7`N^N1
+Z53 Vn`c2iF@3g?z50O4aSWdZ02
 R4
-Z53 w1533701998
-Z54 8../sim/OV7670_SDRAM_VGA_tb.v
-Z55 F../sim/OV7670_SDRAM_VGA_tb.v
+Z54 w1533885041
+Z55 8../sim/OV7670_SDRAM_VGA_tb.v
+Z56 F../sim/OV7670_SDRAM_VGA_tb.v
 L0 7
 R8
 r1
 31
-Z56 !s108 1533702402.000000
-Z57 !s107 F:/FPGA/Verilog/OV7670_SDRAM_VGA/src/sdram_v2/sdram_para.v|../sim/sdram_model_plus.v|../sim/OV7670_SDRAM_VGA_tb.v|
-Z58 !s90 -reportprogress|300|../sim/OV7670_SDRAM_VGA_tb.v|../sim/sdram_model_plus.v|
+Z57 !s108 1534226202.808000
+Z58 !s107 F:/FPGA/Verilog/OV7670_SDRAM_VGA/src/sdram_v2/sdram_para.v|../sim/sdram_model_plus.v|../sim/OV7670_SDRAM_VGA_tb.v|
+Z59 !s90 -reportprogress|300|../sim/OV7670_SDRAM_VGA_tb.v|../sim/sdram_model_plus.v|
 o-O0
-Z59 n@o@v7670_@s@d@r@a@m_@v@g@a_tb
-Z60 !s100 RAVa>I:a^I;6?iH]SnWQ81
+Z60 n@o@v7670_@s@d@r@a@m_@v@g@a_tb
 !i10b 1
 !s85 0
 !s101 -O0
 vOV7670_top
-Z61 !s100 Ygz0KUR8IF020A[A:NI`22
-Z62 I]m[:XWmcO]NB=aOVWzHVz0
-Z63 VH;1MQe679^_g@Z[1JZPeg0
+Z61 !s100 5XYW6eW2dkNk;3?n0^2Om3
+Z62 IR^dU=CkCzg7PVXG=5VhA42
+Z63 V8QDo>7G:eJ^BW=LF1h3d93
 R4
-Z64 w1532655977
+Z64 w1534225531
 Z65 8../src/OV7670/OV7670_top.v
 Z66 F../src/OV7670/OV7670_top.v
 L0 1
@@ -164,18 +164,18 @@ Z67 n@o@v7670_top
 !s85 0
 !s101 -O0
 vsdram_2port_top
-Z68 !s100 8A_B`f94M4UMmGdL<[U[O1
-Z69 Ibz;liT1VaiN[6:_HMia>:3
+Z68 !s100 z=zLnV3[=_8=cbY?eUUMg2
+Z69 I?;jiUKRB_UW:fW[200TfF2
 Z70 VNhe4ngPc13G<MT=>7hFZg2
 R4
-Z71 w1533695020
+Z71 w1534225493
 Z72 8../src/sdram_v2/sdram_2port_top.v
 Z73 F../src/sdram_v2/sdram_2port_top.v
-L0 6
+L0 8
 R8
 r1
 31
-Z74 !s108 1533702403.009000
+Z74 !s108 1534226203.646000
 Z75 !s107 F:/FPGA/Verilog/OV7670_SDRAM_VGA/src/sdram_v2/sdram_para.v|../src/sdram_v2/sdram_para.v|../src/sdram_v2/sdram_fifo.v|../src/sdram_v2/sdram_ctrl.v|../src/sdram_v2/sdram_cmd.v|../src/sdram_v2/sdram_2port_top.v|
 Z76 !s90 -reportprogress|300|../src/sdram_v2/sdram_2port_top.v|../src/sdram_v2/sdram_cmd.v|../src/sdram_v2/sdram_ctrl.v|../src/sdram_v2/sdram_fifo.v|../src/sdram_v2/sdram_para.v|
 o-O0
@@ -183,11 +183,11 @@ o-O0
 !s85 0
 !s101 -O0
 vsdram_cmd
-Z77 !s100 R_P?z2KPSDZGE^]T[V1L92
-Z78 I=`bNO?E4RBHmhV[h`P36[1
+Z77 !s100 [UcWoTN>@1:DKZb<??jTd1
+Z78 Ifo1MBA;VT2g4^HGdQ2QEU3
 Z79 VBb:bSdE06L=Cfdm9B`k4?3
 R4
-Z80 w1533695009
+Z80 w1534226197
 Z81 8../src/sdram_v2/sdram_cmd.v
 Z82 F../src/sdram_v2/sdram_cmd.v
 L0 7
@@ -202,11 +202,11 @@ o-O0
 !s85 0
 !s101 -O0
 vsdram_ctrl
-Z83 !s100 FJ``h]Qe[WXnXWAO>]JW<2
-Z84 I5QDHn7Y14Ff31]F5OCjGM2
+Z83 !s100 d27o87M8@ZbOeN=9oU<^G2
+Z84 IKY9IG8TnFVWIiKb;2B;`F0
 Z85 V=YdhlZ]O@1O<`OO?TOTo?0
 R4
-Z86 w1533631937
+Z86 w1534138097
 Z87 8../src/sdram_v2/sdram_ctrl.v
 Z88 F../src/sdram_v2/sdram_ctrl.v
 L0 5
@@ -221,11 +221,11 @@ o-O0
 !s85 0
 !s101 -O0
 vsdram_fifo
-Z89 !s100 jkTTAn96[7Tj[bOz:7AoG0
-Z90 IKc@1Y=;AIbJoz7Ajn8G7h0
-Z91 V5d9DmAN1@2A7o;ALi3^>=3
+Z89 !s100 YcNioIg=9A4MWa?lf4ldN2
+Z90 Ii6d17;KITVUR<OAOLl^G51
+Z91 V0Wa9`jn0E5YnBYYiW9D^S3
 R4
-Z92 w1533700321
+Z92 w1533734125
 Z93 8../src/sdram_v2/sdram_fifo.v
 Z94 F../src/sdram_v2/sdram_fifo.v
 L0 39
@@ -240,30 +240,30 @@ o-O0
 !s85 0
 !s101 -O0
 vsdram_model_plus
-Z95 !s100 U0^8WSc]RQm>lE5OL7J4X2
-Z96 Iz8c9[?nHfCKl?kma5O`b[2
-Z97 VT:CBz?8JoCb2b]NhhddK]1
+Z95 !s100 gf35AB9I1>6zdZa^1WO851
+Z96 IljNEhJ7hoZmNIfaE0f1nK1
+Z97 V<oGd@Kk?DZ5H3H<1jKfY:2
 R4
-Z98 w1533699510
+Z98 w1534126756
 Z99 8../sim/sdram_model_plus.v
 Z100 F../sim/sdram_model_plus.v
-L0 64
+L0 56
 R8
 r1
 31
-R56
 R57
 R58
+R59
 o-O0
 !i10b 1
 !s85 0
 !s101 -O0
 vsdram_pll
-Z101 !s100 ?dfae7TDWDVic?MhIdQ5l2
-Z102 IPF^]1V9mQ7fKY;?GcGZ2g3
+Z101 !s100 :@e?AV2T`NFBJ7hUDjPK93
+Z102 IOPUKQP2e<>:__mTgAkVKS0
 Z103 V3[icOkC7Go6fUabW]AX:C1
 R4
-Z104 w1533694415
+Z104 w1534153511
 Z105 8../core/sdram_pll.v
 Z106 F../core/sdram_pll.v
 L0 39
@@ -272,18 +272,18 @@ r1
 31
 Z107 !s90 -reportprogress|300|../core/sdram_pll.v|
 o-O0
-Z108 !s108 1533702401.863000
+Z108 !s108 1534226202.660000
 Z109 !s107 ../core/sdram_pll.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vVGA_CTRL
 !i10b 1
-Z110 !s100 c@f4@oC7V8ILL<42lEnR<0
-Z111 IbJZ6<<Ej?V>ZSifnZ^Oz62
+Z110 !s100 [;YN7i0G:58]nGWLTMom;1
+Z111 ILnhB8hK5^mE]1OcU>L?J61
 Z112 VbNZPZoLnL8Kgk3`WI1B=n3
 R4
-Z113 w1533695274
+Z113 w1533796762
 Z114 8../src/vga/VGA_CTRL.v
 Z115 F../src/vga/VGA_CTRL.v
 L0 8
@@ -291,7 +291,7 @@ R8
 r1
 !s85 0
 31
-Z116 !s108 1533702403.422000
+Z116 !s108 1534226204.015000
 Z117 !s107 F:/FPGA/Verilog/OV7670_SDRAM_VGA/src/vga/VGA_para.v|../src/vga/VGA_para.v|../src/vga/VGA_driver.v|../src/vga/VGA_CTRL.v|
 Z118 !s90 -reportprogress|300|../src/vga/VGA_CTRL.v|../src/vga/VGA_driver.v|../src/vga/VGA_para.v|
 !s101 -O0
@@ -303,7 +303,7 @@ Z120 !s100 oSQ0i?;kXh?Je0::PfllF2
 Z121 I_c<][FFGE:k@S:I5Xl_f_3
 Z122 VEdd9`R5_j;>6POnIK0b_l0
 R4
-Z123 w1533695094
+Z123 w1534225450
 Z124 8../src/vga/VGA_driver.v
 Z125 F../src/vga/VGA_driver.v
 Z126 FF:/FPGA/Verilog/OV7670_SDRAM_VGA/src/vga/VGA_para.v

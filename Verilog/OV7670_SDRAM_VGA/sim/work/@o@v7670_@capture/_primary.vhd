@@ -13,7 +13,7 @@ entity OV7670_Capture is
         OV_oe           : out    vl_logic;
         OV_wen          : out    vl_logic;
         OV_rclk         : out    vl_logic;
-        w_usedw         : in     vl_logic_vector(8 downto 0);
+        w_usedw         : in     vl_logic_vector(10 downto 0);
         w_req           : out    vl_logic;
         w_clk           : out    vl_logic;
         w_data          : out    vl_logic_vector(15 downto 0)

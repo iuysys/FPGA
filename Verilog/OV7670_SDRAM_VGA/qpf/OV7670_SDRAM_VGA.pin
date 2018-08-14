@@ -66,16 +66,16 @@ Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage 
 -------------------------------------------------------------------------------------------------------------
 ~ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 1         : input  : 3.3-V LVTTL       :         : 1         : N              
 ~nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 2         : input  : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : 3         :        :                   :         : 1         :                
-GND*                         : 4         :        :                   :         : 1         :                
-GND*                         : 5         :        :                   :         : 1         :                
-GND*                         : 6         :        :                   :         : 1         :                
+RESERVED                     : 3         :        :                   :         : 1         :                
+RESERVED                     : 4         :        :                   :         : 1         :                
+RESERVED                     : 5         :        :                   :         : 1         :                
+RESERVED                     : 6         :        :                   :         : 1         :                
 VCCIO1                       : 7         : power  :                   : 3.3V    : 1         :                
-GND*                         : 8         :        :                   :         : 1         :                
+RESERVED                     : 8         :        :                   :         : 1         :                
 GND                          : 9         : gnd    :                   :         :           :                
-GND*                         : 10        :        :                   :         : 1         :                
-GND*                         : 11        :        :                   :         : 1         :                
-GND*                         : 12        :        :                   :         : 1         :                
+RESERVED                     : 10        :        :                   :         : 1         :                
+RESERVED                     : 11        :        :                   :         : 1         :                
+vga_blank                    : 12        : output : 3.3-V LVTTL       :         : 1         : N              
 OV_wen                       : 13        : output : 3.3-V LVTTL       :         : 1         : Y              
 OV_vsync                     : 14        : input  : 3.3-V LVTTL       :         : 1         : Y              
 OV_rclk                      : 15        : output : 3.3-V LVTTL       :         : 1         : Y              
@@ -110,8 +110,8 @@ SCCB_SDA                     : 43        : output : 3.3-V LVTTL       :         
 OV_rrst                      : 44        : output : 3.3-V LVTTL       :         : 1         : Y              
 SCCB_SCL                     : 45        : output : 3.3-V LVTTL       :         : 1         : Y              
 OV_wrst                      : 46        : output : 3.3-V LVTTL       :         : 1         : Y              
-GND*                         : 47        :        :                   :         : 1         :                
-GND*                         : 48        :        :                   :         : 1         :                
+RESERVED                     : 47        :        :                   :         : 1         :                
+RESERVED                     : 48        :        :                   :         : 1         :                
 GND                          : 49        : gnd    :                   :         :           :                
 GND_PLL1                     : 50        : gnd    :                   :         :           :                
 VCCD_PLL1                    : 51        : power  :                   : 1.2V    :           :                
@@ -119,53 +119,53 @@ GND_PLL1                     : 52        : gnd    :                   :         
 VCCA_PLL1                    : 53        : power  :                   : 1.2V    :           :                
 GNDA_PLL1                    : 54        : gnd    :                   :         :           :                
 GND                          : 55        : gnd    :                   :         :           :                
-GND*                         : 56        :        :                   :         : 4         :                
-GND*                         : 57        :        :                   :         : 4         :                
-GND*                         : 58        :        :                   :         : 4         :                
-GND*                         : 59        :        :                   :         : 4         :                
-GND*                         : 60        :        :                   :         : 4         :                
-GND*                         : 61        :        :                   :         : 4         :                
+RESERVED                     : 56        :        :                   :         : 4         :                
+RESERVED                     : 57        :        :                   :         : 4         :                
+RESERVED                     : 58        :        :                   :         : 4         :                
+RESERVED                     : 59        :        :                   :         : 4         :                
+RESERVED                     : 60        :        :                   :         : 4         :                
+RESERVED                     : 61        :        :                   :         : 4         :                
 VCCIO4                       : 62        : power  :                   : 3.3V    : 4         :                
-GND*                         : 63        :        :                   :         : 4         :                
-GND*                         : 64        :        :                   :         : 4         :                
+RESERVED                     : 63        :        :                   :         : 4         :                
+RESERVED                     : 64        :        :                   :         : 4         :                
 GND                          : 65        : gnd    :                   :         :           :                
 VCCINT                       : 66        : power  :                   : 1.2V    :           :                
-GND*                         : 67        :        :                   :         : 4         :                
-GND*                         : 68        :        :                   :         : 4         :                
-GND*                         : 69        :        :                   :         : 4         :                
-GND*                         : 70        :        :                   :         : 4         :                
+RESERVED                     : 67        :        :                   :         : 4         :                
+RESERVED                     : 68        :        :                   :         : 4         :                
+RESERVED                     : 69        :        :                   :         : 4         :                
+RESERVED                     : 70        :        :                   :         : 4         :                
 VCCIO4                       : 71        : power  :                   : 3.3V    : 4         :                
-GND*                         : 72        :        :                   :         : 4         :                
+vga_sync                     : 72        : output : 3.3-V LVTTL       :         : 4         : N              
 GND                          : 73        : gnd    :                   :         :           :                
-GND*                         : 74        :        :                   :         : 4         :                
-vga_blank                    : 75        : output : 3.3-V LVTTL       :         : 4         : N              
-GND*                         : 76        :        :                   :         : 4         :                
-GND*                         : 77        :        :                   :         : 4         :                
+RESERVED                     : 74        :        :                   :         : 4         :                
+RESERVED                     : 75        :        :                   :         : 4         :                
+RESERVED                     : 76        :        :                   :         : 4         :                
+RESERVED                     : 77        :        :                   :         : 4         :                
 GND                          : 78        : gnd    :                   :         :           :                
 VCCINT                       : 79        : power  :                   : 1.2V    :           :                
-GND*                         : 80        :        :                   :         : 4         :                
-GND*                         : 81        :        :                   :         : 4         :                
-GND*                         : 82        :        :                   :         : 4         :                
+RESERVED                     : 80        :        :                   :         : 4         :                
+RESERVED                     : 81        :        :                   :         : 4         :                
+RESERVED                     : 82        :        :                   :         : 4         :                
 VCCIO4                       : 83        : power  :                   : 3.3V    : 4         :                
-GND*                         : 84        :        :                   :         : 4         :                
+RESERVED                     : 84        :        :                   :         : 4         :                
 GND                          : 85        : gnd    :                   :         :           :                
-GND*                         : 86        :        :                   :         : 4         :                
-GND*                         : 87        :        :                   :         : 4         :                
-GND*                         : 88        :        :                   :         : 4         :                
-GND*                         : 89        :        :                   :         : 4         :                
-GND*                         : 90        :        :                   :         : 4         :                
+RESERVED                     : 86        :        :                   :         : 4         :                
+RESERVED                     : 87        :        :                   :         : 4         :                
+RESERVED                     : 88        :        :                   :         : 4         :                
+RESERVED                     : 89        :        :                   :         : 4         :                
+RESERVED                     : 90        :        :                   :         : 4         :                
 VCCIO4                       : 91        : power  :                   : 3.3V    : 4         :                
-GND*                         : 92        :        :                   :         : 4         :                
+RESERVED                     : 92        :        :                   :         : 4         :                
 GND                          : 93        : gnd    :                   :         :           :                
-GND*                         : 94        :        :                   :         : 4         :                
-vga_sync                     : 95        : output : 3.3-V LVTTL       :         : 4         : N              
-GND*                         : 96        :        :                   :         : 4         :                
-GND*                         : 97        :        :                   :         : 4         :                
+RESERVED                     : 94        :        :                   :         : 4         :                
+RESERVED                     : 95        :        :                   :         : 4         :                
+RESERVED                     : 96        :        :                   :         : 4         :                
+RESERVED                     : 97        :        :                   :         : 4         :                
 VCCIO4                       : 98        : power  :                   : 3.3V    : 4         :                
-GND*                         : 99        :        :                   :         : 4         :                
+RESERVED                     : 99        :        :                   :         : 4         :                
 GND                          : 100       : gnd    :                   :         :           :                
-GND*                         : 101       :        :                   :         : 4         :                
-GND*                         : 102       :        :                   :         : 4         :                
+RESERVED                     : 101       :        :                   :         : 4         :                
+RESERVED                     : 102       :        :                   :         : 4         :                
 vga_rgb_out[4]               : 103       : output : 3.3-V LVTTL       :         : 4         : Y              
 vga_rgb_out[3]               : 104       : output : 3.3-V LVTTL       :         : 4         : Y              
 vga_rgb_out[2]               : 105       : output : 3.3-V LVTTL       :         : 3         : Y              
@@ -200,19 +200,19 @@ vga_rgb_out[11]              : 133       : output : 3.3-V LVTTL       :         
 vga_clk                      : 134       : output : 3.3-V LVTTL       :         : 3         : Y              
 vga_hsync                    : 135       : output : 3.3-V LVTTL       :         : 3         : Y              
 VCCIO3                       : 136       : power  :                   : 3.3V    : 3         :                
-GND*                         : 137       :        :                   :         : 3         :                
-GND*                         : 138       :        :                   :         : 3         :                
-GND*                         : 139       :        :                   :         : 3         :                
+RESERVED                     : 137       :        :                   :         : 3         :                
+RESERVED                     : 138       :        :                   :         : 3         :                
+RESERVED                     : 139       :        :                   :         : 3         :                
 GND                          : 140       : gnd    :                   :         :           :                
-GND*                         : 141       :        :                   :         : 3         :                
-GND*                         : 142       :        :                   :         : 3         :                
-GND*                         : 143       :        :                   :         : 3         :                
-GND*                         : 144       :        :                   :         : 3         :                
-GND*                         : 145       :        :                   :         : 3         :                
-GND*                         : 146       :        :                   :         : 3         :                
-GND*                         : 147       :        :                   :         : 3         :                
+RESERVED                     : 141       :        :                   :         : 3         :                
+RESERVED                     : 142       :        :                   :         : 3         :                
+RESERVED                     : 143       :        :                   :         : 3         :                
+RESERVED                     : 144       :        :                   :         : 3         :                
+RESERVED                     : 145       :        :                   :         : 3         :                
+RESERVED                     : 146       :        :                   :         : 3         :                
+RESERVED                     : 147       :        :                   :         : 3         :                
 VCCIO3                       : 148       : power  :                   : 3.3V    : 3         :                
-GND*                         : 149       :        :                   :         : 3         :                
+RESERVED                     : 149       :        :                   :         : 3         :                
 SDRAM_DQ[0]                  : 150       : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 SDRAM_DQ[1]                  : 151       : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 SDRAM_DQ[2]                  : 152       : bidir  : 3.3-V LVTTL       :         : 3         : Y              

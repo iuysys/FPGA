@@ -104,7 +104,7 @@ module sdram_pll (
 		altpll_component.clk1_divide_by = 1,
 		altpll_component.clk1_duty_cycle = 50,
 		altpll_component.clk1_multiply_by = 5,
-		altpll_component.clk1_phase_shift = "180",
+		altpll_component.clk1_phase_shift = "5000",
 		altpll_component.clk2_divide_by = 1,
 		altpll_component.clk2_duty_cycle = 50,
 		altpll_component.clk2_multiply_by = 2,
@@ -235,7 +235,7 @@ endmodule
 // Retrieval info: PRIVATE: PHASE_SHIFT2 STRING "0.00000000"
 // Retrieval info: PRIVATE: PHASE_SHIFT_STEP_ENABLED_CHECK STRING "0"
 // Retrieval info: PRIVATE: PHASE_SHIFT_UNIT0 STRING "deg"
-// Retrieval info: PRIVATE: PHASE_SHIFT_UNIT1 STRING "ps"
+// Retrieval info: PRIVATE: PHASE_SHIFT_UNIT1 STRING "deg"
 // Retrieval info: PRIVATE: PHASE_SHIFT_UNIT2 STRING "ps"
 // Retrieval info: PRIVATE: PLL_ADVANCED_PARAM_CHECK STRING "0"
 // Retrieval info: PRIVATE: PLL_ARESET_CHECK STRING "0"
@@ -281,7 +281,7 @@ endmodule
 // Retrieval info: CONSTANT: CLK1_DIVIDE_BY NUMERIC "1"
 // Retrieval info: CONSTANT: CLK1_DUTY_CYCLE NUMERIC "50"
 // Retrieval info: CONSTANT: CLK1_MULTIPLY_BY NUMERIC "5"
-// Retrieval info: CONSTANT: CLK1_PHASE_SHIFT STRING "180"
+// Retrieval info: CONSTANT: CLK1_PHASE_SHIFT STRING "5000"
 // Retrieval info: CONSTANT: CLK2_DIVIDE_BY NUMERIC "1"
 // Retrieval info: CONSTANT: CLK2_DUTY_CYCLE NUMERIC "50"
 // Retrieval info: CONSTANT: CLK2_MULTIPLY_BY NUMERIC "2"

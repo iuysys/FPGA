@@ -13,7 +13,7 @@ output							OV_oe		,
 output							OV_wen		,
 output							OV_rclk		,
 				
-input				[8:0]		w_usedw		,
+input				[10:0]		w_usedw		,
 output							w_req		,
 output							w_clk		,
 output				[15:0]		w_data		
@@ -87,7 +87,7 @@ OV7670_Capture	OV7670_Capture_inst(
 .S_CLK			(S_CLK					),
 .RST_N			(RST_N					),
 
-// .init_done		(1'b1				),
+// .init_done		(1'b1				),					//调试打开
 .init_done		(init_done				),
 .start_init		(start_init				),
 

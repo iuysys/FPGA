@@ -13,7 +13,7 @@ output							OV_oe		,
 output		reg					OV_wen		,
 output							OV_rclk		,
 			
-input				[8:0]		w_usedw		,
+input				[10:0]		w_usedw		,
 output		reg					w_req		,
 output							w_clk		,
 output		reg		[15:0]		w_data		
@@ -49,7 +49,7 @@ reg								flag_wait			;
 //-- 参数定义
 //------------------------------------------------------
 `define		IMAGE_SIZE 240*320
-// `define		IMAGE_SIZE 176*144
+// `define		IMAGE_SIZE 1024
 `define		WAIT_2US_TIME 80
 localparam	INIT = 3'D0 ,IDLE = 3'D1 ,WRST = 3'D2 ,CAPT = 3'D3 ,RRST = 3'D4 ,READ = 3'D5 ;
 
@@ -59,8 +59,8 @@ localparam	INIT = 3'D0 ,IDLE = 3'D1 ,WRST = 3'D2 ,CAPT = 3'D3 ,RRST = 3'D4 ,READ
 assign	OV_oe = 1'b0 ;
 assign	OV_rclk = (state == READ && ov_rclk_en) ? S_CLK : 1'b0 ;
 assign	w_clk = ~S_CLK ;
-assign 	almost_full = (w_usedw >= 1920) ? 1'b1 : 1'b0 ;
-assign	almost_empty = (w_usedw <= 640) ? 1'b1 : 1'b0 ;
+assign 	almost_full = (w_usedw >= 1792) ? 1'b1 : 1'b0 ;
+assign	almost_empty = (w_usedw <= 512) ? 1'b1 : 1'b0 ;
 
 //------------------------------------------------------
 //-- 上电等待2us
@@ -103,7 +103,7 @@ always@(*) begin
 			end
 		end
 		IDLE : begin
-			if(flag_pose_edge_vs && w_usedw == 'd0) begin					//等一帧图像发送完成在采集下一帧图像
+			if(flag_pose_edge_vs && w_usedw <= 'd256) begin					//等一帧图像快发送完成在采集下一帧图像
 				state_n = WRST ;
 			end
 			else begin
@@ -141,6 +141,14 @@ always@(*) begin
 			end
 			else begin
 				state_n = READ ;
+			end
+		end
+		default : begin
+			if(flag_pose_edge_vs && w_usedw <= 'd256) begin					
+				state_n = WRST ;
+			end
+			else begin
+				state_n = IDLE ;
 			end
 		end
 		
@@ -215,7 +223,7 @@ always@(posedge S_CLK or negedge RST_N) begin
 						w_data[15:8] <= OV_data ;
 					end	
 					else if(step_cnt == 'd2) begin
-						step_cnt <= step_cnt + 1'b1 ;
+						// step_cnt <= step_cnt + 1'b1 ;
 						w_req <= 1'b1 ;
 						step_cnt <= 'd1 ;
 						w_data[7:0] <= OV_data ;
@@ -228,7 +236,7 @@ always@(posedge S_CLK or negedge RST_N) begin
 							ov_rclk_en <= 1'b1 ;
 						end
 					end
-					else begin
+					else begin 
 						step_cnt <= step_cnt + 1'b1 ;
 						w_req <= 1'b0 ;
 					end
@@ -241,6 +249,18 @@ always@(posedge S_CLK or negedge RST_N) begin
 					w_req <= 1'b0 ;
 				end
 			end	
+			default : begin
+				OV_wrst <= 1'b1 ;
+				OV_wen <= 1'b0 ;
+				OV_rrst <= 1'b1 ;
+				step_cnt <= 'b0 ;
+				start_init <= 1'b0 ;
+				rst_cnt <= 'b0 ;
+				pixel_cnt <= 'b0 ;
+				w_req <= 1'b0 ;
+				w_data <= 'b0 ;
+				ov_rclk_en <= 1'b0 ;
+			end
 		endcase
 	end
 	
@@ -258,9 +278,11 @@ always@(posedge S_CLK or negedge RST_N) begin
 		edge_vs_pre <= edge_vs_now ;
 	end
 end
-
+//---------------------------------------------------
+//-- 
 assign flag_pose_edge_vs = (!edge_vs_pre & edge_vs_now) ? 1'b1 : 1'b0 ;
-
+//---------------------------------------------------
+//-- 
 always@(posedge S_CLK or negedge RST_N) begin
 	if(!RST_N) begin
 		vsync_cnt <= 'b0 ;
